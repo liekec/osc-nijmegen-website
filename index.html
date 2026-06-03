@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Open Science Community Nijmegen</title>
 
 <style>
 
 :root {
     --blue: #002060;
-    --light-blue: #0070C0;
+    --accent: #0070C0;
     --red: #BE311A;
-    --text: #1f1f1f;
-    --background: #f6f7f9;
+    --text: #1a1a1a;
+    --muted: #555;
+    --bg: #f7f8fa;
+    --border: #e6e8ec;
 }
 
 /* RESET */
@@ -24,208 +25,205 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Helvetica, Arial, sans-serif;
-    background: var(--background);
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.65;
-    font-size: 16.5px;
+    line-height: 1.75;
+    font-size: 16px;
 }
 
-/* HEADER */
-.site-header {
+/* ================= HEADER ================= */
+
+header {
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
+    background: white;
+    border-bottom: 1px solid var(--border);
 }
 
+/* top bar */
 .top-bar {
-    background: white;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 12px 36px;
-    border-bottom: 1px solid #eee;
+    align-items: center;
+    padding: 14px 40px;
 }
 
 .logo img {
-    height: 58px;
+    height: 60px;
 }
 
-.top-nav {
+.top-links {
     display: flex;
+    gap: 20px;
     align-items: center;
-    gap: 18px;
 }
 
-.top-nav a {
-    text-decoration: none;
+.top-links a {
     color: var(--blue);
-    font-weight: 500;
+    text-decoration: none;
     font-size: 0.95rem;
 }
 
-.top-nav a:hover {
-    color: var(--light-blue);
-}
-
-.top-nav input {
-    padding: 8px 12px;
-    border-radius: 999px;
-    border: 1px solid #ddd;
-    outline: none;
+.top-links input {
+    padding: 7px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
     width: 180px;
 }
 
-/* MAIN NAV */
-.main-nav {
-    background: var(--blue);
+/* main nav */
+.nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 38px;
-    padding: 16px 20px;
+    gap: 35px;
+    padding: 14px;
+    background: var(--blue);
 }
 
-.main-nav a {
+.nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     opacity: 0.9;
 }
 
-.main-nav a:hover {
+.nav a:hover {
     opacity: 1;
 }
 
-.main-nav .cta {
+.nav .cta {
     background: var(--red);
-    padding: 8px 16px;
+    padding: 6px 14px;
     border-radius: 999px;
-    font-weight: 700;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero {
-    padding: 50px 20px 30px;
     text-align: center;
+    padding: 80px 20px 60px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .hero img {
-    width: 200px;
+    width: 180px;
     margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
     color: var(--blue);
-    margin-bottom: 14px;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .hero p {
     font-size: 1.15rem;
-    color: #444;
-    max-width: 700px;
-    margin: 0 auto;
+    color: var(--muted);
+    max-width: 720px;
+    margin: auto;
 }
 
-.button {
+.hero .button {
     display: inline-block;
-    margin-top: 26px;
+    margin-top: 28px;
     padding: 12px 26px;
-    border-radius: 999px;
     background: var(--red);
     color: white;
+    border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
+
 .section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 35px 20px;
+    max-width: 980px;
+    margin: auto;
+    padding: 70px 20px;
 }
 
 .section h2 {
+    font-size: 1.6rem;
     color: var(--blue);
-    font-size: 1.5rem;
     margin-bottom: 18px;
 }
 
-/* NEW OPEN SCIENCE STYLING */
-.highlight-box {
-    background: white;
-    border-left: 5px solid var(--light-blue);
-    padding: 18px 20px;
-    border-radius: 10px;
-    margin-bottom: 18px;
-    border: 1px solid #e6e6e6;
+.section p {
+    color: var(--text);
+    margin-bottom: 16px;
 }
 
-.definition {
-    background: white;
-    padding: 18px 20px;
-    border-radius: 12px;
-    border: 1px solid #e6e6e6;
-    margin-bottom: 18px;
+/* highlight quote (clean EU style) */
+blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 18px;
+    margin: 22px 0;
+    color: var(--muted);
+    font-style: italic;
 }
 
-.small-title {
-    color: var(--blue);
-    font-weight: 700;
-    margin-top: 18px;
-    margin-bottom: 8px;
-}
+/* ================= NEWS ================= */
 
-/* NEWS */
-.news-featured {
+.news {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 18px;
-    margin-top: 24px;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
 }
 
 .news-main {
+    border: 1px solid var(--border);
     background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #e6e6e6;
 }
 
 .news-main img {
     width: 100%;
-    height: 220px;
+    height: 240px;
     object-fit: cover;
 }
 
-.news-main-content {
+.news-main .content {
     padding: 18px;
+}
+
+.news-main h3 {
+    color: var(--blue);
+    margin-bottom: 8px;
 }
 
 .news-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .news-item {
-    background: white;
-    border: 1px solid #e6e6e6;
-    border-radius: 10px;
-    padding: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
 }
 
-/* FOOTER */
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item h4 {
+    color: var(--blue);
+    font-size: 0.95rem;
+}
+
+/* ================= FOOTER ================= */
+
 footer {
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px;
     font-size: 0.9rem;
     color: #777;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid var(--border);
     margin-top: 40px;
 }
 
@@ -234,33 +232,28 @@ footer {
 
 <body>
 
-<header class="site-header">
+<header>
 
     <div class="top-bar">
-
         <div class="logo">
             <img src="OSCN logo transparant.png" alt="OSCN Logo">
         </div>
 
-        <div class="top-nav">
+        <div class="top-links">
             <a href="#">About</a>
             <a href="#">Resources</a>
             <a href="#">Contact</a>
             <input type="text" placeholder="Search...">
         </div>
-
     </div>
 
-    <div class="main-nav">
-
-        <a href="#" class="home">🏠</a>
+    <nav class="nav">
         <a href="#">News</a>
         <a href="#">Newsletters</a>
         <a href="#">Events</a>
         <a href="#">Members</a>
-        <a href="#" class="cta">Join us</a>
-
-    </div>
+        <a class="cta" href="#">Join us</a>
+    </nav>
 
 </header>
 
@@ -279,48 +272,37 @@ footer {
 
 </section>
 
-    <section class="section">
-
-    <h2>Who are we?</h2>
-
-    <div class="definition">
-        Open Science Community Nijmegen (OSCN) is a local community of researchers, students and professionals from different disciplines who are committed to making science more open, collaborative and reproducible.
-    </div>
-
-    <div class="definition">
-        We connect people across institutions in Nijmegen who share an interest in Open Science practices and cultural change in research. Our activities include events, workshops and informal networking.
-    </div>
-
-</section>
-    
 <section class="section">
 
     <h2>What is Open Science?</h2>
 
-    <div class="highlight-box">
-        There is no single definition of “open science” that covers all practices and principles,
-        but the Open Science Training Handbook offers a useful starting point.
-    </div>
+    <p>
+        There is no single definition of “open science” that fully captures its scope,
+        but a useful starting point comes from the Open Science Training Handbook.
+    </p>
 
-    <div class="definition">
+    <blockquote>
         Open Science is the practice of science in such a way that others can collaborate and contribute,
         where research data, lab notes and other research processes are freely available,
         under terms that enable reuse, redistribution and reproduction of the research and its underlying data and methods.
-    </div>
+    </blockquote>
 
-    <div class="definition">
-        <div class="small-title">Examples of Open Science practices</div>
-        Preregistered studies, sharing research data and code, open peer review,
-        and ensuring free access to published work are all examples of open science practices.
-    </div>
+    <p>
+        Practices include preregistration, sharing data and code, open peer review,
+        and ensuring free access to published work.
+    </p>
 
-    <div class="definition">
-        <div class="small-title">Open Science as a default</div>
-        In OSCN, we do not distinguish “open” science from “traditional” science —
-        often summarized as “Open science is just science done right”.
-        Modern technological and societal developments have changed how science is done,
-        but academic systems are still adapting to fully use these possibilities.
-    </div>
+    <h2 style="margin-top:40px;">Who are we?</h2>
+
+    <p>
+        Open Science Community Nijmegen (OSCN) is a local community of researchers, students and professionals
+        committed to making science more open, collaborative and reproducible.
+    </p>
+
+    <p>
+        We connect people across disciplines and institutions in Nijmegen and organize events, workshops,
+        and informal networking activities.
+    </p>
 
 </section>
 
@@ -328,26 +310,30 @@ footer {
 
     <h2>Latest news</h2>
 
-    <div class="news-featured">
+    <div class="news">
 
         <div class="news-main">
             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="">
-            <div class="news-main-content">
+            <div class="content">
                 <h3>Open Science Week 2026 announced</h3>
                 <p>A week of workshops, keynote talks and community sessions.</p>
             </div>
         </div>
 
         <div class="news-list">
+
             <div class="news-item">
                 <h4>Reproducibility toolkit released</h4>
             </div>
+
             <div class="news-item">
                 <h4>Community meetup recap</h4>
             </div>
+
             <div class="news-item">
                 <h4>Funding opportunities open</h4>
             </div>
+
         </div>
 
     </div>
