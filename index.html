@@ -10,14 +10,11 @@
 
 :root {
     --blue: #002060;
-    --light-blue: #0070C0;
     --red: #BE311A;
     --text: #1c1c1c;
-    --bg: #f5f7fb;
-    --card: #ffffff;
+    --bg: #f7f8fb;
 }
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +26,7 @@ body {
                  Roboto, Helvetica, Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.65;
     font-size: 16px;
 }
 
@@ -47,11 +44,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 34px;
-    border-bottom: 1px solid #eaeaea;
+    padding: 14px 36px;
+    border-bottom: 1px solid #eee;
 }
 
-/* LOGO (institution style) */
 .logo {
     display: flex;
     align-items: center;
@@ -71,7 +67,6 @@ body {
 
 .logo-text strong {
     color: var(--blue);
-    font-size: 1rem;
 }
 
 .logo-text span {
@@ -79,7 +74,6 @@ body {
     color: #666;
 }
 
-/* TOP NAV */
 .top-nav {
     display: flex;
     align-items: center;
@@ -99,175 +93,96 @@ body {
     border: 1px solid #ddd;
 }
 
-/* ================= MAIN NAV ================= */
-
+/* MAIN NAV */
 .main-nav {
     background: var(--blue);
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 36px;
-    padding: 15px 18px;
+    gap: 34px;
+    padding: 14px 18px;
 }
 
 .main-nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
-.main-nav a:hover {
-    opacity: 1;
 }
 
 .main-nav .cta {
     background: var(--red);
-    padding: 7px 14px;
+    padding: 6px 14px;
     border-radius: 999px;
-}
-
-/* ================= MISSION ================= */
-
-.mission {
-    background: white;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.mission-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 26px 20px;
-}
-
-.mission h1 {
-    font-size: 1.8rem;
-    color: var(--blue);
-    margin-bottom: 10px;
-}
-
-.mission p {
-    color: #444;
-    max-width: 850px;
-}
-
-.tags {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tags span {
-    font-size: 0.85rem;
-    background: #eef2ff;
-    color: var(--blue);
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-weight: 500;
 }
 
 /* ================= LAYOUT ================= */
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 26px 20px;
+    padding: 40px 20px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 22px;
+/* ================= INTRO ================= */
+
+.intro {
+    margin-bottom: 40px;
 }
 
-/* ================= HERO FEATURE ================= */
-
-.hero-card {
-    background: var(--card);
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid #e6e6e6;
-}
-
-.hero-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-}
-
-.hero-content {
-    padding: 18px;
-}
-
-.hero-content h1 {
+.intro h1 {
     color: var(--blue);
-    font-size: 1.7rem;
-    margin-bottom: 6px;
-}
-
-/* ================= SIDEBAR ================= */
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.sidebar-card {
-    background: var(--card);
-    border: 1px solid #e6e6e6;
-    border-radius: 12px;
-    padding: 14px;
-}
-
-.sidebar-card h3 {
-    color: var(--blue);
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-.event {
-    border-left: 3px solid var(--light-blue);
-    padding-left: 10px;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
-/* ================= NEWS GRID ================= */
-
-.section-title {
-    margin: 26px 0 14px;
-    font-size: 1.3rem;
-    color: var(--blue);
+.intro p {
+    color: #444;
+    max-width: 750px;
 }
 
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
+/* ================= FEATURE ================= */
 
-.news-card {
-    background: var(--card);
+.feature {
+    background: white;
     border: 1px solid #e6e6e6;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
-.news-card img {
+.feature img {
     width: 100%;
-    height: 140px;
+    height: 240px;
     object-fit: cover;
 }
 
-.news-card div {
-    padding: 14px;
+.feature-content {
+    padding: 18px;
 }
 
-.news-card h4 {
+.feature-content h2 {
     color: var(--blue);
-    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+/* ================= NEWS ================= */
+
+.news {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.news-item {
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.news-item h3 {
+    color: var(--blue);
+    font-size: 1rem;
+    margin-bottom: 4px;
 }
 
 /* ================= FOOTER ================= */
@@ -287,11 +202,10 @@ footer {
 
 <header class="site-header">
 
-    <!-- TOP BAR -->
     <div class="top-bar">
 
         <a href="#" class="logo">
-            <img src="OSCN logo transparant.png" alt="OSCN Logo">
+            <img src="OSCN logo transparant.png">
 
             <div class="logo-text">
                 <strong>OSCN</strong>
@@ -308,11 +222,9 @@ footer {
 
     </div>
 
-    <!-- MAIN NAV -->
     <div class="main-nav">
-        <a href="#">🏠</a>
+        <a href="#">Home</a>
         <a href="#">News</a>
-        <a href="#">Newsletters</a>
         <a href="#">Events</a>
         <a href="#">Members</a>
         <a class="cta" href="#">Join us</a>
@@ -320,108 +232,46 @@ footer {
 
 </header>
 
-<!-- MISSION -->
-<section class="mission">
-    <div class="mission-inner">
+<div class="container">
 
+    <!-- INTRO -->
+    <div class="intro">
         <h1>Open Science Community Nijmegen</h1>
-
         <p>
             We are a researcher-led community working to make science more open,
             transparent, and collaborative across Nijmegen’s academic institutions.
         </p>
-
-        <div class="tags">
-            <span>Open Science</span>
-            <span>Reproducibility</span>
-            <span>Collaboration</span>
-            <span>Research Culture</span>
-        </div>
-
     </div>
-</section>
 
-<!-- MAIN -->
-<div class="container">
+    <!-- FEATURE -->
+    <div class="feature">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+        <div class="feature-content">
+            <h2>Open Science Week 2026 announced</h2>
+            <p>
+                Join researchers across Nijmegen for a week of workshops,
+                talks and collaborative sessions.
+            </p>
+        </div>
+    </div>
 
-    <div class="grid">
+    <!-- NEWS -->
+    <div class="news">
 
-        <!-- MAIN CONTENT -->
-        <div>
-
-            <!-- FEATURED -->
-            <div class="hero-card">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
-                <div class="hero-content">
-                    <h1>Open Science Week 2026 announced</h1>
-                    <p>
-                        A week of workshops, keynote talks and community sessions
-                        focused on transparency in research.
-                    </p>
-                </div>
-            </div>
-
-            <h2 class="section-title">Latest news</h2>
-
-            <div class="news-grid">
-
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc">
-                    <div>
-                        <h4>Reproducibility tools updated</h4>
-                        <p>New research workflows released.</p>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952">
-                    <div>
-                        <h4>Community meetup recap</h4>
-                        <p>Highlights from last session.</p>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
-                    <div>
-                        <h4>Funding opportunities</h4>
-                        <p>Grants for open science projects.</p>
-                    </div>
-                </div>
-
-            </div>
-
+        <div class="news-item">
+            <h3>Reproducibility toolkit released</h3>
+            <p>New tools for better research workflows.</p>
         </div>
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+        <div class="news-item">
+            <h3>Community meetup recap</h3>
+            <p>Highlights from last month’s session.</p>
+        </div>
 
-            <div class="sidebar-card">
-                <h3>Latest updates</h3>
-
-                <div class="event">
-                    <strong>Workshop</strong>
-                    <p>Data sharing practices</p>
-                </div>
-
-                <div class="event">
-                    <strong>Talk</strong>
-                    <p>Open peer review systems</p>
-                </div>
-
-                <div class="event">
-                    <strong>Meetup</strong>
-                    <p>Monthly OSCN gathering</p>
-                </div>
-            </div>
-
-            <div class="sidebar-card">
-                <h3>Events</h3>
-                <p>📅 Feb 12 — Open Data Workshop</p>
-                <p>📅 Feb 26 — Transparency Talk</p>
-            </div>
-
-        </aside>
+        <div class="news-item">
+            <h3>Funding opportunities open</h3>
+            <p>Grants for open science projects.</p>
+        </div>
 
     </div>
 
