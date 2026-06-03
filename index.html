@@ -12,11 +12,11 @@
     --blue: #002060;
     --light-blue: #0070C0;
     --red: #BE311A;
-    --text: #1f1f1f;
-    --background: #f6f7f9;
+    --text: #1c1c1c;
+    --bg: #f5f7fb;
+    --card: #ffffff;
 }
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -26,15 +26,13 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                  Roboto, Helvetica, Arial, sans-serif;
-    background: var(--background);
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.65;
-    font-size: 16.5px;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 .site-header {
     position: sticky;
@@ -46,52 +44,43 @@ body {
 .top-bar {
     background: white;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 12px 36px;
-    border-bottom: 1px solid #eee;
+    align-items: center;
+    padding: 12px 34px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .logo img {
-    height: 42px;
+    height: 40px;
 }
 
 .top-nav {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
 }
 
 .top-nav a {
-    text-decoration: none;
     color: var(--blue);
+    text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
 }
 
-.top-nav a:hover {
-    color: var(--light-blue);
-}
-
 .top-nav input {
-    padding: 8px 12px;
+    padding: 7px 12px;
     border-radius: 999px;
     border: 1px solid #ddd;
-    outline: none;
-    width: 180px;
 }
 
-/* =========================
-   MAIN NAV (BLUE)
-========================= */
-
+/* BLUE NAV */
 .main-nav {
     background: var(--blue);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 38px;
-    padding: 16px 20px;
+    gap: 34px;
+    padding: 14px 18px;
 }
 
 .main-nav a {
@@ -99,171 +88,137 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    letter-spacing: 0.2px;
     opacity: 0.9;
-    transition: 0.2s;
 }
 
 .main-nav a:hover {
     opacity: 1;
 }
 
-/* HOME ICON */
-.main-nav .home {
-    display: flex;
-    align-items: center;
-}
-
-/* CTA */
 .main-nav .cta {
     background: var(--red);
-    padding: 8px 16px;
+    padding: 7px 14px;
     border-radius: 999px;
-    font-weight: 700;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ================= LAYOUT GRID ================= */
 
-.hero {
-    padding: 70px 20px 50px;
-    text-align: center;
-    max-width: 900px;
+.container {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 28px 20px;
 }
 
-.hero img {
-    width: 200px;
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    font-size: 2.3rem;
-    color: var(--blue);
-    margin-bottom: 14px;
-    font-weight: 700;
-}
-
-.hero p {
-    font-size: 1.15rem;
-    color: #444;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 26px;
-    padding: 12px 26px;
-    border-radius: 999px;
-    background: var(--red);
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-.section h2 {
-    color: var(--blue);
-    font-size: 1.5rem;
-    margin-bottom: 18px;
-}
-
-/* =========================
-   CARDS
-========================= */
-
-.cards {
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
-    margin-top: 24px;
+    grid-template-columns: 2fr 1fr;
+    gap: 22px;
 }
 
-.card {
-    background: white;
-    border: 1px solid #e6e6e6;
-    border-radius: 12px;
-    padding: 20px;
-}
+/* ================= HERO FEATURE ================= */
 
-.card h3 {
-    color: var(--blue);
-    margin-bottom: 6px;
-}
-
-/* =========================
-   NEWS
-========================= */
-
-.news-featured {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 18px;
-    margin-top: 24px;
-}
-
-.news-main {
-    background: white;
-    border-radius: 12px;
+.hero-card {
+    background: var(--card);
+    border-radius: 14px;
     overflow: hidden;
     border: 1px solid #e6e6e6;
 }
 
-.news-main img {
+.hero-card img {
     width: 100%;
-    height: 220px;
+    height: 280px;
     object-fit: cover;
 }
 
-.news-main-content {
+.hero-content {
     padding: 18px;
 }
 
-.news-main-content h3 {
+.hero-content h1 {
     color: var(--blue);
+    font-size: 1.8rem;
     margin-bottom: 8px;
 }
 
-.news-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.hero-content p {
+    color: #444;
 }
 
-.news-item {
-    background: white;
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sidebar-card {
+    background: var(--card);
     border: 1px solid #e6e6e6;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 14px;
 }
 
-.news-item h4 {
+.sidebar-card h3 {
     color: var(--blue);
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.event {
+    border-left: 3px solid var(--light-blue);
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* ================= NEWS FEED ================= */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.news-card {
+    background: var(--card);
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.news-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.news-card div {
+    padding: 14px;
+}
+
+.news-card h4 {
+    color: var(--blue);
+    margin-bottom: 6px;
     font-size: 0.95rem;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+    margin: 28px 0 12px;
+    font-size: 1.3rem;
+    color: var(--blue);
+}
+
+/* ================= FOOTER ================= */
 
 footer {
     text-align: center;
     padding: 50px 20px;
-    font-size: 0.9rem;
     color: #777;
-    border-top: 1px solid #eaeaea;
     margin-top: 40px;
+    border-top: 1px solid #eaeaea;
 }
 
 </style>
@@ -273,11 +228,10 @@ footer {
 
 <header class="site-header">
 
-    <!-- TOP BAR -->
     <div class="top-bar">
 
         <div class="logo">
-            <img src="OSCN logo transparant.png" alt="OSCN Logo">
+            <img src="OSCN logo transparant.png">
         </div>
 
         <div class="top-nav">
@@ -289,121 +243,106 @@ footer {
 
     </div>
 
-    <!-- MAIN NAV -->
     <div class="main-nav">
 
-        <a href="#" class="home">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5z"
-                      stroke="white" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
-        </a>
-
+        <a href="#">🏠</a>
         <a href="#">News</a>
         <a href="#">Newsletters</a>
         <a href="#">Events</a>
         <a href="#">Members</a>
-
-        <a href="#" class="cta">Join us</a>
+        <a class="cta" href="#">Join us</a>
 
     </div>
 
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<!-- MAIN CONTENT -->
+<div class="container">
 
-    <img src="OSCN logo transparant.png" alt="OSCN Logo">
+    <div class="grid">
 
-    <h1>Open Science Community Nijmegen</h1>
+        <!-- LEFT MAIN CONTENT -->
+        <div>
 
-    <p>
-        A research community working to make science more open, reproducible,
-        and collaborative across disciplines and institutions.
-    </p>
+            <!-- HERO FEATURE -->
+            <div class="hero-card">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+                <div class="hero-content">
+                    <h1>Open Science Week 2026 announced</h1>
+                    <p>
+                        Join researchers across Nijmegen for a week of workshops,
+                        keynotes and collaborative science sessions.
+                    </p>
+                </div>
+            </div>
 
-    <a class="button" href="#">Become a member</a>
+            <!-- NEWS -->
+            <h2 class="section-title">Latest news</h2>
 
-</section>
+            <div class="news-grid">
 
-<!-- ABOUT -->
-<section class="section">
-    <h2>About us</h2>
-    <p>
-        We connect researchers, students, and professionals across Nijmegen
-        who are committed to Open Science practices and cultural change in research.
-    </p>
-</section>
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc">
+                    <div>
+                        <h4>Reproducibility tools updated</h4>
+                        <p>New workflows for open research.</p>
+                    </div>
+                </div>
 
-<!-- WHAT WE DO -->
-<section class="section">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952">
+                    <div>
+                        <h4>Community meetup recap</h4>
+                        <p>Highlights from our latest session.</p>
+                    </div>
+                </div>
 
-    <h2>What we do</h2>
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
+                    <div>
+                        <h4>Funding opportunities</h4>
+                        <p>New grants for open science projects.</p>
+                    </div>
+                </div>
 
-    <div class="cards">
+            </div>
 
-        <div class="card">
-            <h3>Events</h3>
-            <p>Talks, meetups and interdisciplinary networking.</p>
         </div>
 
-        <div class="card">
-            <h3>Workshops</h3>
-            <p>Hands-on training in Open Science tools and methods.</p>
-        </div>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
 
-        <div class="card">
-            <h3>Community</h3>
-            <p>Connecting researchers across institutes in Nijmegen.</p>
-        </div>
+            <div class="sidebar-card">
+                <h3>Latest updates</h3>
+
+                <div class="event">
+                    <strong>Workshop</strong>
+                    <p>Data sharing practices</p>
+                </div>
+
+                <div class="event">
+                    <strong>Talk</strong>
+                    <p>Open peer review systems</p>
+                </div>
+
+                <div class="event">
+                    <strong>Meetup</strong>
+                    <p>Monthly OSCN gathering</p>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Next events</h3>
+                <p>📅 Feb 12 — Open Data Workshop</p>
+                <p>📅 Feb 26 — Research Transparency Talk</p>
+            </div>
+
+        </aside>
 
     </div>
 
-</section>
+</div>
 
-<!-- NEWS -->
-<section class="section">
-
-    <h2>Latest news</h2>
-
-    <div class="news-featured">
-
-        <div class="news-main">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="Research">
-
-            <div class="news-main-content">
-                <h3>Open Science Week 2026 announced</h3>
-                <p>
-                    A week of workshops, keynote talks and community sessions
-                    focused on transparency in research.
-                </p>
-            </div>
-        </div>
-
-        <div class="news-list">
-
-            <div class="news-item">
-                <h4>Reproducibility toolkit released</h4>
-                <p>New tools for better research workflows.</p>
-            </div>
-
-            <div class="news-item">
-                <h4>Community meetup recap</h4>
-                <p>Highlights from last month’s session.</p>
-            </div>
-
-            <div class="news-item">
-                <h4>Funding opportunities open</h4>
-                <p>Grants for open research projects.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- FOOTER -->
 <footer>
     © 2026 Open Science Community Nijmegen
 </footer>
