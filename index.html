@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Open Science Community Nijmegen</title>
 
 <style>
@@ -12,10 +11,12 @@
     --blue: #002060;
     --light-blue: #0070C0;
     --red: #BE311A;
-    --text: #2c2c2c;
-    --background: #fafafa;
+    --text: #1f1f1f;
+    --background: #f6f7f9;
+    --card: #ffffff;
 }
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -27,114 +28,234 @@ body {
                  Roboto, Helvetica, Arial, sans-serif;
     background: var(--background);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* =========================
+   HEADER (2-LAYER SYSTEM)
+========================= */
 
-nav {
-    text-align: center;
-    padding: 24px;
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* TOP BAR */
+.top-bar {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo img {
+    height: 44px;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 500;
     font-size: 0.95rem;
 }
 
-nav a {
-    color: var(--blue);
-    text-decoration: none;
-    margin: 0 18px;
-}
-
-nav a:hover {
+.top-nav a:hover {
     color: var(--light-blue);
 }
 
-/* HERO */
+.top-nav input {
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    outline: none;
+    width: 180px;
+}
+
+/* MAIN NAV (BLUE) */
+.main-nav {
+    background: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 12px 20px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.main-nav a:hover {
+    opacity: 1;
+}
+
+.main-nav .home {
+    font-size: 1.1rem;
+}
+
+.main-nav .cta {
+    background: var(--red);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
+    padding: 90px 20px 70px;
     text-align: center;
-    padding: 60px 20px 100px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero img {
-    width: 260px;
-    max-width: 70%;
-    margin-bottom: 40px;
+    width: 220px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    color: var(--blue);
+    margin-bottom: 18px;
+    font-weight: 700;
 }
 
 .hero p {
-    font-size: 2rem;
-    font-weight: 300;
-    max-width: 850px;
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 700px;
     margin: 0 auto;
-    color: var(--blue);
-    line-height: 1.3;
 }
 
 .button {
     display: inline-block;
-    margin-top: 40px;
-    padding: 14px 28px;
-    border: 1px solid var(--red);
+    margin-top: 30px;
+    padding: 12px 26px;
     border-radius: 999px;
-    text-decoration: none;
-    color: var(--red);
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-.button:hover {
     background: var(--red);
     color: white;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* CONTENT */
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
-    max-width: 850px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 80px 25px;
+    padding: 80px 20px;
 }
 
 .section h2 {
     color: var(--blue);
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    font-weight: 600;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
 }
 
-.section p {
-    color: #444;
-}
-
-/* CARDS */
+/* =========================
+   CARDS GRID
+========================= */
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
     margin-top: 30px;
 }
 
 .card {
-    background: white;
-    padding: 24px;
-    border-radius: 12px;
+    background: var(--card);
     border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 22px;
 }
 
 .card h3 {
     color: var(--blue);
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
-/* FOOTER */
+/* =========================
+   NEWS SECTION
+========================= */
+
+.news-featured {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.news-main {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+}
+
+.news-main img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.news-main-content {
+    padding: 20px;
+}
+
+.news-main-content h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-item {
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.news-item h4 {
+    color: var(--blue);
+    font-size: 0.95rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
     padding: 60px 20px;
-    color: #777;
     font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid #eaeaea;
+    margin-top: 60px;
 }
 
 </style>
@@ -142,89 +263,126 @@ footer {
 
 <body>
 
-<nav>
-    <a href="#">About</a>
-    <a href="#">Events</a>
-    <a href="#">News</a>
-    <a href="#">Resources</a>
-    <a href="#">Contact</a>
-</nav>
+<header class="site-header">
 
-<section class="hero">
+    <!-- TOP BAR -->
+    <div class="top-bar">
 
-    <img src="OSCN logo transparant.png"
-         alt="Open Science Community Nijmegen">
-
-    <p>
-        We bring researchers in Nijmegen together to make science
-        more open, transparent, and impactful.
-    </p>
-
-    <a href="#" class="button">Join our community</a>
-
-</section>
-
-<section class="section">
-
-    <h2>About</h2>
-
-    <p>
-        We are the Open Science Community Nijmegen (OSCN), a community of
-        researchers, students and professionals who are passionate about
-        making Open Science the standard in scholarly activities. We connect
-        people across research-performing institutes in Nijmegen and create
-        opportunities to learn from each other, collaborate and contribute
-        to a more open and inclusive research culture.
-    </p>
-
-</section>
-
-<section class="section">
-
-    <h2>What we do</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Events</h3>
-            <p>
-                Community events, talks and networking opportunities.
-            </p>
+        <div class="logo">
+            <img src="OSCN logo transparant.png" alt="OSCN Logo">
         </div>
 
-        <div class="card">
-            <h3>Workshops</h3>
-            <p>
-                Practical sessions on Open Science tools and practices.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Community</h3>
-            <p>
-                Connecting researchers across disciplines and institutes.
-            </p>
+        <div class="top-nav">
+            <a href="#">About</a>
+            <a href="#">Resources</a>
+            <a href="#">Contact</a>
+            <input type="text" placeholder="Search...">
         </div>
 
     </div>
 
-</section>
+    <!-- MAIN NAV -->
+    <div class="main-nav">
+        <a href="#" class="home">🏠</a>
+        <a href="#">News</a>
+        <a href="#">Newsletters</a>
+        <a href="#">Events</a>
+        <a href="#">Members</a>
+        <a href="#" class="cta">Join us</a>
+    </div>
 
-<section class="section">
+</header>
 
-    <h2>What is Open Science?</h2>
+<!-- HERO -->
+<section class="hero">
+    <img src="OSCN logo transparant.png" alt="OSCN">
+
+    <h1>Open Science Community Nijmegen</h1>
 
     <p>
-        Open Science is the practice of conducting and sharing research in
-        ways that make it more transparent, reproducible, accessible and
-        collaborative. It aims to improve both the quality of research and
-        its impact on society.
+        A research community working to make science more open, reproducible,
+        and collaborative across disciplines and institutions.
     </p>
 
+    <a class="button" href="#">Become a member</a>
 </section>
 
+<!-- ABOUT -->
+<section class="section">
+    <h2>About us</h2>
+    <p>
+        We connect researchers, students, and professionals across Nijmegen
+        who are committed to Open Science practices. We organize events,
+        share tools, and support cultural change in research.
+    </p>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="section">
+    <h2>What we do</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Events</h3>
+            <p>Talks, meetups and interdisciplinary networking.</p>
+        </div>
+
+        <div class="card">
+            <h3>Workshops</h3>
+            <p>Hands-on training in Open Science tools and methods.</p>
+        </div>
+
+        <div class="card">
+            <h3>Community</h3>
+            <p>Connecting researchers across institutes in Nijmegen.</p>
+        </div>
+    </div>
+</section>
+
+<!-- NEWS -->
+<section class="section">
+    <h2>Latest news</h2>
+
+    <div class="news-featured">
+
+        <div class="news-main">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+                 alt="Research">
+
+            <div class="news-main-content">
+                <h3>Open Science Week 2026 announced</h3>
+                <p>
+                    Join us for a week of workshops, keynote talks and community
+                    sessions focused on transparency in research.
+                </p>
+            </div>
+        </div>
+
+        <div class="news-list">
+
+            <div class="news-item">
+                <h4>New reproducibility toolkit released</h4>
+                <p>Tools for better research workflows.</p>
+            </div>
+
+            <div class="news-item">
+                <h4>Community meetup recap</h4>
+                <p>Highlights from last month’s session.</p>
+            </div>
+
+            <div class="news-item">
+                <h4>Grant opportunities open</h4>
+                <p>Funding for open research projects.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    © 2025 Open Science Community Nijmegen
+    © 2026 Open Science Community Nijmegen · Built for Open Science
 </footer>
 
 </body>
