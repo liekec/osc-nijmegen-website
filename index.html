@@ -14,6 +14,7 @@
     --blue: #002060;
     --accent: #BE311A;
 
+    --bg-hero: #f3f5f8;
     --bg-soft: #f7f7f7;
     --bg-tint: #eef3fb;
 
@@ -89,11 +90,41 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 0 8vw;
-    background: #f3f5f8;
+    position: relative;
+    background: var(--bg-hero);
+    overflow: hidden;
+}
+
+/* subtle university-style texture */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.10), transparent 45%);
+    z-index: 0;
+}
+
+/* 🔴 RED FLARE (RESTORED) */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle,
+        rgba(190,49,26,0.35) 0%,
+        rgba(190,49,26,0.15) 30%,
+        transparent 70%);
+    filter: blur(10px);
+    z-index: 0;
 }
 
 .hero-content {
+    position: relative;
     max-width: 900px;
+    z-index: 1;
 }
 
 .tag {
@@ -154,16 +185,7 @@ body {
     background: var(--bg-tint);
 }
 
-/* ================= HEADINGS ================= */
-
-h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
-    color: var(--blue);
-    margin-bottom: 18px;
-}
-
-/* ================= EVENT (CHIC DESIGN) ================= */
+/* ================= EVENT ================= */
 
 .event-wrapper {
     display: flex;
@@ -180,31 +202,7 @@ h2 {
     border-left: 6px solid var(--accent);
 }
 
-.event h2 {
-    margin-bottom: 10px;
-}
-
-.event p {
-    font-size: 1.05rem;
-    color: #333;
-}
-
-/* ================= CARDS ================= */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-}
-
-.card {
-    background: white;
-    padding: 18px;
-    border-radius: 12px;
-    border: 1px solid #e6e6e6;
-}
-
-/* ================= TEAM (CENTERED) ================= */
+/* ================= TEAM ================= */
 
 .team-wrapper {
     display: flex;
@@ -237,13 +235,6 @@ h2 {
 .member p {
     font-size: 0.9rem;
     color: #555;
-}
-
-/* responsive team */
-@media (max-width: 800px) {
-    .team {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 /* ================= NEWS ================= */
@@ -325,7 +316,7 @@ footer {
         <p>
             The Open Science Community Nijmegen (OSCN) brings together researchers,
             students and professionals committed to making research more transparent,
-            reproducible and collaborative.
+            reproducible and collaborative across disciplines.
         </p>
 
         <div class="buttons">
@@ -337,19 +328,15 @@ footer {
 
 </section>
 
-<!-- EVENT (CHIC) -->
+<!-- EVENT -->
 <section class="flash soft">
-
     <div class="event-wrapper">
-
         <div class="event">
             <h2>Upcoming Event</h2>
             <p><strong>Open Science Meetup Nijmegen</strong> — 18 September 2026</p>
             <p>Talks, networking and workshops on open research practices.</p>
         </div>
-
     </div>
-
 </section>
 
 <!-- ABOUT -->
@@ -383,13 +370,11 @@ footer {
     </div>
 </section>
 
-<!-- TEAM (CENTERED) -->
+<!-- TEAM -->
 <section class="flash tint">
-
     <h2>Organising Team</h2>
 
     <div class="team-wrapper">
-
         <div class="team">
 
             <div class="member">
@@ -417,9 +402,7 @@ footer {
             </div>
 
         </div>
-
     </div>
-
 </section>
 
 <!-- NEWS -->
