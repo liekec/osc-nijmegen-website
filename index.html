@@ -13,9 +13,11 @@
 :root {
     --blue: #002060;
     --accent: #BE311A;
-    --light: #f6f7f9;
+    --bg: #f3f5f8;
     --text: #1f1f1f;
 }
+
+/* ================= BASE ================= */
 
 * {
     margin: 0;
@@ -25,96 +27,74 @@
 
 body {
     font-family: "Inter", sans-serif;
-    background: var(--light);
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
 }
 
-/* ================= HEADER ================= */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    background: white;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo img {
-    height: 52px;
-}
-
-nav {
-    display: flex;
-    gap: 22px;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--blue);
-    font-weight: 500;
-}
-
-nav a.cta {
-    background: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 999px;
-}
-
-/* ================= HERO ================= */
+/* ================= FULL PAGE HERO ================= */
 
 .hero {
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-    max-width: 1100px;
-    margin: 60px auto 40px;
-    padding: 0 20px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8vw;
+    position: relative;
 }
 
-.hero-left {
-    flex: 1;
+/* subtle background feel like academic landing pages */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.08), transparent 45%);
+    z-index: 0;
 }
 
-.hero-left .tag {
+.hero-content {
+    position: relative;
+    max-width: 900px;
+}
+
+/* TAG */
+.tag {
     font-size: 0.85rem;
     letter-spacing: 2px;
     color: var(--accent);
     font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 3.2rem;
-    color: var(--blue);
-    line-height: 1.1;
     margin-bottom: 18px;
 }
 
-.hero p {
-    font-size: 1.1rem;
+/* TITLE BIGGER (zoals je vroeg) */
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    color: var(--blue);
+    line-height: 1.05;
     margin-bottom: 22px;
-    color: #444;
 }
 
+/* INTRO TEXT */
+.hero p {
+    font-size: 1.25rem;
+    color: #333;
+    max-width: 720px;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
 .buttons {
     display: flex;
-    gap: 12px;
+    gap: 14px;
 }
 
 .btn {
-    padding: 10px 18px;
+    padding: 12px 20px;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .btn.primary {
@@ -127,50 +107,49 @@ nav a.cta {
     color: var(--blue);
 }
 
-.hero-right {
-    flex: 1;
-    text-align: center;
+/* scroll hint */
+.scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: #666;
+    opacity: 0.8;
 }
 
-.hero-right img {
-    width: 280px;
-}
-
-/* ================= EVENT ================= */
-
-.event {
-    max-width: 1100px;
-    margin: 10px auto 30px;
-    background: white;
-    border-left: 6px solid var(--accent);
-    padding: 22px 26px;
-    border-radius: 12px;
-}
-
-.event h3 {
-    color: var(--blue);
-    margin-bottom: 6px;
-}
-
-/* ================= SECTIONS ================= */
+/* ================= NEXT SECTION ================= */
 
 section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 20px;
+    padding: 90px 8vw;
 }
 
+/* EVENT SECTION (after scroll) */
+.event {
+    background: white;
+    border-left: 6px solid var(--accent);
+    padding: 26px;
+    border-radius: 14px;
+    max-width: 900px;
+}
+
+.event h2 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+/* SECTION TITLES */
 h2 {
     font-family: "Playfair Display", serif;
+    font-size: 2rem;
     color: var(--blue);
     margin-bottom: 18px;
 }
 
-/* ================= CARDS ================= */
-
+/* cards */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 16px;
 }
 
@@ -178,11 +157,10 @@ h2 {
     background: white;
     padding: 18px;
     border-radius: 12px;
-    border: 1px solid #eaeaea;
+    border: 1px solid #e6e6e6;
 }
 
-/* ================= NEWS ================= */
-
+/* NEWS */
 .news {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -193,12 +171,11 @@ h2 {
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #eaeaea;
 }
 
 .news-main img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
 }
 
@@ -216,16 +193,15 @@ h2 {
     background: white;
     padding: 12px;
     border-radius: 10px;
-    border: 1px solid #eaeaea;
+    border: 1px solid #e6e6e6;
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 40px;
-    font-size: 0.9rem;
+    padding: 50px;
     color: #777;
+    font-size: 0.9rem;
 }
 
 </style>
@@ -233,24 +209,10 @@ footer {
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="OSCN logo transparant.png" alt="OSCN Logo">
-    </div>
+<!-- HERO FULL SCREEN -->
+<div class="hero">
 
-    <nav>
-        <a href="#">About</a>
-        <a href="#">Events</a>
-        <a href="#">News</a>
-        <a href="#">Resources</a>
-        <a class="cta" href="#">Join</a>
-    </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-
-    <div class="hero-left">
+    <div class="hero-content">
 
         <div class="tag">OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY</div>
 
@@ -260,9 +222,9 @@ footer {
         </h1>
 
         <p>
-            The Open Science Community Nijmegen (OSCN) brings together researchers,
-            students and professionals committed to making research more transparent,
-            reproducible and collaborative across disciplines.
+            The Open Science Community Nijmegen (OSCN) brings together researchers, students
+            and professionals committed to making research more transparent, reproducible
+            and collaborative across disciplines.
         </p>
 
         <div class="buttons">
@@ -272,23 +234,25 @@ footer {
 
     </div>
 
-    <div class="hero-right">
-        <img src="OSCN logo transparant.png" alt="OSCN Logo">
+    <div class="scroll-hint">
+        ↓ Scroll to explore
     </div>
 
-</section>
-
-<!-- EVENT SPOTLIGHT -->
-<div class="event">
-    <h3>📅 Upcoming Event</h3>
-    <p><strong>Open Science Meetup Nijmegen</strong> — 18 September 2026</p>
-    <p>Talks, networking and workshops on open research practices.</p>
 </div>
+
+<!-- EVENTS (pas zichtbaar na scroll = zoals voorbeeld) -->
+<section>
+    <div class="event">
+        <h2>Upcoming Event</h2>
+        <p><strong>Open Science Meetup Nijmegen</strong> — 18 September 2026</p>
+        <p>Talks, networking and workshops on open research practices.</p>
+    </div>
+</section>
 
 <!-- ABOUT -->
 <section>
     <h2>About OSCN</h2>
-    <p>
+    <p style="max-width:800px; font-size:1.1rem;">
         We are a community of researchers, students and staff from Nijmegen-based institutions
         working together to advance Open Science practices. Our goal is to make research more
         transparent, reproducible and accessible.
@@ -334,7 +298,7 @@ footer {
         <div class="news-side">
             <div class="news-item">
                 <strong>Toolkit released</strong>
-                <p>Better reproducibility workflows.</p>
+                <p>Improved reproducibility workflows.</p>
             </div>
 
             <div class="news-item">
