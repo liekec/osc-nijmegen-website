@@ -13,8 +13,10 @@
 :root {
     --blue: #002060;
     --accent: #BE311A;
-    --bg1: #f3f5f8;
-    --bg2: #ffffff;
+
+    --bg-soft: #f7f7f7;
+    --bg-tint: #eef3fb;
+
     --text: #1f1f1f;
 }
 
@@ -29,10 +31,10 @@
 body {
     font-family: "Inter", sans-serif;
     color: var(--text);
-    padding-top: 70px; /* space for fixed navbar */
+    padding-top: 70px;
 }
 
-/* ================= TOPBAR ================= */
+/* ================= NAVBAR ================= */
 
 .topbar {
     position: fixed;
@@ -44,10 +46,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    background: rgba(255,255,255,0.85);
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.topbar.scrolled {
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #eaeaea;
-    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
 .topbar .logo img {
@@ -57,7 +66,6 @@ body {
 .topbar nav {
     display: flex;
     gap: 22px;
-    align-items: center;
 }
 
 .topbar nav a {
@@ -81,20 +89,10 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 0 8vw;
-    position: relative;
-    background: var(--bg1);
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
-                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.08), transparent 45%);
+    background: #f3f5f8;
 }
 
 .hero-content {
-    position: relative;
     max-width: 900px;
 }
 
@@ -142,18 +140,18 @@ body {
     color: var(--blue);
 }
 
-/* ================= FLASH SECTIONS ================= */
+/* ================= FLASH ================= */
 
 .flash {
     padding: 90px 8vw;
 }
 
-.flash.light {
-    background: var(--bg2);
+.flash.soft {
+    background: var(--bg-soft);
 }
 
-.flash.blue {
-    background: linear-gradient(180deg, #f6f9ff, #eef3fb);
+.flash.tint {
+    background: var(--bg-tint);
 }
 
 /* ================= HEADINGS ================= */
@@ -165,14 +163,30 @@ h2 {
     margin-bottom: 18px;
 }
 
-/* ================= EVENT ================= */
+/* ================= EVENT (CHIC DESIGN) ================= */
+
+.event-wrapper {
+    display: flex;
+    justify-content: center;
+}
 
 .event {
     background: white;
-    border-left: 6px solid var(--accent);
-    padding: 26px;
-    border-radius: 14px;
+    padding: 34px;
+    border-radius: 18px;
     max-width: 900px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border-left: 6px solid var(--accent);
+}
+
+.event h2 {
+    margin-bottom: 10px;
+}
+
+.event p {
+    font-size: 1.05rem;
+    color: #333;
 }
 
 /* ================= CARDS ================= */
@@ -190,16 +204,18 @@ h2 {
     border: 1px solid #e6e6e6;
 }
 
-/* ================= TEAM ================= */
+/* ================= TEAM (CENTERED) ================= */
+
+.team-wrapper {
+    display: flex;
+    justify-content: center;
+}
 
 .team {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     max-width: 900px;
-}
-
-.member {
     text-align: center;
 }
 
@@ -221,6 +237,13 @@ h2 {
 .member p {
     font-size: 0.9rem;
     color: #555;
+}
+
+/* responsive team */
+@media (max-width: 800px) {
+    .team {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ================= NEWS ================= */
@@ -274,7 +297,6 @@ footer {
 
 <body>
 
-<!-- TOPBAR -->
 <header class="topbar">
 
     <div class="logo">
@@ -286,7 +308,7 @@ footer {
         <a href="#">Events</a>
         <a href="#">News</a>
         <a href="#">Resources</a>
-        <a class="cta" href="#">Join</a>
+        <a class="cta">Join</a>
     </nav>
 
 </header>
@@ -303,29 +325,35 @@ footer {
         <p>
             The Open Science Community Nijmegen (OSCN) brings together researchers,
             students and professionals committed to making research more transparent,
-            reproducible and collaborative across disciplines.
+            reproducible and collaborative.
         </p>
 
         <div class="buttons">
-            <a class="btn primary" href="#">Become a member</a>
-            <a class="btn secondary" href="#">Upcoming events</a>
+            <a class="btn primary">Become a member</a>
+            <a class="btn secondary">Upcoming events</a>
         </div>
 
     </div>
 
 </section>
 
-<!-- EVENT -->
-<section class="flash light">
-    <div class="event">
-        <h2>Upcoming Event</h2>
-        <p><strong>Open Science Meetup Nijmegen</strong> — 18 September 2026</p>
-        <p>Talks, networking and workshops on open research practices.</p>
+<!-- EVENT (CHIC) -->
+<section class="flash soft">
+
+    <div class="event-wrapper">
+
+        <div class="event">
+            <h2>Upcoming Event</h2>
+            <p><strong>Open Science Meetup Nijmegen</strong> — 18 September 2026</p>
+            <p>Talks, networking and workshops on open research practices.</p>
+        </div>
+
     </div>
+
 </section>
 
 <!-- ABOUT -->
-<section class="flash blue">
+<section class="flash tint">
     <h2>About OSCN</h2>
     <p style="max-width:800px; font-size:1.1rem;">
         We are a community of researchers, students and staff from Nijmegen-based institutions
@@ -334,7 +362,7 @@ footer {
 </section>
 
 <!-- WHAT WE DO -->
-<section class="flash light">
+<section class="flash soft">
     <h2>What we do</h2>
 
     <div class="cards">
@@ -355,41 +383,48 @@ footer {
     </div>
 </section>
 
-<!-- TEAM -->
-<section class="flash blue">
+<!-- TEAM (CENTERED) -->
+<section class="flash tint">
+
     <h2>Organising Team</h2>
 
-    <div class="team">
+    <div class="team-wrapper">
 
-        <div class="member">
-            <img src="https://i.pravatar.cc/150?img=12">
-            <h3>Emma de Vries</h3>
-            <p>Radboud University</p>
-        </div>
+        <div class="team">
 
-        <div class="member">
-            <img src="https://i.pravatar.cc/150?img=32">
-            <h3>Jasper van Dijk</h3>
-            <p>Radboud UMC</p>
-        </div>
+            <div class="member">
+                <img src="https://i.pravatar.cc/150?img=12">
+                <h3>Emma de Vries</h3>
+                <p>Radboud University</p>
+            </div>
 
-        <div class="member">
-            <img src="https://i.pravatar.cc/150?img=45">
-            <h3>Sofia Ahmed</h3>
-            <p>Radboud University</p>
-        </div>
+            <div class="member">
+                <img src="https://i.pravatar.cc/150?img=32">
+                <h3>Jasper van Dijk</h3>
+                <p>Radboud UMC</p>
+            </div>
 
-        <div class="member">
-            <img src="https://i.pravatar.cc/150?img=18">
-            <h3>Lucas Meijer</h3>
-            <p>Radboud UMC</p>
+            <div class="member">
+                <img src="https://i.pravatar.cc/150?img=45">
+                <h3>Sofia Ahmed</h3>
+                <p>Radboud University</p>
+            </div>
+
+            <div class="member">
+                <img src="https://i.pravatar.cc/150?img=18">
+                <h3>Lucas Meijer</h3>
+                <p>Radboud UMC</p>
+            </div>
+
         </div>
 
     </div>
+
 </section>
 
 <!-- NEWS -->
-<section class="flash light">
+<section class="flash soft">
+
     <h2>Latest News</h2>
 
     <div class="news">
@@ -420,11 +455,24 @@ footer {
         </div>
 
     </div>
+
 </section>
 
 <footer>
     © 2026 Open Science Community Nijmegen
 </footer>
+
+<script>
+window.addEventListener("scroll", function () {
+    const nav = document.querySelector(".topbar");
+
+    if (window.scrollY > 30) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+</script>
 
 </body>
 </html>
