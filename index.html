@@ -17,7 +17,7 @@
     --text: #1f1f1f;
 }
 
-/* ================= BASE ================= */
+/* BASE */
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@ body {
     padding-top: 70px;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 .topbar {
     position: fixed;
     top: 0;
@@ -41,15 +41,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    background: transparent;
+    background: var(--bg-hero);
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
     z-index: 1000;
 }
 
 .topbar.scrolled {
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(10px);
+    background: white;
     border-bottom: 1px solid #eaeaea;
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
@@ -76,7 +75,7 @@ body {
     border-radius: 999px;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero {
     min-height: calc(100vh - 70px);
     display: flex;
@@ -88,7 +87,6 @@ body {
     overflow: hidden;
 }
 
-/* subtle university-style texture */
 .hero::before {
     content: "";
     position: absolute;
@@ -98,7 +96,6 @@ body {
     z-index: 0;
 }
 
-/* RED FLARE */
 .hero::after {
     content: "";
     position: absolute;
@@ -161,7 +158,30 @@ body {
     color: var(--blue);
 }
 
-/* ================= TEAM ================= */
+/* SCROLL INDICATOR */
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-down span {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-right: 3px solid var(--blue);
+    border-bottom: 3px solid var(--blue);
+    transform: rotate(45deg);
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(8px); }
+}
+
+/* TEAM */
 .team-wrapper {
     display: flex;
     justify-content: center;
@@ -169,15 +189,15 @@ body {
 
 .team {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    max-width: 900px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    max-width: 1100px;
     text-align: center;
 }
 
 .member img {
-    width: 130px;   /* 🔥 groter gemaakt */
-    height: 130px;  /* 🔥 groter gemaakt */
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 12px;
@@ -195,9 +215,15 @@ body {
     color: #555;
 }
 
-/* ================= OTHER SECTIONS ================= */
-.flash { padding: 90px 8vw; }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .team {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+/* SECTIONS */
+.flash { padding: 90px 8vw; }
 .flash.soft { background: var(--bg-soft); }
 .flash.tint { background: var(--bg-tint); }
 
@@ -225,7 +251,6 @@ footer {
     </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
         <div class="tag">OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY</div>
@@ -241,9 +266,12 @@ footer {
             <a class="btn secondary">Upcoming events</a>
         </div>
     </div>
+
+    <div class="scroll-down">
+        <span></span>
+    </div>
 </section>
 
-<!-- TEAM -->
 <section class="flash tint">
 
     <h2 style="text-align:center; margin-bottom:40px;">
@@ -290,6 +318,17 @@ footer {
 <footer>
     © 2026 Open Science Community Nijmegen
 </footer>
+
+<script>
+window.addEventListener("scroll", function () {
+    const topbar = document.querySelector(".topbar");
+    if (window.scrollY > 50) {
+        topbar.classList.add("scrolled");
+    } else {
+        topbar.classList.remove("scrolled");
+    }
+});
+</script>
 
 </body>
 </html>
