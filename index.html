@@ -84,26 +84,190 @@ body {
 
 /* ================= HERO ================= */
 
+/* ===== HERO LAYOUT ===== */
+
 .hero {
-    min-height: calc(100vh - 70px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 8vw;
-    position: relative;
-    background: var(--bg-hero);
-    overflow: hidden;
+min-height: calc(100vh - 70px);
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 60px;
+padding: 0 8vw;
+position: relative;
+background: var(--bg-hero);
+overflow: hidden;
 }
 
-/* subtle university-style texture */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
-                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.10), transparent 45%);
-    z-index: 0;
+.hero-content {
+flex: 1;
+max-width: 650px;
+position: relative;
+z-index: 2;
 }
+
+.hero-visual {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+z-index: 2;
+}
+
+/* rode glow */
+
+.hero-visual::before {
+content: "";
+position: absolute;
+width: 600px;
+height: 600px;
+background: radial-gradient(
+circle,
+rgba(190,49,26,.25),
+rgba(190,49,26,.08),
+transparent 70%
+);
+border-radius: 50%;
+filter: blur(20px);
+}
+
+/* SVG illustratie */
+
+.nijmegen-svg {
+width: 100%;
+max-width: 600px;
+height: auto;
+}
+
+.bridge {
+stroke: var(--blue);
+stroke-width: 5;
+fill: none;
+}
+
+.city {
+fill: var(--blue);
+}
+
+.network {
+stroke: var(--accent);
+stroke-width: 2;
+opacity: .7;
+}
+
+.node {
+fill: var(--accent);
+}
+
+/* mobiel */
+
+@media (max-width: 900px) {
+
+```
+.hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.buttons {
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero-visual {
+    margin-top: 20px;
+}
+```
+
+}
+HTML:
+
+<section class="hero">
+
+```
+<div class="hero-content">
+
+    <div class="tag">
+        OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY
+    </div>
+
+    <h1>
+        Open Science<br>
+        Community Nijmegen
+    </h1>
+
+    <p>
+        The Open Science Community Nijmegen (OSCN) brings together
+        researchers, students and professionals committed to making
+        research more transparent, reproducible and collaborative
+        across disciplines.
+    </p>
+
+    <div class="buttons">
+        <a class="btn primary">Become a member</a>
+        <a class="btn secondary">Upcoming events</a>
+    </div>
+
+</div>
+
+<div class="hero-visual">
+
+    <svg class="nijmegen-svg" viewBox="0 0 800 500">
+
+        <!-- netwerk -->
+
+        <line class="network" x1="120" y1="120" x2="250" y2="180"/>
+        <line class="network" x1="250" y1="180" x2="420" y2="120"/>
+        <line class="network" x1="420" y1="120" x2="620" y2="180"/>
+        <line class="network" x1="250" y1="180" x2="360" y2="260"/>
+        <line class="network" x1="360" y1="260" x2="540" y2="220"/>
+
+        <circle class="node" cx="120" cy="120" r="7"/>
+        <circle class="node" cx="250" cy="180" r="7"/>
+        <circle class="node" cx="420" cy="120" r="7"/>
+        <circle class="node" cx="620" cy="180" r="7"/>
+        <circle class="node" cx="360" cy="260" r="7"/>
+        <circle class="node" cx="540" cy="220" r="7"/>
+
+        <!-- stevenskerk -->
+
+        <rect class="city" x="330" y="180" width="45" height="130"/>
+        <polygon class="city"
+            points="352,100 315,180 389,180"/>
+
+        <!-- skyline -->
+
+        <rect class="city" x="170" y="250" width="50" height="70"/>
+        <rect class="city" x="235" y="220" width="60" height="100"/>
+        <rect class="city" x="410" y="230" width="70" height="90"/>
+        <rect class="city" x="500" y="260" width="45" height="60"/>
+
+        <!-- waalbrug -->
+
+        <path class="bridge"
+            d="M90 340
+               Q240 170 400 340
+               Q560 170 710 340"/>
+
+        <line class="bridge" x1="90" y1="340" x2="710" y2="340"/>
+
+        <!-- pijlers -->
+
+        <line class="bridge" x1="200" y1="340" x2="200" y2="250"/>
+        <line class="bridge" x1="400" y1="340" x2="400" y2="210"/>
+        <line class="bridge" x1="600" y1="340" x2="600" y2="250"/>
+
+    </svg>
+
+</div>
+```
+
+</section>
 
 /* 🔴 RED FLARE (RESTORED) */
 .hero::after {
