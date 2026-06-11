@@ -12,6 +12,8 @@
     --blue: #002060;
     --accent: #BE311A;
     --bg-hero: #f3f5f8;
+    --bg-soft: #f7f7f7;
+    --bg-tint: #eef3fb;
     --text: #1f1f1f;
 }
 
@@ -40,15 +42,23 @@ body {
     align-items: center;
     padding: 0 40px;
     background: var(--bg-hero);
+    transition: all 0.3s ease;
     z-index: 1000;
+}
+
+.topbar.scrolled {
+    background: white;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
 /* LOGO */
 .logo img {
     height: 42px;
+    cursor: pointer;
 }
 
-/* DESKTOP NAV */
+/* NAV */
 nav {
     display: flex;
     gap: 18px;
@@ -63,24 +73,13 @@ nav a {
     font-size: 0.95rem;
 }
 
-/* HOME ICON (OUTLINE SVG) */
-nav a.home {
-    display: flex;
-    align-items: center;
-}
-
+/* HOME ICON SVG */
 nav a.home svg {
     width: 22px;
     height: 22px;
     stroke: var(--blue);
     fill: none;
     stroke-width: 2;
-}
-
-/* SCROLLED NAV */
-.topbar.scrolled {
-    background: white;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
 /* HERO */
@@ -90,45 +89,37 @@ nav a.home svg {
     flex-direction: column;
     justify-content: center;
     padding: 0 8vw;
-    background: var(--bg-hero);
     position: relative;
+    background: var(--bg-hero);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.10), transparent 45%);
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
     max-width: 900px;
+    z-index: 1;
 }
 
-/* SCROLL ARROW */
-.scroll-down {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
+/* TEAM (ORIGINEEL) */
+.team-wrapper {
+    display: flex;
+    justify-content: center;
 }
 
-.scroll-down span {
-    display: block;
-    width: 22px;
-    height: 22px;
-    border-right: 3px solid var(--blue);
-    border-bottom: 3px solid var(--blue);
-    transform: rotate(45deg);
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: rotate(45deg) translateY(0); }
-    50% { transform: rotate(45deg) translateY(8px); }
-}
-
-/* TEAM */
 .team {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 25px;
     max-width: 1100px;
-    margin: auto;
     text-align: center;
 }
 
@@ -137,9 +128,11 @@ nav a.home svg {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid #eaeaea;
 }
 
-/* MOBILE */
+/* HAMBURGER */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -165,6 +158,7 @@ nav a.home svg {
     gap: 25px;
     transform: translateX(100%);
     transition: 0.3s ease;
+    z-index: 2000;
 }
 
 .mobile-menu.open {
@@ -200,7 +194,6 @@ nav a.home svg {
 
     <nav>
         <a class="home" href="#">
-            <!-- OUTLINE HOME ICON -->
             <svg viewBox="0 0 24 24">
                 <path d="M3 10.5L12 3l9 7.5"></path>
                 <path d="M5 10v10h14V10"></path>
@@ -212,7 +205,7 @@ nav a.home svg {
         <a href="#">News</a>
         <a href="#">Resources</a>
         <a href="#">Members</a>
-        <a href="#">Contact</a>
+        <a href="#">Contact Persons</a>
         <a href="#">Newsletter</a>
     </nav>
 
@@ -232,20 +225,82 @@ nav a.home svg {
     <a href="#">News</a>
     <a href="#">Resources</a>
     <a href="#">Members</a>
-    <a href="#">Contact</a>
+    <a href="#">Contact Persons</a>
     <a href="#">Newsletter</a>
 </div>
 
+<!-- HERO (ORIGINEEL BEHOUDEN) -->
 <section class="hero">
     <div class="hero-content">
-        <h1>Open Science Community Nijmegen</h1>
-        <p>Making research more transparent and collaborative.</p>
+
+        <div class="tag">OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY</div>
+
+        <h1>Open Science<br>Community Nijmegen</h1>
+
+        <p>
+            The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative.
+        </p>
+
+        <div class="buttons">
+            <a class="btn primary">Become a member</a>
+            <a class="btn secondary">Upcoming events</a>
+        </div>
+
     </div>
 
     <div class="scroll-down">
         <span></span>
     </div>
 </section>
+
+<!-- TEAM (ORIGINEEL) -->
+<section class="flash tint">
+
+    <h2 style="text-align:center; margin-bottom:40px;">
+        Organising Team
+    </h2>
+
+    <div class="team-wrapper">
+        <div class="team">
+
+            <div class="member">
+                <img src="anita.jpeg">
+                <h3>Anita Eerland</h3>
+                <p>Radboud University</p>
+            </div>
+
+            <div class="member">
+                <img src="max.png">
+                <h3>Max Cenci</h3>
+                <p>Radboud UMC</p>
+            </div>
+
+            <div class="member">
+                <img src="Lieke.jpeg">
+                <h3>Lieke Corbeek</h3>
+                <p>Radboud University</p>
+            </div>
+
+            <div class="member">
+                <img src="Tim.png">
+                <h3>Tim Middeldorp</h3>
+                <p>Radboud University</p>
+            </div>
+
+            <div class="member">
+                <img src="Karin.jpg">
+                <h3>Karin Kastens</h3>
+                <p>Max Planck Institute</p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Open Science Community Nijmegen
+</footer>
 
 <script>
 const hamburger = document.getElementById("hamburger");
