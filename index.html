@@ -3,26 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Open Science Community Nijmegen</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
     --blue: #002060;
     --accent: #BE311A;
-
     --bg-hero: #f3f5f8;
     --bg-soft: #f7f7f7;
     --bg-tint: #eef3fb;
-
     --text: #1f1f1f;
 }
 
 /* ================= BASE ================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +31,6 @@ body {
 }
 
 /* ================= NAVBAR ================= */
-
 .topbar {
     position: fixed;
     top: 0;
@@ -82,194 +76,29 @@ body {
     border-radius: 999px;
 }
 
-/* ================= HERO ================= */
-
-/* ===== HERO LAYOUT ===== */
-
+/* ================= HERO (UPDATED) ================= */
 .hero {
-min-height: calc(100vh - 70px);
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 60px;
-padding: 0 8vw;
-position: relative;
-background: var(--bg-hero);
-overflow: hidden;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8vw;
+    position: relative;
+    background: var(--bg-hero);
+    overflow: hidden;
 }
 
-.hero-content {
-flex: 1;
-max-width: 650px;
-position: relative;
-z-index: 2;
+/* subtle background texture */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.10), transparent 45%);
+    z-index: 0;
 }
 
-.hero-visual {
-flex: 1;
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-z-index: 2;
-}
-
-/* rode glow */
-
-.hero-visual::before {
-content: "";
-position: absolute;
-width: 600px;
-height: 600px;
-background: radial-gradient(
-circle,
-rgba(190,49,26,.25),
-rgba(190,49,26,.08),
-transparent 70%
-);
-border-radius: 50%;
-filter: blur(20px);
-}
-
-/* SVG illustratie */
-
-.nijmegen-svg {
-width: 100%;
-max-width: 600px;
-height: auto;
-}
-
-.bridge {
-stroke: var(--blue);
-stroke-width: 5;
-fill: none;
-}
-
-.city {
-fill: var(--blue);
-}
-
-.network {
-stroke: var(--accent);
-stroke-width: 2;
-opacity: .7;
-}
-
-.node {
-fill: var(--accent);
-}
-
-/* mobiel */
-
-@media (max-width: 900px) {
-
-```
-.hero {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-.buttons {
-    justify-content: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-}
-
-.hero-visual {
-    margin-top: 20px;
-}
-```
-
-}
-HTML:
-
-<section class="hero">
-
-```
-<div class="hero-content">
-
-    <div class="tag">
-        OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY
-    </div>
-
-    <h1>
-        Open Science<br>
-        Community Nijmegen
-    </h1>
-
-    <p>
-        The Open Science Community Nijmegen (OSCN) brings together
-        researchers, students and professionals committed to making
-        research more transparent, reproducible and collaborative
-        across disciplines.
-    </p>
-
-    <div class="buttons">
-        <a class="btn primary">Become a member</a>
-        <a class="btn secondary">Upcoming events</a>
-    </div>
-
-</div>
-
-<div class="hero-visual">
-
-    <svg class="nijmegen-svg" viewBox="0 0 800 500">
-
-        <!-- netwerk -->
-
-        <line class="network" x1="120" y1="120" x2="250" y2="180"/>
-        <line class="network" x1="250" y1="180" x2="420" y2="120"/>
-        <line class="network" x1="420" y1="120" x2="620" y2="180"/>
-        <line class="network" x1="250" y1="180" x2="360" y2="260"/>
-        <line class="network" x1="360" y1="260" x2="540" y2="220"/>
-
-        <circle class="node" cx="120" cy="120" r="7"/>
-        <circle class="node" cx="250" cy="180" r="7"/>
-        <circle class="node" cx="420" cy="120" r="7"/>
-        <circle class="node" cx="620" cy="180" r="7"/>
-        <circle class="node" cx="360" cy="260" r="7"/>
-        <circle class="node" cx="540" cy="220" r="7"/>
-
-        <!-- stevenskerk -->
-
-        <rect class="city" x="330" y="180" width="45" height="130"/>
-        <polygon class="city"
-            points="352,100 315,180 389,180"/>
-
-        <!-- skyline -->
-
-        <rect class="city" x="170" y="250" width="50" height="70"/>
-        <rect class="city" x="235" y="220" width="60" height="100"/>
-        <rect class="city" x="410" y="230" width="70" height="90"/>
-        <rect class="city" x="500" y="260" width="45" height="60"/>
-
-        <!-- waalbrug -->
-
-        <path class="bridge"
-            d="M90 340
-               Q240 170 400 340
-               Q560 170 710 340"/>
-
-        <line class="bridge" x1="90" y1="340" x2="710" y2="340"/>
-
-        <!-- pijlers -->
-
-        <line class="bridge" x1="200" y1="340" x2="200" y2="250"/>
-        <line class="bridge" x1="400" y1="340" x2="400" y2="210"/>
-        <line class="bridge" x1="600" y1="340" x2="600" y2="250"/>
-
-    </svg>
-
-</div>
-```
-
-</section>
-
-/* 🔴 RED FLARE (RESTORED) */
+/* red flare */
 .hero::after {
     content: "";
     position: absolute;
@@ -277,17 +106,15 @@ HTML:
     right: -150px;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle,
-        rgba(190,49,26,0.35) 0%,
-        rgba(190,49,26,0.15) 30%,
-        transparent 70%);
+    background: radial-gradient(circle, rgba(190,49,26,0.35) 0%, rgba(190,49,26,0.15) 30%, transparent 70%);
     filter: blur(10px);
     z-index: 0;
 }
 
+/* LEFT CONTENT */
 .hero-content {
     position: relative;
-    max-width: 900px;
+    max-width: 600px;
     z-index: 1;
 }
 
@@ -335,27 +162,26 @@ HTML:
     color: var(--blue);
 }
 
-/* ================= FLASH ================= */
-
-.flash {
-    padding: 90px 8vw;
+/* RIGHT IMAGE */
+.hero-image {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
 }
 
-.flash.soft {
-    background: var(--bg-soft);
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-.flash.tint {
-    background: var(--bg-tint);
-}
+/* ================= OTHER SECTIONS (UNCHANGED) ================= */
+.flash { padding: 90px 8vw; }
+.flash.soft { background: var(--bg-soft); }
+.flash.tint { background: var(--bg-tint); }
 
-/* ================= EVENT ================= */
-
-.event-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
+.event-wrapper { display: flex; justify-content: center; }
 .event {
     background: white;
     padding: 34px;
@@ -366,13 +192,7 @@ HTML:
     border-left: 6px solid var(--accent);
 }
 
-/* ================= TEAM ================= */
-
-.team-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
+.team-wrapper { display: flex; justify-content: center; }
 .team {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -390,18 +210,8 @@ HTML:
     border: 3px solid #eaeaea;
 }
 
-.member h3 {
-    font-size: 1rem;
-    margin-bottom: 4px;
-    color: var(--blue);
-}
-
-.member p {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* ================= NEWS ================= */
+.member h3 { font-size: 1rem; margin-bottom: 4px; color: var(--blue); }
+.member p { font-size: 0.9rem; color: #555; }
 
 .news {
     display: grid;
@@ -421,9 +231,7 @@ HTML:
     object-fit: cover;
 }
 
-.news-main div {
-    padding: 16px;
-}
+.news-main div { padding: 16px; }
 
 .news-side {
     display: flex;
@@ -438,26 +246,21 @@ HTML:
     border: 1px solid #e6e6e6;
 }
 
-/* ================= FOOTER ================= */
-
 footer {
     text-align: center;
     padding: 50px;
     color: #777;
     font-size: 0.9rem;
 }
-
 </style>
 </head>
 
 <body>
 
 <header class="topbar">
-
     <div class="logo">
         <img src="OSCN logo transparant.png" alt="OSCN Logo">
     </div>
-
     <nav>
         <a href="#">About</a>
         <a href="#">Events</a>
@@ -465,31 +268,25 @@ footer {
         <a href="#">Resources</a>
         <a class="cta">Join</a>
     </nav>
-
 </header>
 
 <!-- HERO -->
 <section class="hero">
-
     <div class="hero-content">
-
         <div class="tag">OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY</div>
-
         <h1>Open Science<br>Community Nijmegen</h1>
-
         <p>
-            The Open Science Community Nijmegen (OSCN) brings together researchers,
-            students and professionals committed to making research more transparent,
-            reproducible and collaborative across disciplines.
+            The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative across disciplines.
         </p>
-
         <div class="buttons">
             <a class="btn primary">Become a member</a>
             <a class="btn secondary">Upcoming events</a>
         </div>
-
     </div>
 
+    <div class="hero-image">
+        <img src="nijmegen skyline.webp" alt="Nijmegen Skyline">
+    </div>
 </section>
 
 <!-- EVENT -->
@@ -507,26 +304,22 @@ footer {
 <section class="flash tint">
     <h2>About OSCN</h2>
     <p style="max-width:800px; font-size:1.1rem;">
-        We are a community of researchers, students and staff from Nijmegen-based institutions
-        working together to advance Open Science practices.
+        We are a community of researchers, students and staff from Nijmegen-based institutions working together to advance Open Science practices.
     </p>
 </section>
 
 <!-- WHAT WE DO -->
 <section class="flash soft">
     <h2>What we do</h2>
-
     <div class="cards">
         <div class="card">
             <h3>Events</h3>
             <p>Meetups and discussions.</p>
         </div>
-
         <div class="card">
             <h3>Workshops</h3>
             <p>Training in Open Science tools.</p>
         </div>
-
         <div class="card">
             <h3>Community</h3>
             <p>Connecting researchers in Nijmegen.</p>
@@ -537,51 +330,21 @@ footer {
 <!-- TEAM -->
 <section class="flash tint">
     <h2>Organising Team</h2>
-
     <div class="team-wrapper">
         <div class="team">
-
-            <div class="member">
-                <img src="https://i.pravatar.cc/150?img=12">
-                <h3>Anita Eerland</h3>
-                <p>Radboud University</p>
-            </div>
-
-            <div class="member">
-                <img src="https://i.pravatar.cc/150?img=32">
-                <h3>Max Cenci</h3>
-                <p>Radboud UMC</p>
-            </div>
-
-            <div class="member">
-                <img src="https://i.pravatar.cc/150?img=45">
-                <h3>Lieke Corbeeks</h3>
-                <p>Radboud University</p>
-            </div>
-            
-            <div class="member">
-                <img src="https://i.pravatar.cc/150?img=45">
-                <h3>Tim Middeldorp</h3>
-                <p>Radboud University</p>
-            </div>
-
-            <div class="member">
-                <img src="https://i.pravatar.cc/150?img=18">
-                <h3>Karin Kastens</h3>
-                <p>Max Planck Institute</p>
-            </div>
-
+            <div class="member"><img src="https://i.pravatar.cc/150?img=12"><h3>Anita Eerland</h3><p>Radboud University</p></div>
+            <div class="member"><img src="https://i.pravatar.cc/150?img=32"><h3>Max Cenci</h3><p>Radboud UMC</p></div>
+            <div class="member"><img src="https://i.pravatar.cc/150?img=45"><h3>Lieke Corbeeks</h3><p>Radboud University</p></div>
+            <div class="member"><img src="https://i.pravatar.cc/150?img=45"><h3>Tim Middeldorp</h3><p>Radboud University</p></div>
+            <div class="member"><img src="https://i.pravatar.cc/150?img=18"><h3>Karin Kastens</h3><p>Max Planck Institute</p></div>
         </div>
     </div>
 </section>
 
 <!-- NEWS -->
 <section class="flash soft">
-
     <h2>Latest News</h2>
-
     <div class="news">
-
         <div class="news-main">
             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
             <div>
@@ -595,20 +358,16 @@ footer {
                 <strong>Toolkit released</strong>
                 <p>Improved reproducibility workflows.</p>
             </div>
-
             <div class="news-item">
                 <strong>Community meetup</strong>
                 <p>Highlights from last month.</p>
             </div>
-
             <div class="news-item">
                 <strong>Funding open</strong>
                 <p>New grants available.</p>
             </div>
         </div>
-
     </div>
-
 </section>
 
 <footer>
@@ -618,7 +377,6 @@ footer {
 <script>
 window.addEventListener("scroll", function () {
     const nav = document.querySelector(".topbar");
-
     if (window.scrollY > 30) {
         nav.classList.add("scrolled");
     } else {
