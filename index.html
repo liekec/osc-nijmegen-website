@@ -17,7 +17,6 @@
     --text: #1f1f1f;
 }
 
-/* BASE */
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +29,7 @@ body {
     padding-top: 70px;
 }
 
-/* NAVBAR */
+/* NAV */
 .topbar {
     position: fixed;
     top: 0;
@@ -42,8 +41,6 @@ body {
     align-items: center;
     padding: 0 40px;
     background: transparent;
-    border-bottom: 1px solid transparent;
-    transition: 0.3s ease;
     z-index: 1000;
 }
 
@@ -51,29 +48,6 @@ body {
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #eaeaea;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-}
-
-.topbar .logo img {
-    height: 42px;
-}
-
-.topbar nav {
-    display: flex;
-    gap: 22px;
-}
-
-.topbar nav a {
-    text-decoration: none;
-    color: var(--blue);
-    font-weight: 500;
-}
-
-.topbar nav a.cta {
-    background: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 999px;
 }
 
 /* HERO */
@@ -84,41 +58,19 @@ body {
     justify-content: space-between;
     padding: 0 8vw;
     position: relative;
-    background: var(--bg-hero);
     overflow: hidden;
-}
 
-/* background glow */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
-                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.10), transparent 45%);
-    z-index: 0;
-}
-
-/* skyline (NEW) */
-.hero::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 260px;
-    opacity: 0.18;
-    z-index: 0;
-
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300'%3E%3Cpath d='M0 300 L0 200 L70 200 L110 160 L150 200 L210 200 L250 140 L290 200 L350 200 L410 120 L470 200 L530 200 L590 170 L650 200 L710 200 L770 150 L830 200 L890 200 L950 130 L1010 200 L1070 200 L1130 180 L1200 200 L1200 300 Z' fill='%23002060'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
+    background:
+        linear-gradient(to right, rgba(243,245,248,0.95), rgba(243,245,248,0.6)),
+        url("nijmegen skyline.jpg");
     background-size: cover;
+    background-position: center;
 }
 
-/* LEFT TEXT */
 .hero-content {
-    position: relative;
-    max-width: 600px;
+    max-width: 650px;
     z-index: 2;
+    position: relative;
 }
 
 .tag {
@@ -133,8 +85,6 @@ body {
     font-family: "Playfair Display", serif;
     font-size: 4rem;
     color: var(--blue);
-    line-height: 1.05;
-    margin-bottom: 22px;
 }
 
 .hero p {
@@ -164,88 +114,51 @@ body {
     color: var(--blue);
 }
 
-/* RIGHT SIDE (kept empty but reserved) */
-.hero-image {
-    position: relative;
-    z-index: 2;
+/* TEAM */
+.team-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--blue);
+    font-family: "Playfair Display", serif;
 }
 
-/* SECTIONS */
-.flash { padding: 90px 8vw; }
-.flash.soft { background: var(--bg-soft); }
-.flash.tint { background: var(--bg-tint); }
-
-.event-wrapper { display: flex; justify-content: center; }
-
-.event {
-    background: white;
-    padding: 34px;
-    border-radius: 18px;
-    max-width: 900px;
-    width: 100%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    border-left: 6px solid var(--accent);
+.team-wrapper {
+    display: flex;
+    justify-content: center;
 }
-
-.team-wrapper { display: flex; justify-content: center; }
 
 .team {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 30px;
-    max-width: 900px;
+    max-width: 1100px;
     text-align: center;
 }
 
 .member img {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 12px;
     border: 3px solid #eaeaea;
 }
 
-.member h3 { color: var(--blue); }
-
-.news {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 16px;
+.member h3 {
+    color: var(--blue);
 }
 
-.news-main {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-}
+/* SECTIONS */
+.flash { padding: 90px 8vw; }
 
-.news-main img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.news-main div { padding: 16px; }
-
-.news-side {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.news-item {
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #e6e6e6;
-}
+.flash.soft { background: var(--bg-soft); }
+.flash.tint { background: var(--bg-tint); }
 
 footer {
     text-align: center;
     padding: 50px;
     color: #777;
-    font-size: 0.9rem;
 }
 </style>
 </head>
@@ -254,7 +167,7 @@ footer {
 
 <header class="topbar">
     <div class="logo">
-        <img src="OSCN logo transparant.png" alt="OSCN Logo">
+        <img src="OSCN logo transparant.png" height="42">
     </div>
     <nav>
         <a href="#">About</a>
@@ -273,7 +186,7 @@ footer {
         <h1>Open Science<br>Community Nijmegen</h1>
 
         <p>
-            The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative across disciplines.
+            The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative.
         </p>
 
         <div class="buttons">
@@ -283,83 +196,39 @@ footer {
     </div>
 </section>
 
-<!-- EVENT -->
-<section class="flash soft">
-    <div class="event-wrapper">
-        <div class="event">
-            <h2>Upcoming Event</h2>
-            <p><strong>Open Science Meetup Nijmegen</strong> — 18 September 2026</p>
-            <p>Talks, networking and workshops on open research practices.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section class="flash tint">
-    <h2>About OSCN</h2>
-    <p style="max-width:800px; font-size:1.1rem;">
-        We are a community of researchers, students and staff from Nijmegen-based institutions working together to advance Open Science practices.
-    </p>
-</section>
-
-<!-- WHAT WE DO -->
-<section class="flash soft">
-    <h2>What we do</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Events</h3>
-            <p>Meetups and discussions.</p>
-        </div>
-        <div class="card">
-            <h3>Workshops</h3>
-            <p>Training in Open Science tools.</p>
-        </div>
-        <div class="card">
-            <h3>Community</h3>
-            <p>Connecting researchers in Nijmegen.</p>
-        </div>
-    </div>
-</section>
-
 <!-- TEAM -->
-<section class="flash tint">
-    <h2>Organising Team</h2>
+<section class="flash soft">
+
+    <div class="team-title">Organising Team</div>
+
     <div class="team-wrapper">
         <div class="team">
-            <div class="member"><img src="https://i.pravatar.cc/150?img=12"><h3>Anita Eerland</h3><p>Radboud University</p></div>
-            <div class="member"><img src="https://i.pravatar.cc/150?img=32"><h3>Max Cenci</h3><p>Radboud UMC</p></div>
-            <div class="member"><img src="https://i.pravatar.cc/150?img=45"><h3>Lieke Corbeeks</h3><p>Radboud University</p></div>
-            <div class="member"><img src="https://i.pravatar.cc/150?img=45"><h3>Tim Middeldorp</h3><p>Radboud University</p></div>
-            <div class="member"><img src="https://i.pravatar.cc/150?img=18"><h3>Karin Kastens</h3><p>Max Planck Institute</p></div>
-        </div>
-    </div>
-</section>
 
-<!-- NEWS -->
-<section class="flash soft">
-    <h2>Latest News</h2>
-    <div class="news">
-        <div class="news-main">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
-            <div>
-                <h3>Open Science Week 2026 announced</h3>
-                <p>Workshops and talks across Nijmegen.</p>
+            <div class="member">
+                <img src="anita.jpeg" alt="Anita">
+                <h3>Anita Eerland</h3>
             </div>
-        </div>
 
-        <div class="news-side">
-            <div class="news-item">
-                <strong>Toolkit released</strong>
-                <p>Improved reproducibility workflows.</p>
+            <div class="member">
+                <img src="max.png" alt="Max">
+                <h3>Max Cenci</h3>
             </div>
-            <div class="news-item">
-                <strong>Community meetup</strong>
-                <p>Highlights from last month.</p>
+
+            <div class="member">
+                <img src="Lieke.jpeg" alt="Lieke">
+                <h3>Lieke Corbeeks</h3>
             </div>
-            <div class="news-item">
-                <strong>Funding open</strong>
-                <p>New grants available.</p>
+
+            <div class="member">
+                <img src="Tim.png" alt="Tim">
+                <h3>Tim Middeldorp</h3>
             </div>
+
+            <div class="member">
+                <img src="Karin.jpg" alt="Karin">
+                <h3>Karin Kastens</h3>
+            </div>
+
         </div>
     </div>
 </section>
@@ -367,17 +236,6 @@ footer {
 <footer>
     © 2026 Open Science Community Nijmegen
 </footer>
-
-<script>
-window.addEventListener("scroll", function () {
-    const nav = document.querySelector(".topbar");
-    if (window.scrollY > 30) {
-        nav.classList.add("scrolled");
-    } else {
-        nav.classList.remove("scrolled");
-    }
-});
-</script>
 
 </body>
 </html>
