@@ -12,8 +12,6 @@
     --blue: #002060;
     --accent: #BE311A;
     --bg-hero: #f3f5f8;
-    --bg-soft: #f7f7f7;
-    --bg-tint: #eef3fb;
     --text: #1f1f1f;
 }
 
@@ -42,46 +40,47 @@ body {
     align-items: center;
     padding: 0 40px;
     background: var(--bg-hero);
-    transition: all 0.3s ease;
     z-index: 1000;
 }
 
-.topbar.scrolled {
-    background: white;
-    border-bottom: 1px solid #eaeaea;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-}
-
 /* LOGO */
-.topbar .logo {
-    display: flex;
-    align-items: center;
-}
-
-.topbar .logo img {
+.logo img {
     height: 42px;
-    cursor: pointer;
 }
 
-/* NAV RIGHT */
-.topbar nav {
+/* DESKTOP NAV */
+nav {
     display: flex;
     gap: 18px;
     justify-content: flex-end;
     align-items: center;
 }
 
-.topbar nav a {
+nav a {
     text-decoration: none;
     color: var(--blue);
     font-weight: 500;
     font-size: 0.95rem;
-    white-space: nowrap;
 }
 
-/* HOME ICON */
-.topbar nav a.home {
-    font-size: 1.2rem;
+/* HOME ICON (OUTLINE SVG) */
+nav a.home {
+    display: flex;
+    align-items: center;
+}
+
+nav a.home svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--blue);
+    fill: none;
+    stroke-width: 2;
+}
+
+/* SCROLLED NAV */
+.topbar.scrolled {
+    background: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
 /* HERO */
@@ -91,80 +90,13 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 0 8vw;
-    position: relative;
     background: var(--bg-hero);
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
-                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.10), transparent 45%);
-    z-index: 0;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -150px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(190,49,26,0.35) 0%, rgba(190,49,26,0.15) 30%, transparent 70%);
-    filter: blur(10px);
-    z-index: 0;
+    position: relative;
 }
 
 .hero-content {
     position: relative;
     max-width: 900px;
-    z-index: 1;
-}
-
-.tag {
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 4rem;
-    color: var(--blue);
-    line-height: 1.05;
-    margin-bottom: 22px;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    max-width: 720px;
-    margin-bottom: 30px;
-}
-
-.buttons {
-    display: flex;
-    gap: 14px;
-}
-
-.btn {
-    padding: 12px 20px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.btn.primary {
-    background: var(--accent);
-    color: white;
-}
-
-.btn.secondary {
-    border: 2px solid var(--blue);
-    color: var(--blue);
 }
 
 /* SCROLL ARROW */
@@ -191,16 +123,12 @@ body {
 }
 
 /* TEAM */
-.team-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
 .team {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 25px;
     max-width: 1100px;
+    margin: auto;
     text-align: center;
 }
 
@@ -209,38 +137,55 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 12px;
-    border: 3px solid #eaeaea;
 }
 
-.member h3 {
-    font-size: 1rem;
-    margin-bottom: 4px;
+/* MOBILE */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--blue);
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transform: translateX(100%);
+    transition: 0.3s ease;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.mobile-menu a {
+    font-size: 1.4rem;
+    text-decoration: none;
     color: var(--blue);
-}
-
-.member p {
-    font-size: 0.9rem;
-    color: #555;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-    .team {
-        grid-template-columns: repeat(2, 1fr);
+    nav {
+        display: none;
     }
-}
 
-/* SECTIONS */
-.flash { padding: 90px 8vw; }
-.flash.soft { background: var(--bg-soft); }
-.flash.tint { background: var(--bg-tint); }
-
-footer {
-    text-align: center;
-    padding: 50px;
-    color: #777;
-    font-size: 0.9rem;
+    .hamburger {
+        display: flex;
+    }
 }
 </style>
 </head>
@@ -254,34 +199,47 @@ footer {
     </a>
 
     <nav>
-        <a href="#" class="home">🏠</a>
+        <a class="home" href="#">
+            <!-- OUTLINE HOME ICON -->
+            <svg viewBox="0 0 24 24">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 10v10h14V10"></path>
+            </svg>
+        </a>
+
         <a href="#">About</a>
         <a href="#">Events</a>
         <a href="#">News</a>
         <a href="#">Resources</a>
         <a href="#">Members</a>
-        <a href="#">Contact Persons</a>
+        <a href="#">Contact</a>
         <a href="#">Newsletter</a>
     </nav>
 
-    <div></div>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
 </header>
 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Events</a>
+    <a href="#">News</a>
+    <a href="#">Resources</a>
+    <a href="#">Members</a>
+    <a href="#">Contact</a>
+    <a href="#">Newsletter</a>
+</div>
+
 <section class="hero">
     <div class="hero-content">
-        <div class="tag">OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY</div>
-
-        <h1>Open Science<br>Community Nijmegen</h1>
-
-        <p>
-            The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative.
-        </p>
-
-        <div class="buttons">
-            <a class="btn primary">Become a member</a>
-            <a class="btn secondary">Upcoming events</a>
-        </div>
+        <h1>Open Science Community Nijmegen</h1>
+        <p>Making research more transparent and collaborative.</p>
     </div>
 
     <div class="scroll-down">
@@ -289,61 +247,19 @@ footer {
     </div>
 </section>
 
-<section class="flash tint">
-
-    <h2 style="text-align:center; margin-bottom:40px;">
-        Organising Team
-    </h2>
-
-    <div class="team-wrapper">
-        <div class="team">
-
-            <div class="member">
-                <img src="anita.jpeg" alt="Anita">
-                <h3>Anita Eerland</h3>
-                <p>Radboud University</p>
-            </div>
-
-            <div class="member">
-                <img src="max.png" alt="Max">
-                <h3>Max Cenci</h3>
-                <p>Radboud UMC</p>
-            </div>
-
-            <div class="member">
-                <img src="Lieke.jpeg" alt="Lieke">
-                <h3>Lieke Corbeek</h3>
-                <p>Radboud University</p>
-            </div>
-
-            <div class="member">
-                <img src="Tim.png" alt="Tim">
-                <h3>Tim Middeldorp</h3>
-                <p>Radboud University</p>
-            </div>
-
-            <div class="member">
-                <img src="Karin.jpg" alt="Karin">
-                <h3>Karin Kastens</h3>
-                <p>Max Planck Institute</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<footer>
-    © 2026 Open Science Community Nijmegen
-</footer>
-
 <script>
-window.addEventListener("scroll", function () {
-    const topbar = document.querySelector(".topbar");
-    if (window.scrollY > 50) {
-        topbar.classList.add("scrolled");
-    } else {
-        topbar.classList.remove("scrolled");
-    }
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+});
+
+window.addEventListener("scroll", () => {
+    document.querySelector(".topbar").classList.toggle(
+        "scrolled",
+        window.scrollY > 50
+    );
 });
 </script>
 
