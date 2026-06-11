@@ -30,19 +30,18 @@ body {
     padding-top: 70px;
 }
 
-/* NAVBAR */
+/* NAVBAR (CENTERED) */
 .topbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 0 40px;
     background: var(--bg-hero);
-    border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
     z-index: 1000;
 }
@@ -59,20 +58,17 @@ body {
 
 .topbar nav {
     display: flex;
-    gap: 22px;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .topbar nav a {
     text-decoration: none;
     color: var(--blue);
     font-weight: 500;
-}
-
-.topbar nav a.cta {
-    background: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 999px;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 /* HERO */
@@ -158,7 +154,7 @@ body {
     color: var(--blue);
 }
 
-/* SCROLL INDICATOR */
+/* SCROLL ARROW */
 .scroll-down {
     position: absolute;
     bottom: 25px;
@@ -242,13 +238,18 @@ footer {
     <div class="logo">
         <img src="OSCN logo transparant.png" alt="OSCN Logo">
     </div>
+
     <nav>
         <a href="#">About</a>
         <a href="#">Events</a>
         <a href="#">News</a>
         <a href="#">Resources</a>
-        <a class="cta">Join</a>
+        <a href="#">Members</a>
+        <a href="#">Contact Persons</a>
+        <a href="#">Newsletter</a>
     </nav>
+
+    <div></div>
 </header>
 
 <section class="hero">
@@ -258,7 +259,7 @@ footer {
         <h1>Open Science<br>Community Nijmegen</h1>
 
         <p>
-            The Open Science Community Nijmegen (OSCN) brings together researchers, professionals and students committed to making research more transparent, reproducible and collaborative.
+            The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative.
         </p>
 
         <div class="buttons">
