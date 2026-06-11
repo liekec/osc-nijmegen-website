@@ -17,6 +17,7 @@
     --text: #1f1f1f;
 }
 
+/* ================= BASE ================= */
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +30,7 @@ body {
     padding-top: 70px;
 }
 
-/* NAV */
+/* ================= NAVBAR ================= */
 .topbar {
     position: fixed;
     top: 0;
@@ -41,6 +42,8 @@ body {
     align-items: center;
     padding: 0 40px;
     background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
     z-index: 1000;
 }
 
@@ -48,29 +51,70 @@ body {
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
-/* HERO */
+.topbar .logo img {
+    height: 42px;
+}
+
+.topbar nav {
+    display: flex;
+    gap: 22px;
+}
+
+.topbar nav a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.topbar nav a.cta {
+    background: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 999px;
+}
+
+/* ================= HERO ================= */
 .hero {
     min-height: calc(100vh - 70px);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     padding: 0 8vw;
     position: relative;
+    background: var(--bg-hero);
     overflow: hidden;
+}
 
-    background:
-        linear-gradient(to right, rgba(243,245,248,0.95), rgba(243,245,248,0.6)),
-        url("nijmegen skyline.jpg");
-    background-size: cover;
-    background-position: center;
+/* subtle university-style texture */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.10), transparent 45%);
+    z-index: 0;
+}
+
+/* RED FLARE */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(190,49,26,0.35) 0%, rgba(190,49,26,0.15) 30%, transparent 70%);
+    filter: blur(10px);
+    z-index: 0;
 }
 
 .hero-content {
-    max-width: 650px;
-    z-index: 2;
     position: relative;
+    max-width: 900px;
+    z-index: 1;
 }
 
 .tag {
@@ -85,10 +129,13 @@ body {
     font-family: "Playfair Display", serif;
     font-size: 4rem;
     color: var(--blue);
+    line-height: 1.05;
+    margin-bottom: 22px;
 }
 
 .hero p {
     font-size: 1.25rem;
+    max-width: 720px;
     margin-bottom: 30px;
 }
 
@@ -114,15 +161,7 @@ body {
     color: var(--blue);
 }
 
-/* TEAM */
-.team-title {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    color: var(--blue);
-    font-family: "Playfair Display", serif;
-}
-
+/* ================= TEAM ================= */
 .team-wrapper {
     display: flex;
     justify-content: center;
@@ -130,15 +169,15 @@ body {
 
 .team {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    max-width: 1100px;
+    max-width: 900px;
     text-align: center;
 }
 
 .member img {
-    width: 120px;
-    height: 120px;
+    width: 130px;   /* 🔥 groter gemaakt */
+    height: 130px;  /* 🔥 groter gemaakt */
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 12px;
@@ -146,10 +185,17 @@ body {
 }
 
 .member h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
     color: var(--blue);
 }
 
-/* SECTIONS */
+.member p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* ================= OTHER SECTIONS ================= */
 .flash { padding: 90px 8vw; }
 
 .flash.soft { background: var(--bg-soft); }
@@ -159,6 +205,7 @@ footer {
     text-align: center;
     padding: 50px;
     color: #777;
+    font-size: 0.9rem;
 }
 </style>
 </head>
@@ -167,7 +214,7 @@ footer {
 
 <header class="topbar">
     <div class="logo">
-        <img src="OSCN logo transparant.png" height="42">
+        <img src="OSCN logo transparant.png" alt="OSCN Logo">
     </div>
     <nav>
         <a href="#">About</a>
@@ -197,9 +244,11 @@ footer {
 </section>
 
 <!-- TEAM -->
-<section class="flash soft">
+<section class="flash tint">
 
-    <div class="team-title">Organising Team</div>
+    <h2 style="text-align:center; margin-bottom:40px;">
+        Organising Team
+    </h2>
 
     <div class="team-wrapper">
         <div class="team">
@@ -207,26 +256,31 @@ footer {
             <div class="member">
                 <img src="anita.jpeg" alt="Anita">
                 <h3>Anita Eerland</h3>
+                <p>Radboud University</p>
             </div>
 
             <div class="member">
                 <img src="max.png" alt="Max">
                 <h3>Max Cenci</h3>
+                <p>Radboud UMC</p>
             </div>
 
             <div class="member">
                 <img src="Lieke.jpeg" alt="Lieke">
-                <h3>Lieke Corbeeks</h3>
+                <h3>Lieke Corbeek</h3>
+                <p>Radboud University</p>
             </div>
 
             <div class="member">
                 <img src="Tim.png" alt="Tim">
                 <h3>Tim Middeldorp</h3>
+                <p>Radboud University</p>
             </div>
 
             <div class="member">
                 <img src="Karin.jpg" alt="Karin">
                 <h3>Karin Kastens</h3>
+                <p>Max Planck Institute</p>
             </div>
 
         </div>
