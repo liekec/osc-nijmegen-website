@@ -52,6 +52,20 @@ body {
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
+.topbar nav a.join-btn {
+    background: var(--accent);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topbar nav a.join-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(190,49,26,0.25);
+}
+
 /* LOGO */
 .topbar .logo {
     display: flex;
@@ -69,6 +83,8 @@ body {
     gap: 18px;
     justify-content: flex-end;
     align-items: center;
+
+    margin-right: 30px;
 }
 
 .topbar nav a {
@@ -428,7 +444,7 @@ footer {
 
     <a href="#">Contact Persons</a>
 
-    <a href="#">Join us!</a>
+    <a href="#" class="join-btn">Join</a>
 
 </nav>
 
