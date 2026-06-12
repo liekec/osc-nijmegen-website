@@ -100,7 +100,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 10px);
     left: 0;
     min-width: 220px;
     background: white;
@@ -302,14 +302,16 @@ footer {
     </a>
 
     <div class="dropdown">
-        <a href="#">About</a>
-        <div class="dropdown-content">
-            <a href="#">Resources</a>
-            <a href="#">Contact Persons</a>
-        </div>
+    <a href="#">About</a>
+    <div class="dropdown-content">
+        <a href="#">Resources</a>
+        <a href="#">Contact</a>
     </div>
+</div>
 
-    <a href="#">Events</a>
+<a href="#">Contact Persons</a>
+
+<a href="#">Events</a>
 
     <div class="dropdown">
         <a href="#">News</a>
