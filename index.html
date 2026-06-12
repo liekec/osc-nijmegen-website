@@ -334,6 +334,49 @@ body {
     transform: translateX(4px);
 }
 
+/* NEWS LIST (ULTRA CLEAN STYLE) */
+
+.news-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.news-date {
+    min-width: 140px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.news-title {
+    flex: 1;
+    font-size: 1.05rem;
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.news-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--accent);
+    padding-left: 15px;
+    transition: transform 0.2s ease;
+}
+
+.news-item:hover .news-link {
+    transform: translateX(5px);
+}
+
 /* SECTIONS */
 .flash { padding: 90px 8vw; }
 .flash.soft { background: var(--bg-soft); }
@@ -521,39 +564,33 @@ footer {
 
     <h2 class="section-title">Latest News</h2>
 
-    <div class="news-grid">
+<div class="news-list">
 
-        <article class="news-card">
-            <img src="open education.png" alt="SIG Open Education Meeting">
-            <div class="news-content">
-                <div class="news-date">June 10, 2026</div>
-                <h3>MEET-UP SIG OPEN EDUCATION: CONNECTING THE OPENS</h3>
-                <p>Open Science and Open Education are both growing, but are they also growing towards one another?</p>
-                <a href="#">Continue reading →</a>
-            </div>
-        </article>
-
-        <article class="news-card">
-            <img src="2.png" alt="Barcamp OSC-NL">
-            <div class="news-content">
-                <div class="news-date">May 26, 2026</div>
-                <h3>OSC-NL Barcamp + National Open Science Festival 2026 🌍</h3>
-                <p>This October, Delft will become the meeting place for the Dutch open science community...</p>
-                <a href="#">Continue reading →</a>
-            </div>
-        </article>
-
-        <article class="news-card">
-            <img src="turning the tide- stories of open science.jpeg" alt="Turning the Tide">
-            <div class="news-content">
-                <div class="news-date">April 16, 2026</div>
-                <h3>Turning the Tide: Stories of Open Science 🌊</h3>
-                <p>Researchers share personal turning points that led them toward open science.</p>
-                <a href="#">Continue reading →</a>
-            </div>
-        </article>
-
+    <div class="news-item">
+        <div class="news-date">June 10, 2026</div>
+        <div class="news-title">
+            MEET-UP SIG OPEN EDUCATION: CONNECTING THE OPENS
+        </div>
+        <a href="#" class="news-link">→</a>
     </div>
+
+    <div class="news-item">
+        <div class="news-date">May 26, 2026</div>
+        <div class="news-title">
+            OSC-NL Barcamp + National Open Science Festival 2026 🌍
+        </div>
+        <a href="#" class="news-link">→</a>
+    </div>
+
+    <div class="news-item">
+        <div class="news-date">April 16, 2026</div>
+        <div class="news-title">
+            Turning the Tide: Stories of Open Science 🌊
+        </div>
+        <a href="#" class="news-link">→</a>
+    </div>
+
+</div>
 
     <div class="news-button-wrapper">
         <a href="#" class="btn secondary">View all news</a>
