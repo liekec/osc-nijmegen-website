@@ -231,6 +231,8 @@ body {
     50% { transform: rotate(45deg) translateY(8px); }
 }
 
+
+    
 /* TEAM */
 .team-wrapper {
     display: flex;
@@ -283,6 +285,90 @@ footer {
     color: #777;
     font-size: 0.9rem;
 }
+
+/* NEWS SECTION */
+.news-section {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 40px;
+    font-family: "Playfair Display", serif;
+}
+
+/* GRID */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* CARD */
+.news-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 18px;
+}
+
+.news-date {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.news-card h3 {
+    font-size: 1.05rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.news-card a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* BUTTON WRAPPER */
+.news-button-wrapper {
+    margin-top: 35px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    
 </style>
 </head>
 
@@ -353,6 +439,50 @@ footer {
     <div class="scroll-down">
         <span></span>
     </div>
+</section>
+
+<section class="flash soft news-section">
+
+    <h2 class="section-title">Latest News</h2>
+
+    <div class="news-grid">
+
+        <article class="news-card">
+            <img src="news1.jpg" alt="SIG Open Education Meeting">
+            <div class="news-content">
+                <div class="news-date">June 10, 2026</div>
+                <h3>MEET-UP SIG OPEN EDUCATION: CONNECTING THE OPENS</h3>
+                <p>Open Science and Open Education are both growing, but are they also growing towards one another?</p>
+                <a href="#">Continue reading →</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="news2.jpg" alt="Barcamp OSC-NL">
+            <div class="news-content">
+                <div class="news-date">May 26, 2026</div>
+                <h3>OSC-NL Barcamp + National Open Science Festival 2026 🌍</h3>
+                <p>This October, Delft will become the meeting place for the Dutch open science community...</p>
+                <a href="#">Continue reading →</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="news3.jpg" alt="Turning the Tide">
+            <div class="news-content">
+                <div class="news-date">April 16, 2026</div>
+                <h3>Turning the Tide: Stories of Open Science 🌊</h3>
+                <p>Researchers share personal turning points that led them toward open science.</p>
+                <a href="#">Continue reading →</a>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="news-button-wrapper">
+        <a href="#" class="btn secondary">View all news</a>
+    </div>
+
 </section>
 
 <section class="flash tint">
