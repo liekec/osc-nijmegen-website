@@ -264,12 +264,21 @@ body {
 }
 
 .member img {
-    width: 150px;
-    height: 150px;
+    width: 165px;
+    height: 165px;
     border-radius: 50%;
     object-fit: cover;
+
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     margin-bottom: 12px;
-    border: 3px solid #eaeaea;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.member img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 
 .member h3 {
@@ -308,7 +317,21 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 35px;
+    margin-top: 50px;
+}
+
+.team-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.team-btn .arrow {
+    transition: transform 0.2s ease;
+}
+
+.team-btn:hover .arrow {
+    transform: translateX(4px);
 }
 
 /* SECTIONS */
@@ -582,7 +605,9 @@ footer {
     </div>
 
 <div class="team-button-wrapper">
-    <a href="#" class="btn secondary">Meet the team</a>
+    <a href="#" class="btn secondary team-btn">
+    Meet the team <span class="arrow">→</span>
+</a>
 </div>
     
 </section>
