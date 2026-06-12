@@ -295,7 +295,9 @@ footer {
     font-size: 2rem;
     color: var(--blue);
     margin-bottom: 40px;
-    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
 }
 
 /* GRID */
@@ -315,8 +317,22 @@ footer {
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     text-align: left;
+
+    display: flex;
+    flex-direction: column;
 }
 
+.news-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.news-content p {
+    flex-grow: 1;
+}
+    
 .news-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 28px rgba(0,0,0,0.10);
