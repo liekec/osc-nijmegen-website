@@ -339,16 +339,25 @@ body {
     box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
-.topbar nav a {
+.topbar nav {
+    display: flex;
+    gap: 18px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* alleen gewone links */
+.topbar nav > a {
     display: flex;
     align-items: center;
 }
 
-    .dropdown {
-    display: flex;
-    align-items: center;
+/* dropdown NIET aanraken */
+.dropdown {
+    display: inline-block;
 }
 
+/* home icon fix */
 .topbar nav a.home svg {
     display: block;
 }
