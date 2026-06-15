@@ -14,47 +14,45 @@
 
 <header class="topbar">
 
-    <a class="logo" href="#">
+    <a class="logo" href="index.html">
         <img src="OSCN logo transparant.png" alt="OSCN Logo">
     </a>
 
-<nav>
+    <nav>
 
-    <a href="#" class="home" aria-label="Home">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 10.5L12 3l9 7.5"></path>
-            <path d="M5 10v10h5v-6h4v6h5V10"></path>
-        </svg>
-    </a>
+        <a href="index.html" class="home" aria-label="Home">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 10v10h5v-6h4v6h5V10"></path>
+            </svg>
+        </a>
 
-    <div class="dropdown">
-        <a href="#">About</a>
-        <div class="dropdown-content">
-            <a href="#">Resources</a>
-            <a href="#">Contact</a>
+        <div class="dropdown">
+            <a href="#">About</a>
+            <div class="dropdown-content">
+                <a href="#">Resources</a>
+                <a href="#">Contact</a>
+            </div>
         </div>
-    </div>
 
-    <a href="#">Events</a>
+        <a href="#">Events</a>
 
-    <div class="dropdown">
-        <a href="news.html">News</a>
-        <div class="dropdown-content">
+        <div class="dropdown">
             <a href="news.html">News</a>
-            <a href="#">Newsletter</a>
-            <a href="#">Newsletter Subscription</a>
+            <div class="dropdown-content">
+                <a href="news.html">News</a>
+                <a href="#">Newsletter</a>
+                <a href="#">Newsletter Subscription</a>
+            </div>
         </div>
-    </div>
 
-    <a href="#">Members</a>
+        <a href="#">Members</a>
 
-    <a href="#">Contact Persons</a>
+        <a href="#">Contact Persons</a>
 
-    <a href="#" class="join-btn">Join</a>
+        <a href="#" class="join-btn">Join</a>
 
-</nav>
-
-    <div></div>
+    </nav>
 
 </header>
 
@@ -70,7 +68,7 @@
 
         <div class="buttons">
             <a class="btn primary">Become a member</a>
-            <a class="btn secondary">Upcoming events</a>
+            <a class="btn secondary" href="news.html">Upcoming events</a>
         </div>
     </div>
 
@@ -79,67 +77,40 @@
     </div>
 </section>
 
-<section class="flash">
-
-    <div class="section-header">
-        <div class="section-kicker">ABOUT OSCN</div>
-        <h2 class="section-title">What we do</h2>
-    </div>
-
-    <div class="about-text">
-        <p style="margin-bottom: 18px;">
-            Open Science Community Nijmegen (OSCN) is a bottom-up network of researchers across Nijmegen who are passionate about making Open Science the norm in scholarly practice. Guided by values of openness, fairness, diversity, and inclusivity, we aim to foster a more open research culture by connecting people and sharing knowledge.
-        </p>
-
-        <p style="margin-bottom: 18px;">
-            Our goals are to engage researchers with Open Science, support them in exploring and adopting open practices, and empower them to help shape research culture, infrastructure, and policy. We do this through events, workshops, and discussions that bring the community together in practice.
-        </p>
-
-<p>
-    OSCN is part of the national 
-    <a href="https://osc-international.com/open-science-community-the-netherlands/" target="_blank" rel="noopener noreferrer">
-        Open Science Communities Netherlands (OSC-NL)
-    </a>
-    and the 
-    <a href="https://osc-international.com/" target="_blank" rel="noopener noreferrer">
-        International Network of Open Science and Scholarship Communities
-    </a>
-.
-</p>
-    </div>
-
-</section>
-
 <section class="flash soft news-section">
 
     <h2 class="section-title">Latest News</h2>
 
-    <div class="news-grid" id="home-news"></div>
+    <div class="news-grid">
 
-    <script>
-function renderHomeNews() {
-    const container = document.getElementById("home-news");
-
-    const latest = [...articles]
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .slice(0, 3);
-
-    container.innerHTML = latest.map(a => `
         <article class="news-card">
-            <img src="${a.image}" alt="${a.title}">
+            <img src="open education.png" alt="">
             <div class="news-content">
-                <div class="news-date">${a.date}</div>
-                <h3>${a.title}</h3>
-                <p>${a.excerpt}</p>
-                <a href="${a.link}?id=${a.id}">Continue reading →</a>
+                <div class="news-date">June 10, 2026</div>
+                <h3>MEET-UP SIG OPEN EDUCATION</h3>
+                <p>Open Science and Open Education are both growing...</p>
+                <a href="news.html">Continue reading →</a>
             </div>
         </article>
-    `).join("");
-}
 
-renderHomeNews();
-</script>
-    
+        <article class="news-card">
+            <img src="2.png" alt="">
+            <div class="news-content">
+                <div class="news-date">May 26, 2026</div>
+                <h3>OSC-NL Barcamp</h3>
+                <p>Delft becomes the meeting place for open science...</p>
+                <a href="news.html">Continue reading →</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="turning the tide- stories of open science.jpeg" alt="">
+            <div class="news-content">
+                <div class="news-date">April 16, 2026</div>
+                <h3>Turning the Tide</h3>
+                <p>Researchers share personal turning points...</p>
+                <a href="news.html">Continue reading →</a>
+            </div>
         </article>
 
     </div>
@@ -150,74 +121,25 @@ renderHomeNews();
 
 </section>
 
-<section class="flash tint">
+<section class="flash">
 
-<div class="section-header">
-    <div class="section-kicker">The people behind OSCN</div>
-    <h2 class="section-title">Organising Team</h2>
-</div>
-
-    <div class="team-wrapper">
-        <div class="team">
-
-            <div class="member">
-                <img src="images/anita.jpeg" alt="Anita">
-                <h3>Anita Eerland</h3>
-                <p>Radboud University</p>
-            </div>
-
-            <div class="member">
-                <img src="images/max.png" alt="Max">
-                <h3>Max Cenci</h3>
-                <p>Radboud UMC</p>
-            </div>
-
-            <div class="member">
-                <img src="images/Lieke.jpeg" alt="Lieke">
-                <h3>Lieke Corbeek</h3>
-                <p>Radboud University</p>
-            </div>
-
-            <div class="member">
-                <img src="images/Tim.png" alt="Tim">
-                <h3>Tim Middeldorp</h3>
-                <p>Radboud University</p>
-            </div>
-
-            <div class="member">
-                <img src="images/Karin.jpg" alt="Karin">
-                <h3>Karin Kastens</h3>
-                <p>Max Planck Institute</p>
-            </div>
-
-        </div>
+    <div class="section-header">
+        <div class="section-kicker">ABOUT OSCN</div>
+        <h2 class="section-title">What we do</h2>
     </div>
 
-<div class="team-button-wrapper">
-    <a href="#" class="btn secondary team-btn">
-    Meet the team <span class="arrow">→</span>
-</a>
-</div>
-    
+    <div class="about-text">
+        <p>
+            Open Science Community Nijmegen is a network of researchers promoting openness and collaboration.
+        </p>
+    </div>
+
 </section>
 
 <footer>
     © 2026 Open Science Community Nijmegen
 </footer>
 
-<script>
-window.addEventListener("scroll", function () {
-    const topbar = document.querySelector(".topbar");
-    if (window.scrollY > 50) {
-        topbar.classList.add("scrolled");
-    } else {
-        topbar.classList.remove("scrolled");
-    }
-});
-</script>
-
-<script src="articles.js"></script>
-    
 </body>
 </html>
 
