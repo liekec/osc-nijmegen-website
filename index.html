@@ -7,9 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
- <!-- BEGIN CSS -->
-
-    <style>
+<style>
 :root {
     --blue: #002060;
     --accent: #BE311A;
@@ -191,25 +189,6 @@ body {
     max-width: 900px;
     z-index: 1;
 }
-
-<div class="hero-network">
-    <svg viewBox="0 0 500 500" fill="none">
-        <line x1="100" y1="100" x2="220" y2="150" />
-        <line x1="220" y1="150" x2="320" y2="80" />
-        <line x1="220" y1="150" x2="280" y2="280" />
-        <line x1="280" y1="280" x2="400" y2="220" />
-        <line x1="280" y1="280" x2="180" y2="380" />
-        <line x1="180" y1="380" x2="350" y2="420" />
-
-        <circle cx="100" cy="100" r="8" />
-        <circle cx="220" cy="150" r="10" />
-        <circle cx="320" cy="80" r="8" />
-        <circle cx="280" cy="280" r="12" />
-        <circle cx="400" cy="220" r="8" />
-        <circle cx="180" cy="380" r="8" />
-        <circle cx="350" cy="420" r="10" />
-    </svg>
-</div>
 
 .tag {
     font-size: 0.85rem;
@@ -475,7 +454,8 @@ body {
 }
 
 .about-text a:hover {
-    text-decoration: underline;}
+    text-decoration: underline;
+}
 
 /* SECTIONS */
 .flash { padding: 90px 8vw; }
@@ -587,54 +567,8 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-
-.hero-network {
-    opacity: 0.25;
-}
-
-.hero-network line {
-    stroke: var(--blue);
-    stroke-width: 1.5;
-}
-
-.hero-network circle {
-    fill: white;
-    stroke: var(--accent);
-    stroke-width: 3;
-}
-
-.hero-network {
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 450px;
-    height: 450px;
-    opacity: 0.25;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.hero-network svg {
-    width: 100%;
-    height: 100%;
-}
-
-.hero-network line {
-    stroke: var(--blue);
-    stroke-width: 1.5;
-}
-
-.hero-network circle {
-    fill: white;
-    stroke: var(--accent);
-    stroke-width: 3;
-}
-     
-</style>
-
- <!-- EIND CSS -->
     
+</style>
 </head>
 
 <body>
@@ -689,7 +623,7 @@ footer {
     <div class="hero-content">
         <div class="tag">OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY</div>
 
-<h1>Open Science<br>Community Nijmegen</h1>
+        <h1>Open Science<br>Community Nijmegen</h1>
 
         <p>
             The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative.
@@ -699,28 +633,6 @@ footer {
             <a class="btn primary">Become a member</a>
             <a class="btn secondary">Upcoming events</a>
         </div>
-
-<div class="hero-network">
-    <svg viewBox="0 0 500 500">
-
-        <line x1="100" y1="100" x2="220" y2="150"/>
-        <line x1="220" y1="150" x2="320" y2="80"/>
-        <line x1="220" y1="150" x2="280" y2="280"/>
-        <line x1="280" y1="280" x2="400" y2="220"/>
-        <line x1="280" y1="280" x2="180" y2="380"/>
-        <line x1="180" y1="380" x2="350" y2="420"/>
-
-        <circle cx="100" cy="100" r="8"/>
-        <circle cx="220" cy="150" r="10"/>
-        <circle cx="320" cy="80" r="8"/>
-        <circle cx="280" cy="280" r="12"/>
-        <circle cx="400" cy="220" r="8"/>
-        <circle cx="180" cy="380" r="8"/>
-        <circle cx="350" cy="420" r="10"/>
-
-    </svg>
-</div>
-     
     </div>
 
     <div class="scroll-down">
@@ -868,6 +780,9 @@ window.addEventListener("scroll", function () {
     }
 });
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
