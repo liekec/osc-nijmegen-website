@@ -7,7 +7,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-<style>
+ /* BEGIN CSS */
+
+    <style>
 :root {
     --blue: #002060;
     --accent: #BE311A;
@@ -189,6 +191,25 @@ body {
     max-width: 900px;
     z-index: 1;
 }
+
+<div class="hero-network">
+    <svg viewBox="0 0 500 500" fill="none">
+        <line x1="100" y1="100" x2="220" y2="150" />
+        <line x1="220" y1="150" x2="320" y2="80" />
+        <line x1="220" y1="150" x2="280" y2="280" />
+        <line x1="280" y1="280" x2="400" y2="220" />
+        <line x1="280" y1="280" x2="180" y2="380" />
+        <line x1="180" y1="380" x2="350" y2="420" />
+
+        <circle cx="100" cy="100" r="8" />
+        <circle cx="220" cy="150" r="10" />
+        <circle cx="320" cy="80" r="8" />
+        <circle cx="280" cy="280" r="12" />
+        <circle cx="400" cy="220" r="8" />
+        <circle cx="180" cy="380" r="8" />
+        <circle cx="350" cy="420" r="10" />
+    </svg>
+</div>
 
 .tag {
     font-size: 0.85rem;
@@ -456,39 +477,6 @@ body {
 .about-text a:hover {
     text-decoration: underline;}
 
-.hero-stats {
-    display: flex;
-    gap: 50px;
-    margin-top: 50px;
-}
-
-.hero-stats strong {
-    display: block;
-    font-size: 2rem;
-    color: var(--blue);
-}
-
-.hero-stats span {
-    color: #666;
-}
-
-<div class="hero-stats">
-    <div>
-        <strong>200+</strong>
-        <span>Members</span>
-    </div>
-
-    <div>
-        <strong>30+</strong>
-        <span>Events</span>
-    </div>
-
-    <div>
-        <strong>8</strong>
-        <span>Partner institutes</span>
-    </div>
-</div>
-
 /* SECTIONS */
 .flash { padding: 90px 8vw; }
 .flash.soft { background: var(--bg-soft); }
@@ -599,8 +587,26 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.hero-network {
+    opacity: 0.25;
+}
+
+.hero-network line {
+    stroke: var(--blue);
+    stroke-width: 1.5;
+}
+
+.hero-network circle {
+    fill: white;
+    stroke: var(--accent);
+    stroke-width: 3;
+}
     
 </style>
+
+/* EIND CSS */
+    
 </head>
 
 <body>
