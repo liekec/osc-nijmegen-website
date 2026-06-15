@@ -454,8 +454,40 @@ body {
 }
 
 .about-text a:hover {
-    text-decoration: underline;
+    text-decoration: underline;}
+
+.hero-stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
 }
+
+.hero-stats strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--blue);
+}
+
+.hero-stats span {
+    color: #666;
+}
+
+<div class="hero-stats">
+    <div>
+        <strong>200+</strong>
+        <span>Members</span>
+    </div>
+
+    <div>
+        <strong>30+</strong>
+        <span>Events</span>
+    </div>
+
+    <div>
+        <strong>8</strong>
+        <span>Partner institutes</span>
+    </div>
+</div>
 
 /* SECTIONS */
 .flash { padding: 90px 8vw; }
@@ -623,11 +655,7 @@ footer {
     <div class="hero-content">
         <div class="tag">OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY</div>
 
-        <h1>
-  Open Science<br>
-  Community<br>
-  Nijmegen
-</h1>
+<h1>Open Science<br>Community Nijmegen</h1>
 
         <p>
             The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative.
