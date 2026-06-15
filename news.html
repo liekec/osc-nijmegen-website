@@ -11,17 +11,47 @@
 <body>
 
 <header class="topbar">
+
     <a class="logo" href="index.html">
-        <img src="OSCN logo transparant.png">
+        <img src="OSCN logo transparant.png" alt="OSCN Logo">
     </a>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="news.html">News</a>
+
+        <a href="index.html" class="home" aria-label="Home">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 10v10h5v-6h4v6h5V10"></path>
+            </svg>
+        </a>
+
+        <div class="dropdown">
+            <a href="#">About</a>
+            <div class="dropdown-content">
+                <a href="#">Resources</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+
         <a href="#">Events</a>
+
+        <div class="dropdown">
+            <a href="news.html">News</a>
+            <div class="dropdown-content">
+                <a href="news.html">News</a>
+                <a href="#">Newsletter</a>
+                <a href="#">Newsletter Subscription</a>
+            </div>
+        </div>
+
         <a href="#">Members</a>
+
+        <a href="#">Contact Persons</a>
+
         <a href="#" class="join-btn">Join</a>
+
     </nav>
+
 </header>
 
 <section class="flash">
