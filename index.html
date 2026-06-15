@@ -115,7 +115,31 @@
     <h2 class="section-title">Latest News</h2>
 
     <div class="news-grid" id="home-news"></div>
-           
+
+    <script>
+function renderHomeNews() {
+    const container = document.getElementById("home-news");
+
+    const latest = [...articles]
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 3);
+
+    container.innerHTML = latest.map(a => `
+        <article class="news-card">
+            <img src="${a.image}" alt="${a.title}">
+            <div class="news-content">
+                <div class="news-date">${a.date}</div>
+                <h3>${a.title}</h3>
+                <p>${a.excerpt}</p>
+                <a href="${a.link}?id=${a.id}">Continue reading →</a>
+            </div>
+        </article>
+    `).join("");
+}
+
+renderHomeNews();
+</script>
+    
         </article>
 
     </div>
