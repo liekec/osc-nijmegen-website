@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News | OSCN</title>
+<title>Open Science Community Nijmegen</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
@@ -56,49 +56,89 @@
 
 </header>
 
+<section class="hero">
+    <div class="hero-content">
+        <div class="tag">OPEN SCIENCE • REPRODUCIBILITY • COMMUNITY</div>
+
+        <h1>Open Science<br>Community Nijmegen</h1>
+
+        <p>
+            The Open Science Community Nijmegen (OSCN) brings together researchers, students and professionals committed to making research more transparent, reproducible and collaborative.
+        </p>
+
+        <div class="buttons">
+            <a class="btn primary">Become a member</a>
+            <a class="btn secondary" href="news.html">Upcoming events</a>
+        </div>
+    </div>
+
+    <div class="scroll-down">
+        <span></span>
+    </div>
+</section>
+
 <section class="flash soft news-section">
 
-    <div class="section-header">
-    <div class="section-kicker">OSCN UPDATES</div>
-    <h2 class="section-title">News</h2>
-</div>
+    <h2 class="section-title">Latest News</h2>
 
-    <div class="news-grid" id="all-news"></div>
+    <div class="news-grid">
 
-    <script>
-function renderAllNews() {
-    const container = document.getElementById("all-news");
-
-    const sorted = [...articles]
-        .sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    container.innerHTML = sorted.map(a => `
         <article class="news-card">
-            <img src="${a.image}" alt="${a.title}">
+            <img src="open education.png" alt="">
             <div class="news-content">
-                <div class="news-date">${a.date}</div>
-                <h3>${a.title}</h3>
-                <p>${a.excerpt}</p>
-                <a href="${a.link}?id=${a.id}">Continue reading →</a>
+                <div class="news-date">June 10, 2026</div>
+                <h3>MEET-UP SIG OPEN EDUCATION</h3>
+                <p>Open Science and Open Education are both growing...</p>
+                <a href="news.html">Continue reading →</a>
             </div>
         </article>
-    `).join("");
-}
 
-renderAllNews();
-</script>
+        <article class="news-card">
+            <img src="2.png" alt="">
+            <div class="news-content">
+                <div class="news-date">May 26, 2026</div>
+                <h3>OSC-NL Barcamp</h3>
+                <p>Delft becomes the meeting place for open science...</p>
+                <a href="news.html">Continue reading →</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="turning the tide- stories of open science.jpeg" alt="">
+            <div class="news-content">
+                <div class="news-date">April 16, 2026</div>
+                <h3>Turning the Tide</h3>
+                <p>Researchers share personal turning points...</p>
+                <a href="news.html">Continue reading →</a>
+            </div>
         </article>
 
     </div>
 
+    <div class="news-button-wrapper">
+        <a href="news.html" class="btn secondary">View all news</a>
+    </div>
+
 </section>
 
+<section class="flash">
+
+    <div class="section-header">
+        <div class="section-kicker">ABOUT OSCN</div>
+        <h2 class="section-title">What we do</h2>
+    </div>
+
+    <div class="about-text">
+        <p>
+            Open Science Community Nijmegen is a network of researchers promoting openness and collaboration.
+        </p>
+    </div>
+
+</section>
 
 <footer>
-    © 2026 OSCN
+    © 2026 Open Science Community Nijmegen
 </footer>
-    
-<script src="articles.js"></script>
-    
+
 </body>
 </html>
