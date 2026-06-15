@@ -622,3 +622,11 @@ footer {
     }
 
 }
+
+.team-grid{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
