@@ -630,3 +630,9 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+@media (max-width: 900px){
+    .team-grid{
+        grid-template-columns: 1fr !important;
+    }
+}
