@@ -636,3 +636,7 @@ footer {
         grid-template-columns: 1fr !important;
     }
 }
+
+.team-grid{
+    border: 5px solid red;
+}
