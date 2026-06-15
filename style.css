@@ -427,6 +427,11 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    transition: transform 0.3s ease;
+}
+
+.team-btn:hover {
+    transform: translateY(-4px);
 }
 
 .team-btn .arrow {
