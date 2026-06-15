@@ -1,13 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>News</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News | OSCN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --blue: #002060;
+    --accent: #BE311A;
+    --bg-hero: #f3f5f8;
+    --bg-soft: #f7f7f7;
+    --bg-tint: #eef3fb;
+    --text: #1f1f1f;
+
+    /* spacing system */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 48px;
+    --space-xl: 90px;
+
+    /* readability */
+    --line-height: 1.7;
+}
+
+/* BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--text);
+    padding-top: 70px;
+}
+
+/* NAVBAR */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 0 40px;
+    background: var(--bg-hero);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.topbar.scrolled {
+    background: white;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.topbar nav a.join-btn {
+    background: var(--accent);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topbar nav a.join-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(190,49,26,0.25);
+}
+
+/* LOGO */
+.topbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.topbar .logo img {
+    height: 42px;
+    cursor: pointer;
+}
+
+/* NAV RIGHT */
+.topbar nav {
+    display: flex;
+    gap: 18px;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin-right: 30px;
+}
+
+.topbar nav a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 500;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* HOME ICON */
+.topbar nav a.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.topbar nav a.home svg {
+    stroke: var(--blue);
+}
+
+/* DROPDOWNS */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: (100%);
+    left: 0;
+    min-width: 220px;
+    background: white;
+    border-radius: 10px;
+    padding: 8px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    z-index: 1001;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+}
+
+.dropdown-content a:hover {
+    background: #f5f7fb;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+    
+/* HERO */
+.hero {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8vw;
+    position: relative;
+    background: var(--bg-hero);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(0,32,96,0.08), transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(190,49,26,0.10), transparent 45%);
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(190,49,26,0.35) 0%, rgba(190,49,26,0.15) 30%, transparent 70%);
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 900px;
+    z-index: 1;
+}
+
+.tag {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    color: var(--blue);
+    line-height: 1.05;
+    margin-bottom: 22px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 720px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn.secondary {
+    border: 2px solid var(--blue);
+    color: var(--blue);
+}
+
+/* SCROLL ARROW */
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-down span {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-right: 3px solid var(--blue);
+    border-bottom: 3px solid var(--blue);
+    transform: rotate(45deg);
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(8px); }
+}
+
+.about-text {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+}
+
+.flash {
+    padding: var(--space-xl) 8vw;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: var(--blue);
+    margin-bottom: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+}
+
+.news-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.about-text a {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.about-text a:hover {
+    text-decoration: none;
+}
+
+.about-text a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.about-text a:hover::after {
+    transform: scaleX(1);
+}
+
+.news-card {
+    border-radius: 16px;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.topbar.scrolled {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.topbar nav {
+    display: flex;
+    gap: 18px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* alleen gewone links */
+.topbar nav > a {
+    display: flex;
+    align-items: center;
+}
+
+/* dropdown NIET aanraken */
+.dropdown {
+    display: inline-block;
+}
+
+/* home icon fix */
+.topbar nav a.home svg {
+    display: block;
+}
+    
+/* TEAM */
+.team-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.member img {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    margin-bottom: 12px;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.member img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.member h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: var(--blue);
+}
+
+.member p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .team {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-kicker {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.team-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.team-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.team-btn .arrow {
+    transition: transform 0.2s ease;
+}
+
+.team-btn:hover .arrow {
+    transform: translateX(4px);
+}
+
+.about-text a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.about-text a:hover {
+    text-decoration: underline;
+}
+
+/* SECTIONS */
+.flash { padding: 90px 8vw; }
+.flash.soft { background: var(--bg-soft); }
+.flash.tint { background: var(--bg-tint); }
+
+footer {
+    text-align: center;
+    padding: 50px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* NEWS SECTION */
+.news-section {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+/* GRID */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* CARD */
+.news-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.news-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.news-content p {
+    flex-grow: 1;
+}
+    
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 18px;
+}
+
+.news-date {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.news-card h3 {
+    font-size: 1.05rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.news-card a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* BUTTON WRAPPER */
+.news-button-wrapper {
+    margin-top: 35px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    
+</style>
+
 </head>
 <body>
-
-<h1>News pagina</h1>
-<p>Dit is mijn eerste aparte pagina 🎉</p>
-
-</body>
-</html>
