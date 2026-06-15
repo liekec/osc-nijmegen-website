@@ -602,7 +602,35 @@ footer {
     stroke: var(--accent);
     stroke-width: 3;
 }
-    
+
+.hero-network {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 450px;
+    height: 450px;
+    opacity: 0.25;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-network svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-network line {
+    stroke: var(--blue);
+    stroke-width: 1.5;
+}
+
+.hero-network circle {
+    fill: white;
+    stroke: var(--accent);
+    stroke-width: 3;
+}
+     
 </style>
 
  <!-- EIND CSS -->
@@ -671,6 +699,28 @@ footer {
             <a class="btn primary">Become a member</a>
             <a class="btn secondary">Upcoming events</a>
         </div>
+
+<div class="hero-network">
+    <svg viewBox="0 0 500 500">
+
+        <line x1="100" y1="100" x2="220" y2="150"/>
+        <line x1="220" y1="150" x2="320" y2="80"/>
+        <line x1="220" y1="150" x2="280" y2="280"/>
+        <line x1="280" y1="280" x2="400" y2="220"/>
+        <line x1="280" y1="280" x2="180" y2="380"/>
+        <line x1="180" y1="380" x2="350" y2="420"/>
+
+        <circle cx="100" cy="100" r="8"/>
+        <circle cx="220" cy="150" r="10"/>
+        <circle cx="320" cy="80" r="8"/>
+        <circle cx="280" cy="280" r="12"/>
+        <circle cx="400" cy="220" r="8"/>
+        <circle cx="180" cy="380" r="8"/>
+        <circle cx="350" cy="420" r="10"/>
+
+    </svg>
+</div>
+     
     </div>
 
     <div class="scroll-down">
