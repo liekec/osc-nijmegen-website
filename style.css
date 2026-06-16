@@ -658,3 +658,14 @@ footer {
         height: 220px;
     }
 }
+
+.center-block{
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.center-block p{
+    margin: 0;
+    line-height: 1.8;
+}
