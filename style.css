@@ -561,8 +561,9 @@ footer {
     .news-grid {
         grid-template-columns: 1fr;
     }
+}
 
-<!-- ABOUT PAGE --!>
+/* ABOUT PAGE */
     
 .team-grid{
     display:flex;
