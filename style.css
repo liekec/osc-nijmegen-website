@@ -576,13 +576,13 @@ footer {
 .team-card{
     display:grid;
     grid-template-columns:180px 1fr;
-    gap:32px;
+    gap:24px;
 
     background:#fff;
     border:1px solid #e5e7eb;
-    border-radius:16px;
+    border-radius:12px;
 
-    padding:24px;
+    padding:20px;
 
     box-shadow:none;
     transition:none;
@@ -594,10 +594,10 @@ footer {
 }
 
 .team-card img{
-    width:180px;
-    height:180px;
+    width:160px;
+    height:160px;
     object-fit:cover;
-    border-radius:12px;
+    border-radius:8px;
 }
 
 .team-card-content{
