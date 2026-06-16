@@ -637,8 +637,21 @@ footer {
     }
 }
 
+.team-grid{
+    margin-top: 0;
+}
+
 .team-intro{
     max-width: 900px;
-    margin: 0 auto 40px auto;
+    margin: 10px auto 50px auto;
     text-align: center;
+}
+
+.team-intro p{
+    margin: 0;
+    line-height: 1.8;
+}
+
+.section-header{
+    margin-bottom: 10px;
 }
