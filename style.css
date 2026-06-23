@@ -678,9 +678,9 @@ footer {
 
 .site-footer{
     background:#f7f8fa;
-    border-top:1px solid #dbe3e8;
+    border-top:1px solid #e5eaee;
     margin-top:100px;
-    padding:70px 0 25px;
+    padding:80px 0 25px;
 }
 
 .footer-container{
@@ -688,48 +688,86 @@ footer {
     margin:auto;
 
     display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:60px;
+    grid-template-columns:2.2fr 1fr 1fr 1fr;
+    gap:70px;
 }
 
 .footer-column h3{
-    font-size:28px;
+    font-size:30px;
+    font-weight:700;
+    color:#183c45;
     margin-bottom:18px;
-    color:#163c4a;
 }
 
 .footer-column h4{
+    font-size:15px;
+    font-weight:700;
+    color:#183c45;
+    text-transform:uppercase;
+    letter-spacing:1px;
     margin-bottom:18px;
-    font-size:18px;
-    color:#163c4a;
 }
 
 .footer-column p{
-    color:#666;
-    line-height:1.7;
+    color:#66737a;
+    line-height:1.8;
 }
 
 .footer-column a{
     display:block;
-    margin-bottom:12px;
-    color:#444;
+    color:#4a555c;
     text-decoration:none;
-    transition:.25s;
+    margin-bottom:12px;
+    transition:all .25s ease;
 }
 
 .footer-column a:hover{
     color:#0b7285;
-    padding-left:4px;
+    transform:translateX(4px);
 }
 
+/* Contact + Social icons */
+
+.social-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:fit-content;
+}
+
+.social-link svg{
+    width:20px;
+    height:20px;
+    flex-shrink:0;
+}
+
+/* Bottom */
+
 .footer-bottom{
+
     width:min(1200px,90%);
-    margin:50px auto 0;
-    padding-top:20px;
-    border-top:1px solid #dbe3e8;
-    text-align:center;
-    color:#777;
+    margin:60px auto 0;
+    padding-top:25px;
+
+    border-top:1px solid #dde4e8;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    color:#7a858b;
     font-size:14px;
+
+}
+
+.footer-bottom a{
+    margin-left:20px;
+    color:#7a858b;
+    text-decoration:none;
+}
+
+.footer-bottom a:hover{
+    color:#0b7285;
 }
 
 /* Responsive */
@@ -738,8 +776,33 @@ footer {
 
     .footer-container{
         grid-template-columns:1fr;
-        gap:40px;
+        gap:45px;
         text-align:center;
     }
 
+    .social-link{
+        margin:0 auto;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .footer-bottom a{
+        margin:0 10px;
+    }
+
+}
+
+.footer-column h3{
+    font-family:"Playfair Display", serif;
+}
+
+.footer-column h4,
+.footer-column p,
+.footer-column a,
+.footer-bottom{
+    font-family:"Inter", sans-serif;
 }
