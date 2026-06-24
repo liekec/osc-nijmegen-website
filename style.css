@@ -827,3 +827,64 @@ body {
     object-fit: contain;
     display: block;
 }
+
+.footer-col form {
+    margin-top: 14px;
+}
+
+/* container die Laposta vaak injecteert */
+.footer-col form,
+.footer-col div {
+    max-width: 100%;
+}
+
+/* INPUT styling */
+.footer-col input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.05);
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+.footer-col input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.footer-col input[type="email"]:focus {
+    border-color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.08);
+}
+
+/* SUBMIT BUTTON */
+.footer-col button,
+.footer-col input[type="submit"] {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: none;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* hover effect */
+.footer-col button:hover,
+.footer-col input[type="submit"]:hover {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+/* Laposta sometimes wraps buttons */
+.footer-col form button {
+    margin-top: 0;
+}
