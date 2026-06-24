@@ -897,8 +897,4 @@ body {
     line-height: 1.4;
 }
 
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
+
