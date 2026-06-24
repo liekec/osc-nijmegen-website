@@ -819,3 +819,11 @@ body {
   width: 18px;
   height: 18px;
 }
+
+.footer-logo {
+    height: 32px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    display: block;
+}
