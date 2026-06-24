@@ -797,3 +797,8 @@ body {
         text-align: center;
     }
 }
+
+.footer svg {
+  width: 18px;
+  height: 18px;
+}
