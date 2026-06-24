@@ -695,6 +695,12 @@ body {
     margin: 0 auto;
 }
 
+.footer-logo {
+    height: 40px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
 .footer-col h3 {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
@@ -728,16 +734,28 @@ body {
     margin-top: 10px;
 }
 
-.social-link svg {
-    width: 22px;
-    height: 22px;
-    fill: #cbd5e1;
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 14px;
     transition: 0.2s ease;
 }
 
-.social-link:hover svg {
-    fill: #ffffff;
-    transform: translateY(-2px);
+.social-link span {
+    transition: 0.2s ease;
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.social-link:hover {
+    color: #ffffff;
 }
 
 /* newsletter button */
