@@ -896,3 +896,9 @@ body {
     margin: 8px 0 0 0;
     line-height: 1.4;
 }
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
