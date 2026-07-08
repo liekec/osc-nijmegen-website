@@ -33,7 +33,7 @@ card.innerHTML = `
 
 <img 
 class="member-photo"
-src="${member.photo || 'images/members/default-profile.png'}"
+src="${member.photo || '../images/members/default-profile.png'}"
 alt="${member.firstName} ${member.lastName}">
 
 
