@@ -1,0 +1,35 @@
+[
+  {
+    "firstName": "Anna",
+    "lastName": "Jansen",
+    "email": "anna.jansen@ru.nl",
+    "position": "PhD Candidate",
+    "institute": "Radboud University",
+    "unit": "Science",
+    "expertise": [
+      "Open Data",
+      "FAIR",
+      "GitHub"
+    ],
+    "interests": [
+      "Open Access",
+      "Replication"
+    ]
+  },
+  {
+    "firstName": "Mark",
+    "lastName": "Peters",
+    "email": "mark.peters@radboudumc.nl",
+    "position": "Assistant Professor",
+    "institute": "Radboudumc",
+    "unit": "Medicine",
+    "expertise": [
+      "Reproducibility",
+      "Registered Reports"
+    ],
+    "interests": [
+      "Open Review",
+      "FAIR"
+    ]
+  }
+]
