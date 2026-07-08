@@ -1,213 +1,73 @@
-let allMembers = [];
+const sheetURL = "https://opensheet.elk.sh/1-xLa6VPYhSVbPR40bHJCF8nnQgSGWAOa3sb4yjjVfkU/1";
+
+let members = [];
 
 
-fetch("../data/members.json")
+fetch(sheetURL)
 .then(response => response.json())
-.then(members => {
+.then(data => {
 
-    allMembers = members;
+    members = data;
 
-    displayMembers(allMembers);
+    displayMembers(members);
 
-
+})
+.catch(error => {
+    console.error("Error loading members:", error);
 });
 
 
 
-function displayMembers(members) {
+function displayMembers(list) {
 
-    const container = document.querySelector(".members-grid");
+    const grid = document.querySelector(".members-grid");
 
-    container.innerHTML = "";
-
-
-    members.forEach(member => {
+    grid.innerHTML = "";
 
 
-        const card = document.createElement("div");
+    list.forEach(member => {
 
-        card.className = "member-card";
+        grid.innerHTML += `
 
+        <article class="team-card">
 
-card.innerHTML = `
+            <div class="team-card-content">
 
-<img 
-class="member-photo"
-src="${member.photo || '../images/members/default-profile.png'}"
-alt="${member.firstName} ${member.lastName}">
-
-
-<h3>
-${member.firstName} ${member.lastName}
-</h3>
+                <h3>
+                    ${member.Name} ${member["Last name"]}
+                </h3>
 
 
-       <p class="member-position">
-    <strong>Position:</strong><br>
-    ${member.position}
-</p>
+                <div class="role">
+                    ${member.Position}
+                </div>
 
 
-<p>
-    <strong>Institute:</strong><br>
-    ${member.institute}
-</p>
+                <p>
+                    <strong>${member.Institute}</strong><br>
+                    ${member["Faculty / Department"]}
+                </p>
 
 
-<p>
-    <strong>Faculty / Department:</strong><br>
-    ${member.unit || "Not specified"}
-</p>
+                <p>
+                    <strong>Expertise</strong><br>
+                    ${member.Expertise}
+                </p>
 
 
-        <h4>Expertise</h4>
-
-        <div class="tags">
-        ${member.expertise.map(item =>
-            `<span>${item}</span>`
-        ).join("")}
-        </div>
+                <p>
+                    <a href="mailto:${member["E-mail"]}">
+                        ${member["E-mail"]}
+                    </a>
+                </p>
 
 
-        <h4>Interested in</h4>
+            </div>
 
-        <div class="tags">
-        ${member.interests.map(item =>
-            `<span>${item}</span>`
-        ).join("")}
-        </div>
-
-
-        <p class="member-email">
-        ✉ ${member.email}
-        </p>
-
+        </article>
 
         `;
 
-
-        container.appendChild(card);
-
-
     });
 
 }
-
-
-
-
-function filterMembers() {
-
-
-    const search =
-    document
-    .getElementById("search-input")
-    .value
-    .toLowerCase();
-
-
-    const institute =
-    document
-    .getElementById("institute-filter")
-    .value;
-
-
-    const position =
-    document
-    .getElementById("position-filter")
-    .value;
-
-
-    const expertise =
-    document
-    .getElementById("expertise-filter")
-    .value;
-
-
-    const interest =
-    document
-    .getElementById("interest-filter")
-    .value;
-
-
-
-    const filtered = allMembers.filter(member => {
-
-
-        return (
-
-        (
-        `${member.firstName} ${member.lastName}`
-        .toLowerCase()
-        .includes(search)
-        )
-
-
-        &&
-
-        (
-        institute === "" ||
-        member.institute === institute
-        )
-
-
-        &&
-
-        (
-        position === "" ||
-        member.position === position
-        )
-
-
-        &&
-
-        (
-        expertise === "" ||
-        member.expertise.includes(expertise)
-        )
-
-
-        &&
-
-        (
-        interest === "" ||
-        member.interests.includes(interest)
-        )
-
-
-        );
-
-    });
-
-
-    displayMembers(filtered);
-
-}
-
-
-
-
-
-document
-.getElementById("search-input")
-.addEventListener("input", filterMembers);
-
-
-document
-.getElementById("institute-filter")
-.addEventListener("change", filterMembers);
-
-
-document
-.getElementById("position-filter")
-.addEventListener("change", filterMembers);
-
-
-document
-.getElementById("expertise-filter")
-.addEventListener("change", filterMembers);
-
-
-document
-.getElementById("interest-filter")
-.addEventListener("change", filterMembers);
