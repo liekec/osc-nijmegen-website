@@ -1,21 +1,19 @@
 [
-  {
-    "firstName": "Anna",
-    "lastName": "Jansen",
-    "email": "anna.jansen@ru.nl",
-    "position": "PhD Candidate",
-    "institute": "Radboud University",
-    "unit": "Science",
-    "expertise": [
-      "Open Data",
-      "FAIR",
-      "GitHub"
-    ],
-    "interests": [
-      "Open Access",
-      "Replication"
-    ]
-  },
+{
+  "firstName": "Anna",
+  "lastName": "Jansen",
+  "email": "anna@example.com",
+  "position": "PhD Candidate",
+  "institute": "Radboud University",
+  "unit": "Social Sciences",
+  "photo": "images/members/default-profile.png",
+  "expertise": [
+    "FAIR"
+  ],
+  "interests": [
+    "Open Access"
+  ]
+},
   {
     "firstName": "Mark",
     "lastName": "Peters",
