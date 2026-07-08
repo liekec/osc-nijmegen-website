@@ -29,8 +29,8 @@ fetch("https://opensheet.elk.sh/1-xLa6VPYhSVbPR40bHJCF8nnQgSGWAOa3sb4yjjVfkU/1")
 
 
 
-        interests: member.Interests
-            ? member.Interests.split(",").map(item => item.trim())
+        interests: member.Interest
+            ? member.Interest.split(",").map(item => item.trim())
             : [],
 
 
