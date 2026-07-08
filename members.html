@@ -13,13 +13,213 @@
 
 <body>
 
-<header>
-    <h1>Members</h1>
+
+<header class="topbar">
+
+    <a class="logo" href="#">
+        <img src="images/OSCN logo transparant.png" alt="OSCN Logo">
+    </a>
+
+<nav>
+
+    <a href="index.html" class="home" aria-label="Home">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 10.5L12 3l9 7.5"></path>
+            <path d="M5 10v10h5v-6h4v6h5V10"></path>
+        </svg>
+    </a>
+
+    <div class="dropdown">
+        <a href="about.html">About</a>
+        <div class="dropdown-content">
+            <a href="#">Resources</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <a href="#">Events</a>
+
+    <div class="dropdown">
+        <a href="news.html">News</a>
+        <div class="dropdown-content">
+            <a href="news.html">News</a>
+            <a href="newsletters.html">Newsletters</a>
+            <a href="#">Newsletter Subscription</a>
+        </div>
+    </div>
+
+    <a href="members.html">Members</a>
+
+    <a href="#">Contact Persons</a>
+
+    <a href="#" class="join-btn">Join</a>
+
+</nav>
+
+    <div></div>
+
 </header>
 
-<section>
-    <p>Our community members will appear here.</p>
+
+<section class="flash">
+
+    <div class="section-header">
+        <div class="section-kicker">OUR COMMUNITY</div>
+        <h1 class="section-title">Members</h1>
+    </div>
+
+    <div class="members-intro">
+        <p>
+            Explore the Open Science Community Nijmegen members.
+            Search and connect with researchers, students and professionals
+            interested in open, transparent and reproducible research.
+        </p>
+    </div>
+
+
+    <div class="member-filters">
+
+        <input type="text" placeholder="Search members...">
+
+        <select>
+            <option>All institutes</option>
+            <option>Radboud University</option>
+            <option>Radboudumc</option>
+            <option>HAN University of Applied Sciences</option>
+            <option>Max Planck Institute for Psycholinguistics</option>
+        </select>
+
+        <select>
+            <option>All positions</option>
+            <option>Assistant Professor</option>
+            <option>Associate Professor</option>
+            <option>Full Professor</option>
+            <option>PhD Candidate</option>
+            <option>Postdoctoral Researcher</option>
+            <option>Researcher</option>
+            <option>Teacher</option>
+            <option>Student</option>
+        </select>
+
+    </div>
+
+
+    <div class="members-grid">
+
+
+        <div class="member-card">
+
+            <h3>Example Name</h3>
+
+            <p class="member-position">
+                PhD Candidate
+            </p>
+
+            <p>
+                Radboud University<br>
+                Science
+            </p>
+
+            <div class="tags">
+                <span>Open Data</span>
+                <span>FAIR</span>
+                <span>Reproducibility</span>
+            </div>
+
+            <p>
+                ✉ example@ru.nl
+            </p>
+
+        </div>
+
+
+    </div>
+
 </section>
+
+<footer class="footer">
+
+  <div class="footer-inner">
+
+    <div class="footer-col">
+      <img src="images/OSCN logo transparant.png" alt="OSCN Logo" class="footer-logo">
+      <p>
+        Open Science Community Nijmegen promotes open, transparent and reproducible research through community building and collaboration.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Navigate</h3>
+      <a href="#">About</a>
+      <a href="#">Events</a>
+      <a href="news.html">News</a>
+      <a href="#">Members</a>
+      <a href="#">Contact Persons</a>
+      <a href="#">Join</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>openscience.nijmegen@gmail.com</p>
+
+<div class="socials">
+  <a href="https://www.linkedin.com/company/open-science-community-nijmegen/" 
+     target="_blank" 
+     class="social-link">
+     
+    <svg viewBox="0 0 24 24">
+      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H12v2.2h.1C12.9 8.8 14.7 7.7 17 7.7c5 0 5.9 3.3 5.9 7.6V24h-5v-7.3c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24h-5V8z"/>
+    </svg>
+
+    <span>LinkedIn</span>
+
+  </a>
+</div>
+
+    </div>
+
+<div class="footer-col">
+  <h3>Stay updated</h3>
+  <p>Join our newsletter for updates on events and open science news.</p>
+
+  <form method="post" action="https://open-science-community-nijmegen.email-provider.eu/subscribe/post/index.php" accept-charset="utf-8" class="form-op7pq9fkox">
+
+    <input type="hidden" name="next" value="" />
+    <input type="hidden" name="a" value="ohz7mrmpse" />
+    <input type="hidden" name="l" value="op7pq9fkox" />
+
+    <label for="id-Kz6LqtiXnQ">Email *</label>
+    <input name="Kz6LqtiXnQ" id="id-Kz6LqtiXnQ" type="email" required>
+
+    <label for="id-P3Px8y6G0Y">First name</label>
+    <input name="P3Px8y6G0Y" id="id-P3Px8y6G0Y" type="text">
+
+    <label for="id-OTxNlZSNlG">Last name</label>
+    <input name="OTxNlZSNlG" id="id-OTxNlZSNlG" type="text">
+
+    <!-- spam honeypot -->
+    <input type="email" id="email" name="email" style="position:absolute;left:-9999px;">
+
+    <input type="submit" value="Subscribe" />
+
+  </form>
+
+  <script src="https://open-science-community-nijmegen.email-provider.eu/subscribe/check/validate.js"></script>
+
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Open Science Community Nijmegen</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+
+</footer>
+
 
 </body>
 
