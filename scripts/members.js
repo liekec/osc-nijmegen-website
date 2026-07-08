@@ -53,11 +53,6 @@ function displayMembers(members) {
     ${member.unit || "Not specified"}
 </p>
 
-        <p>
-        ${member.institute}<br>
-        ${member.unit || ""}
-        </p>
-
 
         <h4>Expertise</h4>
 
