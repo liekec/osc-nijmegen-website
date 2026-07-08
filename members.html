@@ -109,23 +109,24 @@ position, expertise and interests.
 
 
 <input 
+id="search-input"
 type="text" 
 placeholder="Search members..."
 class="search-box">
 
 
 
-<select>
-<option>All institutes</option>
-<option>Radboud University</option>
-<option>Radboudumc</option>
-<option>HAN University of Applied Sciences</option>
-<option>Max Planck Institute for Psycholinguistics</option>
+<select id="institute-filter">
+<option value="">All institutes</option>
+<option value="Radboud University">Radboud University</option>
+<option value="Radboudumc">Radboudumc</option>
+<option value="HAN University of Applied Sciences">HAN University of Applied Sciences</option>
+<option value="Max Planck Institute for Psycholinguistics">Max Planck Institute for Psycholinguistics</option>
 </select>
 
 
 
-<select>
+<select id="position-filter">
 <option>All positions</option>
 <option>Assistant Professor</option>
 <option>Associate Professor</option>
@@ -140,7 +141,7 @@ class="search-box">
 
 
 
-<select>
+<select id="expertise-filter">
 <option>All expertise</option>
 <option>Citizen Science</option>
 <option>FAIR</option>
@@ -165,7 +166,7 @@ class="search-box">
 
 
 
-<select>
+<select id="interest-filter">
 <option>All interests</option>
 <option>Citizen Science</option>
 <option>FAIR</option>
