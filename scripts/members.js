@@ -29,11 +29,17 @@ function displayMembers(members) {
         card.className = "member-card";
 
 
-        card.innerHTML = `
+card.innerHTML = `
 
-        <h3>
-        ${member.firstName} ${member.lastName}
-        </h3>
+<img 
+class="member-photo"
+src="${member.photo || 'images/members/default-profile.png'}"
+alt="${member.firstName} ${member.lastName}">
+
+
+<h3>
+${member.firstName} ${member.lastName}
+</h3>
 
 
        <p class="member-position">
