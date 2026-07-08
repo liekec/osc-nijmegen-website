@@ -1,7 +1,7 @@
 let allMembers = [];
 
 
-fetch("data/members.json")
+fetch("../data/members.json")
 .then(response => response.json())
 .then(members => {
 
