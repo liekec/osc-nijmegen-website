@@ -36,10 +36,22 @@ function displayMembers(members) {
         </h3>
 
 
-        <p class="member-position">
-        ${member.position}
-        </p>
+       <p class="member-position">
+    <strong>Position:</strong><br>
+    ${member.position}
+</p>
 
+
+<p>
+    <strong>Institute:</strong><br>
+    ${member.institute}
+</p>
+
+
+<p>
+    <strong>Faculty / Department:</strong><br>
+    ${member.unit || "Not specified"}
+</p>
 
         <p>
         ${member.institute}<br>
