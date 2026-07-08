@@ -1,7 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,16 +13,17 @@
 
 </head>
 
+
 <body>
 
 
 <header class="topbar">
 
-    <a class="logo" href="#">
+    <a class="logo" href="index.html">
         <img src="images/OSCN logo transparant.png" alt="OSCN Logo">
     </a>
 
-    <!-- NAVBAR -->
+
 <nav>
 
     <a href="index.html" class="home" aria-label="Home">
@@ -30,24 +33,31 @@
         </svg>
     </a>
 
+
     <div class="dropdown">
         <a href="about.html">About</a>
+
         <div class="dropdown-content">
             <a href="#">Resources</a>
             <a href="#">Contact</a>
         </div>
     </div>
 
+
     <a href="#">Events</a>
+
 
     <div class="dropdown">
         <a href="news.html">News</a>
+
         <div class="dropdown-content">
             <a href="news.html">News</a>
             <a href="newsletters.html">Newsletters</a>
             <a href="#">Newsletter Subscription</a>
         </div>
+
     </div>
+
 
     <a href="members.html">Members</a>
 
@@ -55,88 +65,247 @@
 
     <a href="#" class="join-btn">Join</a>
 
+
 </nav>
 
-    <div></div>
+<div></div>
 
 </header>
 
 
+
+<main>
+
+
 <section class="flash">
 
-    <div class="section-header">
-        <div class="section-kicker">OUR COMMUNITY</div>
-        <h1 class="section-title">Members</h1>
+
+<div class="section-header">
+
+    <div class="section-kicker">
+        OUR COMMUNITY
     </div>
 
-    <div class="members-intro">
-        <p>
-            Explore the Open Science Community Nijmegen members.
-            Search and connect with researchers, students and professionals
-            interested in open, transparent and reproducible research.
-        </p>
-    </div>
+    <h1 class="section-title">
+        Members
+    </h1>
+
+</div>
 
 
-    <div class="member-filters">
 
-        <input type="text" placeholder="Search members...">
+<div class="members-intro">
 
-        <select>
-            <option>All institutes</option>
-            <option>Radboud University</option>
-            <option>Radboudumc</option>
-            <option>HAN University of Applied Sciences</option>
-            <option>Max Planck Institute for Psycholinguistics</option>
-        </select>
+<p>
+Explore members of the Open Science Community Nijmegen.
+Find researchers, students and professionals by institute,
+position, expertise and interests.
+</p>
 
-        <select>
-            <option>All positions</option>
-            <option>Assistant Professor</option>
-            <option>Associate Professor</option>
-            <option>Full Professor</option>
-            <option>PhD Candidate</option>
-            <option>Postdoctoral Researcher</option>
-            <option>Researcher</option>
-            <option>Teacher</option>
-            <option>Student</option>
-        </select>
-
-    </div>
+</div>
 
 
-    <div class="members-grid">
+
+<div class="member-filters">
 
 
-        <div class="member-card">
-
-            <h3>Example Name</h3>
-
-            <p class="member-position">
-                PhD Candidate
-            </p>
-
-            <p>
-                Radboud University<br>
-                Science
-            </p>
-
-            <div class="tags">
-                <span>Open Data</span>
-                <span>FAIR</span>
-                <span>Reproducibility</span>
-            </div>
-
-            <p>
-                ✉ example@ru.nl
-            </p>
-
-        </div>
+<input 
+type="text" 
+placeholder="Search members..."
+class="search-box">
 
 
-    </div>
+
+<select>
+<option>All institutes</option>
+<option>Radboud University</option>
+<option>Radboudumc</option>
+<option>HAN University of Applied Sciences</option>
+<option>Max Planck Institute for Psycholinguistics</option>
+</select>
+
+
+
+<select>
+<option>All positions</option>
+<option>Assistant Professor</option>
+<option>Associate Professor</option>
+<option>Full Professor</option>
+<option>PhD Candidate</option>
+<option>Postdoctoral Researcher</option>
+<option>Researcher</option>
+<option>Teacher</option>
+<option>Support Staff / Organisational Professional</option>
+<option>Student</option>
+</select>
+
+
+
+<select>
+<option>All expertise</option>
+<option>Citizen Science</option>
+<option>FAIR</option>
+<option>GitHub</option>
+<option>Open Access</option>
+<option>Open Code</option>
+<option>Open Data</option>
+<option>Open Education</option>
+<option>Open Review</option>
+<option>Open Software</option>
+<option>Open Source</option>
+<option>Preregistration</option>
+<option>Public Engagement</option>
+<option>Registered Reports</option>
+<option>Replication</option>
+<option>Reproducibility</option>
+<option>Research Integrity</option>
+<option>Rewards & Recognition</option>
+<option>Scholarly Publishing</option>
+<option>Transparent Reporting</option>
+</select>
+
+
+
+<select>
+<option>All interests</option>
+<option>Citizen Science</option>
+<option>FAIR</option>
+<option>GitHub</option>
+<option>Open Access</option>
+<option>Open Code</option>
+<option>Open Data</option>
+<option>Open Education</option>
+<option>Open Review</option>
+<option>Open Software</option>
+<option>Open Source</option>
+<option>Preregistration</option>
+<option>Public Engagement</option>
+<option>Registered Reports</option>
+<option>Replication</option>
+<option>Reproducibility</option>
+<option>Research Integrity</option>
+<option>Rewards & Recognition</option>
+<option>Scholarly Publishing</option>
+<option>Transparent Reporting</option>
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="members-grid">
+
+
+
+<div class="member-card">
+
+<h3>
+Example Name
+</h3>
+
+
+<p class="member-position">
+PhD Candidate
+</p>
+
+
+<p>
+Radboud University<br>
+Science
+</p>
+
+
+<h4>Expertise</h4>
+
+<div class="tags">
+
+<span>Open Data</span>
+<span>FAIR</span>
+<span>GitHub</span>
+
+</div>
+
+
+
+<h4>Interested in</h4>
+
+<div class="tags">
+
+<span>Open Access</span>
+<span>Replication</span>
+
+</div>
+
+
+
+<p class="member-email">
+✉ example@ru.nl
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="member-card">
+
+<h3>
+Example Person
+</h3>
+
+
+<p class="member-position">
+Assistant Professor
+</p>
+
+
+<p>
+Radboudumc<br>
+Medicine
+</p>
+
+
+<h4>Expertise</h4>
+
+<div class="tags">
+
+<span>Registered Reports</span>
+<span>Reproducibility</span>
+
+</div>
+
+
+<h4>Interested in</h4>
+
+<div class="tags">
+
+<span>Open Review</span>
+<span>FAIR</span>
+
+</div>
+
+
+<p class="member-email">
+✉ example@radboudumc.nl
+</p>
+
+
+</div>
+
+
+
+</div>
+
 
 </section>
+
+
+</main>
 
 <footer class="footer">
 
