@@ -1,73 +1,234 @@
-const sheetURL = "https://opensheet.elk.sh/1-xLa6VPYhSVbPR40bHJCF8nnQgSGWAOa3sb4yjjVfkU/1";
-
-let members = [];
+let allMembers = [];
 
 
-fetch(sheetURL)
+fetch("https://opensheet.elk.sh/1-xLa6VPYhSVbPR40bHJCF8nnQgSGWAOa3sb4yjjVfkU/1")
 .then(response => response.json())
 .then(data => {
 
-    members = data;
+    allMembers = data.map(member => ({
 
-    displayMembers(members);
+        firstName: member.Name,
+        lastName: member["Last name"],
 
-})
-.catch(error => {
-    console.error("Error loading members:", error);
+        email: member["E-mail"],
+
+        position: member.Position,
+
+        institute: member.Institute,
+
+        unit: member["Faculty / Department"],
+
+        expertise: member.Expertise
+            ? member.Expertise.split(",").map(item => item.trim())
+            : [],
+
+        interests: [],
+
+        photo: ""
+
+    }));
+
+
+    displayMembers(allMembers);
+
 });
 
 
 
-function displayMembers(list) {
+function displayMembers(members) {
 
-    const grid = document.querySelector(".members-grid");
+    const container = document.querySelector(".members-grid");
 
-    grid.innerHTML = "";
-
-
-    list.forEach(member => {
-
-        grid.innerHTML += `
-
-        <article class="team-card">
-
-            <div class="team-card-content">
-
-                <h3>
-                    ${member.Name} ${member["Last name"]}
-                </h3>
+    container.innerHTML = "";
 
 
-                <div class="role">
-                    ${member.Position}
-                </div>
+    members.forEach(member => {
 
 
-                <p>
-                    <strong>${member.Institute}</strong><br>
-                    ${member["Faculty / Department"]}
-                </p>
+        const card = document.createElement("div");
+
+        card.className = "member-card";
 
 
-                <p>
-                    <strong>Expertise</strong><br>
-                    ${member.Expertise}
-                </p>
+card.innerHTML = `
+
+<img 
+class="member-photo"
+src="${member.photo || '../images/members/default-profile.png'}"
+alt="${member.firstName} ${member.lastName}">
 
 
-                <p>
-                    <a href="mailto:${member["E-mail"]}">
-                        ${member["E-mail"]}
-                    </a>
-                </p>
+<h3>
+${member.firstName} ${member.lastName}
+</h3>
 
 
-            </div>
+       <p class="member-position">
+    <strong>Position:</strong><br>
+    ${member.position}
+</p>
 
-        </article>
+
+<p>
+    <strong>Institute:</strong><br>
+    ${member.institute}
+</p>
+
+
+<p>
+    <strong>Faculty / Department:</strong><br>
+    ${member.unit || "Not specified"}
+</p>
+
+
+        <h4>Expertise</h4>
+
+        <div class="tags">
+        ${member.expertise.map(item =>
+            `<span>${item}</span>`
+        ).join("")}
+        </div>
+
+
+        <h4>Interested in</h4>
+
+        <div class="tags">
+        ${member.interests.map(item =>
+            `<span>${item}</span>`
+        ).join("")}
+        </div>
+
+
+        <p class="member-email">
+        ✉ ${member.email}
+        </p>
+
 
         `;
+
+
+        container.appendChild(card);
+
 
     });
 
 }
+
+
+
+
+function filterMembers() {
+
+
+    const search =
+    document
+    .getElementById("search-input")
+    .value
+    .toLowerCase();
+
+
+    const institute =
+    document
+    .getElementById("institute-filter")
+    .value;
+
+
+    const position =
+    document
+    .getElementById("position-filter")
+    .value;
+
+
+    const expertise =
+    document
+    .getElementById("expertise-filter")
+    .value;
+
+
+    const interest =
+    document
+    .getElementById("interest-filter")
+    .value;
+
+
+
+    const filtered = allMembers.filter(member => {
+
+
+        return (
+
+        (
+        `${member.firstName} ${member.lastName}`
+        .toLowerCase()
+        .includes(search)
+        )
+
+
+        &&
+
+        (
+        institute === "" ||
+        member.institute === institute
+        )
+
+
+        &&
+
+        (
+        position === "" ||
+        member.position === position
+        )
+
+
+        &&
+
+        (
+        expertise === "" ||
+        member.expertise.includes(expertise)
+        )
+
+
+        &&
+
+        (
+        interest === "" ||
+        member.interests.includes(interest)
+        )
+
+
+        );
+
+    });
+
+
+    displayMembers(filtered);
+
+}
+
+
+
+
+
+document
+.getElementById("search-input")
+.addEventListener("input", filterMembers);
+
+
+document
+.getElementById("institute-filter")
+.addEventListener("change", filterMembers);
+
+
+document
+.getElementById("position-filter")
+.addEventListener("change", filterMembers);
+
+
+document
+.getElementById("expertise-filter")
+.addEventListener("change", filterMembers);
+
+
+document
+.getElementById("interest-filter")
+.addEventListener("change", filterMembers);
