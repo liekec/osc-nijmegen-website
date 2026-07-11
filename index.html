@@ -306,3 +306,19 @@ window.addEventListener("scroll", function () {
 </body>
 </html>
 
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll(".flash").forEach(section => {
+    observer.observe(section);
+});
+</script>
+
