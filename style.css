@@ -1055,3 +1055,19 @@ body {
     text-decoration:underline;
 }
 
+/* MODERNE SCROLL */
+
+.flash,
+.news-section,
+.tint {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.flash.show,
+.news-section.show,
+.tint.show {
+    opacity: 1;
+    transform: translateY(0);
+}
