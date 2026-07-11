@@ -1055,7 +1055,7 @@ body {
     text-decoration:underline;
 }
 
-/* MODERNE SCROLL */
+/* MODERNE/SMOOTH SCROLL */
 
 .flash,
 .news-section,
@@ -1070,4 +1070,8 @@ body {
 .tint.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+html{
+    scroll-behavior:smooth;
 }
