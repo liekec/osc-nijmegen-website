@@ -154,6 +154,12 @@ body {
     overflow: hidden;
 }
 
+.hero {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 .hero::before {
     content: "";
     position: absolute;
@@ -300,6 +306,14 @@ body {
 
 .flash {
     padding: var(--space-xl) 8vw;
+}
+
+.flash:first-of-type {
+    position: relative;
+    margin-top: -80px;
+    border-radius: 30px 30px 0 0;
+    background: white;
+    z-index: 2;
 }
 
 .section-header {
@@ -1055,19 +1069,3 @@ body {
     text-decoration:underline;
 }
 
-/* MODERNE/SMOOTH SCROLL */
-
-.flash,
-.news-section,
-.tint {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-}
-
-.flash.show,
-.news-section.show,
-.tint.show {
-    opacity: 1;
-    transform: translateY(0);
-}
