@@ -1070,7 +1070,8 @@ body {
     text-align:center;
     color:var(--blue);
     font-family:"Playfair Display", serif;
-    margin-bottom:20px;
+    margin-bottom:20px;\
+    font-size:2rem;
 }
 
 .newsletter-item iframe{
