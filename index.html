@@ -338,3 +338,51 @@ document.querySelectorAll(".flash").forEach(section => {
 });
 </script>
 
+<script>
+const sections = [...document.querySelectorAll(".hero, .flash")];
+
+let currentSection = 0;
+let isAnimating = false;
+
+window.addEventListener("wheel", (e) => {
+    if (window.innerWidth <= 900) return;
+
+    if (isAnimating) {
+        e.preventDefault();
+        return;
+    }
+
+    const currentY = window.scrollY + window.innerHeight / 3;
+
+    sections.forEach((section, index) => {
+        if (currentY >= section.offsetTop) {
+            currentSection = index;
+        }
+    });
+
+    let nextSection = currentSection;
+
+    if (e.deltaY > 30) nextSection++;
+    if (e.deltaY < -30) nextSection--;
+
+    nextSection = Math.max(0, Math.min(nextSection, sections.length - 1));
+
+    if (nextSection === currentSection) return;
+
+    e.preventDefault();
+
+    isAnimating = true;
+
+    lenis.scrollTo(sections[nextSection], {
+        offset: -70,
+        duration: 1.1,
+        easing: t => 1 - Math.pow(1 - t, 4)
+    });
+
+    setTimeout(() => {
+        isAnimating = false;
+    }, 1100);
+
+}, { passive: false });
+</script>
+
