@@ -1120,10 +1120,16 @@ body {
 ========================== */
 
 .newsletter-year{
+    width:100%;
     max-width:900px;
     margin:40px auto;
 }
 
+.newsletter-year .newsletter-list{
+    width:100%;
+    max-width:900px;
+    margin:60px auto;
+}
 
 .newsletter-year summary{
     cursor:pointer;
