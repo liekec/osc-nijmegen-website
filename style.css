@@ -1081,3 +1081,107 @@ body {
     border-radius:12px;
     box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
+
+/* ==========================
+   NEWSLETTER PAGE
+========================== */
+
+.newsletter-year {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 16px;
+    padding: 0 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+
+
+/* Dropdown titel */
+.newsletter-year summary {
+    cursor: pointer;
+    list-style: none;
+
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--blue);
+
+    padding: 25px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* Verberg standaard pijltje */
+.newsletter-year summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* Plus/min teken */
+.newsletter-year summary::after {
+    content: "+";
+    float: right;
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+
+.newsletter-year[open] summary::after {
+    content: "−";
+}
+
+
+/* PDF lijst */
+.newsletter-list {
+    padding: 40px 0;
+}
+
+
+.newsletter-item {
+    margin-bottom: 70px;
+}
+
+
+.newsletter-item h2 {
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    color: var(--blue);
+
+    margin-bottom: 25px;
+}
+
+
+/* PDF viewer */
+.newsletter-item iframe {
+    width: 100%;
+    height: 900px;
+
+    border: none;
+    border-radius: 12px;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+
+/* mobiel */
+@media (max-width: 700px) {
+
+    .newsletter-year {
+        padding: 0 20px;
+    }
+
+    .newsletter-year summary {
+        font-size: 1.6rem;
+    }
+
+    .newsletter-item iframe {
+        height: 600px;
+    }
+
+}
