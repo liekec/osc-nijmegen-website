@@ -1061,8 +1061,6 @@ html {
 }
 
 .hero,
-.flash,
-.footer {
+.flash {
     scroll-snap-align: start;
-    scroll-margin-top: 70px;
 }
