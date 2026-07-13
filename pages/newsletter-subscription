@@ -1,0 +1,31 @@
+<section class="flash">
+
+    <div class="section-header">
+        <div class="section-kicker">STAY UPDATED</div>
+        <h1 class="section-title">Newsletter Subscription</h1>
+    </div>
+
+    <div class="center-block">
+
+        <p>
+            Subscribe to the Open Science Community Nijmegen newsletter and
+            receive updates about events, workshops, community initiatives,
+            and other Open Science news directly in your inbox.
+        </p>
+
+        <ul class="newsletter-benefits">
+            <li>Upcoming events and workshops</li>
+            <li>Latest community news</li>
+            <li>Open Science opportunities</li>
+            <li>Approximately one newsletter per month</li>
+        </ul>
+
+    </div>
+
+    <div class="newsletter-form-wrapper">
+
+        <!-- Hier plak je precies hetzelfde formulier als in je footer -->
+
+    </div>
+
+</section>
