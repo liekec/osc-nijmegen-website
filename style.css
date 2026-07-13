@@ -1194,63 +1194,83 @@ body {
 /* NEWSLETTER SUBSCRIPTION */
 
 .newsletter-form-wrapper{
-    max-width:600px;
-    margin:60px auto 0;
-    padding:40px;
+    max-width:520px;
+    margin:55px auto 0;
+    padding:32px;
     background:#fff;
-    border-radius:18px;
-    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    border:1px solid #e8e8e8;
+    border-radius:14px;
+    box-shadow:0 6px 20px rgba(0,0,0,.05);
 }
 
 .newsletter-form-wrapper .form-op7pq9fkox{
     display:flex;
     flex-direction:column;
-    gap:18px;
+    gap:14px;
     margin:0;
 }
 
-.newsletter-form-wrapper .form-op7pq9fkox label{
+.newsletter-form-wrapper label{
     display:none;
 }
 
 .newsletter-form-wrapper input[type="email"],
 .newsletter-form-wrapper input[type="text"]{
+
     width:100%;
-    padding:15px 18px;
-    border:1px solid #d9dde5;
-    border-radius:12px;
-    background:#fafafa;
-    color:var(--text);
-    font-size:1rem;
+    height:46px;
+
+    padding:0 15px;
+
+    border:1px solid #d8dde5;
+    border-radius:10px;
+
+    background:#fff;
+
+    font-size:.95rem;
     font-family:"Inter",sans-serif;
-    transition:.2s ease;
+
+    transition:.2s;
 }
 
 .newsletter-form-wrapper input::placeholder{
-    color:#8a8a8a;
+    color:#888;
 }
 
 .newsletter-form-wrapper input:focus{
     outline:none;
-    border-color:var(--accent);
-    background:#fff;
-    box-shadow:0 0 0 4px rgba(190,49,26,.08);
+    border-color:var(--blue);
 }
 
+/* Button */
+
 .newsletter-form-wrapper input[type="submit"]{
-    margin-top:10px;
-    padding:15px;
-    border:none;
+
+    align-self:center;
+
+    width:180px;
+    height:46px;
+
+    margin-top:8px;
+
+    border:2px solid var(--blue);
     border-radius:999px;
-    background:var(--accent);
-    color:#fff;
-    font-size:1rem;
+
+    background:white;
+    color:var(--blue);
+
+    font-size:.95rem;
     font-weight:600;
+
     cursor:pointer;
-    transition:.25s ease;
+
+    transition:.2s;
 }
 
 .newsletter-form-wrapper input[type="submit"]:hover{
+
+    background:var(--blue);
+    color:white;
+
     transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(190,49,26,.25);
 }
