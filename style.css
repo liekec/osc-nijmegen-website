@@ -1086,102 +1086,96 @@ body {
    NEWSLETTER PAGE
 ========================== */
 
-.newsletter-year {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 16px;
-    padding: 0 30px;
-    box-shadow: 0 6px 20px rgba(0,0,0,.06);
-}
-
-
-/* Dropdown titel */
-.newsletter-year summary {
-    cursor: pointer;
-    list-style: none;
-
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--blue);
-
-    padding: 25px 0;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-
-/* Verberg standaard pijltje */
-.newsletter-year summary::-webkit-details-marker {
-    display: none;
-}
-
-
-/* Plus/min teken */
-.newsletter-year summary::after {
-    content: "+";
-    float: right;
-    font-family: "Inter", sans-serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: var(--accent);
-}
-
-
-.newsletter-year[open] summary::after {
-    content: "−";
-}
-
 
 /* PDF lijst */
-.newsletter-list {
-    padding: 40px 0;
+
+.newsletter-list{
+    max-width:900px;
+    margin:60px auto;
+}
+
+.newsletter-item{
+    margin-bottom:80px;
+}
+
+.newsletter-item h2{
+    text-align:center;
+    color:var(--blue);
+    font-family:"Playfair Display", serif;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.newsletter-item iframe{
+    width:100%;
+    height:900px;
+    border:none;
+    border-radius:12px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
 
 
-.newsletter-item {
-    margin-bottom: 70px;
+/* ==========================
+   YEAR DROPDOWN
+========================== */
+
+.newsletter-year{
+    max-width:900px;
+    margin:40px auto;
 }
 
 
-.newsletter-item h2 {
-    text-align: center;
+.newsletter-year summary{
+    cursor:pointer;
+    list-style:none;
 
-    font-family: "Playfair Display", serif;
-    font-size: 1.7rem;
-    font-weight: 600;
+    text-align:center;
 
-    color: var(--blue);
+    color:var(--blue);
+    font-family:"Playfair Display", serif;
+    font-size:2rem;
+    font-weight:600;
 
-    margin-bottom: 25px;
+    padding:20px 0;
+    margin-bottom:20px;
+
+    border-bottom:1px solid #e5e7eb;
 }
 
 
-/* PDF viewer */
-.newsletter-item iframe {
-    width: 100%;
-    height: 900px;
+.newsletter-year summary::-webkit-details-marker{
+    display:none;
+}
 
-    border: none;
-    border-radius: 12px;
 
-    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+.newsletter-year summary::after{
+    content:"+";
+
+    float:right;
+
+    color:var(--accent);
+    font-family:"Inter", sans-serif;
+    font-size:1.8rem;
+    font-weight:400;
+}
+
+
+.newsletter-year[open] summary::after{
+    content:"−";
 }
 
 
 /* mobiel */
-@media (max-width: 700px) {
 
-    .newsletter-year {
-        padding: 0 20px;
+@media (max-width:700px){
+
+    .newsletter-year summary{
+        font-size:1.6rem;
     }
 
-    .newsletter-year summary {
-        font-size: 1.6rem;
+    .newsletter-item iframe{
+        height:600px;
     }
 
-    .newsletter-item iframe {
-        height: 600px;
-    }
-
+}
 }
