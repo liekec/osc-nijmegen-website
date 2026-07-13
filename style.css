@@ -1055,3 +1055,14 @@ body {
     text-decoration:underline;
 }
 
+/* SCROLL */
+html {
+    scroll-snap-type: y proximity;
+}
+
+.hero,
+.flash,
+.footer {
+    scroll-snap-align: start;
+    scroll-margin-top: 70px;
+}
