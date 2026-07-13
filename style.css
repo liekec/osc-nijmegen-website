@@ -1191,53 +1191,66 @@ body {
 }
 
 
-/* ======= NEWSLETTER SUBSCRIPTION =========== */
+/* NEWSLETTER SUBSCRIPTION */
 
 .newsletter-form-wrapper{
-    max-width:550px;
-    margin:50px auto 0;
-    padding:35px;
+    max-width:600px;
+    margin:60px auto 0;
+    padding:40px;
     background:#fff;
-    border-radius:16px;
+    border-radius:18px;
     box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
 
 .newsletter-form-wrapper .form-op7pq9fkox{
-    margin-top:0;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin:0;
 }
 
-.newsletter-form-wrapper label{
-    color:var(--text);
+.newsletter-form-wrapper .form-op7pq9fkox label{
+    display:none;
 }
 
 .newsletter-form-wrapper input[type="email"],
 .newsletter-form-wrapper input[type="text"]{
     width:100%;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:10px;
-    background:#fff;
+    padding:15px 18px;
+    border:1px solid #d9dde5;
+    border-radius:12px;
+    background:#fafafa;
     color:var(--text);
+    font-size:1rem;
+    font-family:"Inter",sans-serif;
+    transition:.2s ease;
 }
 
-.newsletter-form-wrapper input[type="email"]:focus,
-.newsletter-form-wrapper input[type="text"]:focus{
-    border-color:var(--blue);
+.newsletter-form-wrapper input::placeholder{
+    color:#8a8a8a;
+}
+
+.newsletter-form-wrapper input:focus{
     outline:none;
+    border-color:var(--accent);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(190,49,26,.08);
 }
 
 .newsletter-form-wrapper input[type="submit"]{
     margin-top:10px;
-    padding:12px 18px;
+    padding:15px;
     border:none;
     border-radius:999px;
     background:var(--accent);
     color:#fff;
+    font-size:1rem;
+    font-weight:600;
     cursor:pointer;
-    transition:.2s ease;
+    transition:.25s ease;
 }
 
 .newsletter-form-wrapper input[type="submit"]:hover{
     transform:translateY(-2px);
-    box-shadow:0 6px 16px rgba(0,0,0,.12);
+    box-shadow:0 8px 18px rgba(190,49,26,.25);
 }
