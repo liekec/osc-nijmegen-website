@@ -8,23 +8,38 @@
     <div class="center-block">
 
         <p>
-            Subscribe to the Open Science Community Nijmegen newsletter and
-            receive updates about events, workshops, community initiatives,
-            and other Open Science news directly in your inbox.
+            Subscribe to the Open Science Community Nijmegen newsletter to stay informed about
+            upcoming events, workshops, community initiatives and the latest developments in
+            Open Science. We typically send around one newsletter per month.
         </p>
-
-        <ul class="newsletter-benefits">
-            <li>Upcoming events and workshops</li>
-            <li>Latest community news</li>
-            <li>Open Science opportunities</li>
-            <li>Approximately one newsletter per month</li>
-        </ul>
 
     </div>
 
     <div class="newsletter-form-wrapper">
 
-        <!-- Hier plak je precies hetzelfde formulier als in je footer -->
+        <form method="post" action="https://open-science-community-nijmegen.email-provider.eu/subscribe/post/index.php" accept-charset="utf-8" class="form-op7pq9fkox">
+
+            <input type="hidden" name="next" value="" />
+            <input type="hidden" name="a" value="ohz7mrmpse" />
+            <input type="hidden" name="l" value="op7pq9fkox" />
+
+            <label for="id-Kz6LqtiXnQ">Email *</label>
+            <input name="Kz6LqtiXnQ" id="id-Kz6LqtiXnQ" type="email" required>
+
+            <label for="id-P3Px8y6G0Y">First name *</label>
+            <input name="P3Px8y6G0Y" id="id-P3Px8y6G0Y" type="text" required>
+
+            <label for="id-OTxNlZSNlG">Last name *</label>
+            <input name="OTxNlZSNlG" id="id-OTxNlZSNlG" type="text" required>
+
+            <!-- spam honeypot -->
+            <input type="email" id="email" name="email" style="position:absolute;left:-9999px;">
+
+            <input type="submit" value="Subscribe" />
+
+        </form>
+
+        <script src="https://open-science-community-nijmegen.email-provider.eu/subscribe/check/validate.js"></script>
 
     </div>
 
