@@ -705,7 +705,7 @@ body {
 
 .center-block {
     max-width: 900px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
