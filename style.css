@@ -1194,6 +1194,7 @@ body {
 /* NEWSLETTER SUBSCRIPTION */
 
 .newsletter-form-wrapper{
+    margin-top: 40px;
     max-width:520px;
     margin:80px auto 0;
     padding:32px;
