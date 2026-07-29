@@ -167,7 +167,7 @@ body {
 .tag {
     font-size: 0.85rem;
     letter-spacing: 2px;
-    color: rgba(255,255,255,0.75);
+    color: var(--blue);
     font-weight: 600;
     margin-bottom: 25px;
 }
@@ -176,7 +176,7 @@ body {
 .hero h1 {
     font-family: "Inter", sans-serif;
     font-size: clamp(3.2rem, 5vw, 5rem);
-    color: white;
+    color: var(--blue);
     line-height: 1.05;
     font-weight: 700;
     letter-spacing: -2px;
@@ -188,7 +188,9 @@ body {
     font-size: 1.2rem;
     line-height: 1.7;
     max-width: 600px;
-    color: rgba(255,255,255,0.9);
+    .hero p {
+    color: var(--text);
+}
     margin-bottom: 35px;
 }
 
