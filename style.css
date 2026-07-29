@@ -1,33 +1,466 @@
 :root {
+
     --blue: #002060;
     --accent: #BE311A;
+
     --bg-hero: #f3f5f8;
     --bg-soft: #f7f7f7;
     --bg-tint: #eef3fb;
+
     --text: #1f1f1f;
 
-    /* spacing system */
-    --space-xs: 8px;
-    --space-sm: 16px;
-    --space-md: 24px;
-    --space-lg: 48px;
     --space-xl: 90px;
+    --space-lg: 60px;
+    --space-md: 30px;
 
-    /* readability */
-    --line-height: 1.7;
 }
 
-/* BASE */
+
+/* ==========================
+   BASE
+========================== */
+
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+
+html {
+    scroll-behavior:smooth;
+}
+
 
 body {
-    font-family: "Inter", sans-serif;
-    color: var(--text);
-    padding-top: 70px;
+
+    font-family:"Inter", sans-serif;
+
+    color:var(--text);
+
+    padding-top:70px;
+
+    background:white;
+
+}
+
+
+img {
+    max-width:100%;
+    display:block;
+}
+
+
+a {
+    text-decoration:none;
+}
+
+
+
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+
+.topbar {
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:70px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+
+    padding:0 45px;
+
+
+    background:var(--bg-hero);
+
+    z-index:1000;
+
+
+    transition:.3s ease;
+
+}
+
+
+
+
+.topbar.scrolled {
+
+    background:white;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+
+
+/* LOGO */
+
+
+.logo img {
+
+    height:42px;
+
+}
+
+
+
+
+
+/* NAV */
+
+
+.topbar nav {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+
+
+.topbar nav a {
+
+    color:var(--blue);
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    white-space:nowrap;
+
+}
+
+
+
+.topbar nav a:hover {
+
+    color:var(--accent);
+
+}
+
+
+
+
+
+/* HOME ICON */
+
+
+.home {
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+.home svg {
+
+    stroke:var(--blue);
+
+}
+
+
+
+
+
+/* JOIN BUTTON */
+
+
+.join-btn {
+
+    background:var(--accent);
+
+    color:white !important;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    font-weight:600 !important;
+
+}
+
+
+
+
+
+.join-btn:hover {
+
+    transform:translateY(-2px);
+
+}
+
+
+
+
+
+/* DROPDOWN */
+
+
+.dropdown {
+
+    position:relative;
+
+}
+
+
+
+.dropdown-content {
+
+
+    display:none;
+
+
+    position:absolute;
+
+
+    top:30px;
+
+    left:0;
+
+
+    background:white;
+
+
+    min-width:220px;
+
+
+    padding:10px 0;
+
+
+    border-radius:12px;
+
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+
+}
+
+
+
+.dropdown-content a {
+
+
+    display:block;
+
+
+    padding:12px 18px;
+
+
+}
+
+
+
+.dropdown-content a:hover {
+
+    background:#f3f5f8;
+
+}
+
+
+
+.dropdown:hover .dropdown-content {
+
+    display:block;
+
+}
+
+
+
+
+
+/* ==========================
+   HERO
+========================== */
+
+
+.hero {
+
+
+    min-height:calc(100vh - 70px);
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+
+    gap:70px;
+
+
+    padding:0 8vw;
+
+
+    background:var(--bg-hero);
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.hero-content {
+
+
+    max-width:600px;
+
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+
+.hero-tag {
+
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+
+    color:var(--accent);
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+.hero h1 {
+
+
+    font-family:"Playfair Display",serif;
+
+
+    font-size:4rem;
+
+
+    line-height:1.05;
+
+
+    color:var(--blue);
+
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+.hero p {
+    font-size:1.2rem;
+    line-height:1.7;
+    margin-bottom:35px;
+
+}
+
+.hero-buttons {
+
+    display:flex;
+    gap:15px;
+
+}
+.btn {
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+
+    padding:13px 25px;
+
+
+    border-radius:999px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+.btn.primary {
+
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+
+
+.btn.secondary {
+
+
+    border:2px solid var(--blue);
+
+    color:var(--blue);
+
+}
+
+
+
+
+
+.hero-image {
+
+
+    flex:1;
+
+
+    display:flex;
+
+    justify-content:center;
+
+
+}
+.hero-image img {
+
+
+    max-width:650px;
 }
 
 /* NAVBAR */
