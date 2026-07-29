@@ -319,6 +319,53 @@ body {
     font-weight: 600;
 }
 
+/* OUR GOALS */
+
+.goals-header {
+    text-align: center;
+    margin: 50px 0 35px;
+}
+
+.goals-header h3 {
+    font-size: 1.7rem;
+    color: var(--blue);
+}
+
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+
+.goal-card {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+
+.goal-card h3 {
+    color: var(--blue);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+
+.goal-card p {
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.network-text {
+    text-align: center;
+}
+
 .news-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
 }
