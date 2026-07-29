@@ -142,18 +142,16 @@ body {
 /* HERO */
 
 .hero {
-    min-height: calc(100vh - 70px);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-    padding: 0 8vw;
+    padding: 70px 8vw 0;
     position: relative;
-    background: #DCE7F5;
-    color: white;
+    background: #EAF0F8;
     overflow: hidden;
 }
-
 
 /* VERWIJDER HERO::BEFORE EN HERO::AFTER */
 
