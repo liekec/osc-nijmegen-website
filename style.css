@@ -266,24 +266,28 @@ body {
 /* SCROLL ARROW */
 .scroll-down {
     position: absolute;
-    bottom: 25px;
+    bottom: 35px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .scroll-down span {
     display: block;
-    width: 22px;
-    height: 22px;
-    border-right: 3px solid var(--blue);
-    border-bottom: 3px solid var(--blue);
+    width: 16px;
+    height: 16px;
+    border-right: 2px solid var(--blue);
+    border-bottom: 2px solid var(--blue);
     transform: rotate(45deg);
     animation: bounce 1.5s infinite;
 }
 
 @keyframes bounce {
-    0%, 100% { transform: rotate(45deg) translateY(0); }
-    50% { transform: rotate(45deg) translateY(8px); }
+    0%, 100% { 
+        transform: rotate(45deg) translateY(0); 
+    }
+    50% { 
+        transform: rotate(45deg) translateY(6px); 
+    }
 }
 
 .about-text {
