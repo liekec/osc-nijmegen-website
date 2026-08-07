@@ -35,9 +35,9 @@ fetch("https://opensheet.elk.sh/1-xLa6VPYhSVbPR40bHJCF8nnQgSGWAOa3sb4yjjVfkU/1")
 
 
 
-        photo: member.Photo
-            ? "../images/members/" + member.Photo
-            : "../images/members/default-profile.png"
+        photo: member["Profile photo"]
+    ? "../images/members/" + member["Profile photo"]
+    : "../images/members/default-profile.png"
 
 
     }));
