@@ -1637,3 +1637,37 @@ body {
 .contact-thanks-wrapper .btn {
     margin-top: 10px;
 }
+
+////////////////* JOIN PAGE */////////////////////////
+
+.join-card {
+    text-align: center;
+}
+
+.join-card p {
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 24px;
+}
+
+.join-form-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.join-note {
+    margin-top: 20px;
+    font-size: .85rem;
+    color: #888;
+}
+
+.join-note a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.join-note a:hover {
+    text-decoration: underline;
+}
