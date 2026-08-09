@@ -66,103 +66,93 @@
 
     <div class="about-text center-block">
         <p>
-            Have a question, an idea, or want to get involved with OSCN? Send us a message using the form below —
-            we usually reply within a few days.
+            Have a question, an idea, or want to get involved with OSCN? Or got news or an upcoming event you'd like
+            us to spread to the community? Use one of the forms below.
         </p>
     </div>
 
 </section>
 
-<!-- CONTACT FORM -->
+<!-- CONTACT + SHARE FORMS -->
 <section class="flash">
 
-    <div class="contact-form-wrapper">
+    <div class="contact-forms-grid">
 
-        <form action="https://formspree.io/f/moeajonk" method="POST" class="contact-form">
+        <div class="contact-form-wrapper">
 
-            <!-- Onderwerp van de e-mail die je ontvangt -->
-            <input type="hidden" name="_subject" value="New message from OSCN website">
+            <h2 class="contact-form-heading">Contact us</h2>
 
-            <!-- Redirect na versturen (maak eventueel een bedankt-pagina) -->
-            <input type="hidden" name="_next" value="contact-thanks.html">
+            <form action="https://formspree.io/f/JOUW_FORMSPREE_ID" method="POST" class="contact-form">
 
-            <!-- Spam honeypot -->
-            <input type="text" name="_gotcha" style="display:none">
+                <!-- Onderwerp van de e-mail die je ontvangt -->
+                <input type="hidden" name="_subject" value="New message from OSCN website">
 
-            <div class="form-row">
-                <label for="contact-name">Name *</label>
-                <input type="text" id="contact-name" name="name" required>
-            </div>
+                <!-- Redirect na versturen (maak eventueel een bedankt-pagina) -->
+                <input type="hidden" name="_next" value="contact-thanks.html">
 
-            <div class="form-row">
-                <label for="contact-email">Email *</label>
-                <input type="email" id="contact-email" name="email" required>
-            </div>
+                <!-- Spam honeypot -->
+                <input type="text" name="_gotcha" style="display:none">
 
-            <div class="form-row">
-                <label for="contact-subject">Subject *</label>
-                <input type="text" id="contact-subject" name="subject" required>
-            </div>
+                <div class="form-row">
+                    <label for="contact-name">Name *</label>
+                    <input type="text" id="contact-name" name="name" required>
+                </div>
 
-            <div class="form-row">
-                <label for="contact-message">Message *</label>
-                <textarea id="contact-message" name="message" rows="6" required></textarea>
-            </div>
+                <div class="form-row">
+                    <label for="contact-email">Email *</label>
+                    <input type="email" id="contact-email" name="email" required>
+                </div>
 
-            <button type="submit" class="btn primary contact-submit">Send message</button>
+                <div class="form-row">
+                    <label for="contact-subject">Subject *</label>
+                    <input type="text" id="contact-subject" name="subject" required>
+                </div>
 
-        </form>
+                <div class="form-row">
+                    <label for="contact-message">Message *</label>
+                    <textarea id="contact-message" name="message" rows="6" required></textarea>
+                </div>
 
-    </div>
+                <button type="submit" class="btn primary contact-submit">Send message</button>
 
-</section>
+            </form>
 
-<!-- SHARE NEWS/EVENTS FORM -->
-<section class="flash soft">
+        </div>
 
-    <div class="section-header">
-        <div class="section-kicker">SHARE WITH THE COMMUNITY</div>
-        <h2 class="section-title">Share news or an event</h2>
-    </div>
+        <div class="contact-form-wrapper">
 
-    <div class="about-text center-block">
-        <p>
-            Got news or an upcoming event you'd like OSCN to spread to the community? Let us know below and we'll help share it.
-        </p>
-    </div>
+            <h2 class="contact-form-heading">Share news or an event</h2>
 
-    <div class="contact-form-wrapper">
+            <form action="https://formspree.io/f/JOUW_FORMSPREE_ID" method="POST" class="contact-form">
 
-        <form action="https://formspree.io/f/xppaqgjk" method="POST" class="contact-form">
+                <!-- Onderwerp van de e-mail die je ontvangt -->
+                <input type="hidden" name="_subject" value="Share Form">
 
-            <!-- Onderwerp van de e-mail die je ontvangt -->
-            <input type="hidden" name="_subject" value="Share Form">
+                <!-- Redirect na versturen -->
+                <input type="hidden" name="_next" value="contact-thanks.html">
 
-            <!-- Redirect na versturen -->
-            <input type="hidden" name="_next" value="contact-thanks.html">
+                <!-- Spam honeypot -->
+                <input type="text" name="_gotcha" style="display:none">
 
-            <!-- Spam honeypot -->
-            <input type="text" name="_gotcha" style="display:none">
+                <div class="form-row">
+                    <label for="share-name">Name *</label>
+                    <input type="text" id="share-name" name="name" required>
+                </div>
 
-            <div class="form-row">
-                <label for="share-name">Name *</label>
-                <input type="text" id="share-name" name="name" required>
-            </div>
+                <div class="form-row">
+                    <label for="share-email">Email *</label>
+                    <input type="email" id="share-email" name="email" required>
+                </div>
 
-            <div class="form-row">
-                <label for="share-email">Email *</label>
-                <input type="email" id="share-email" name="email" required>
-            </div>
+                <div class="form-row">
+                    <label for="share-title">Event/news title *</label>
+                    <input type="text" id="share-title" name="title" required>
+                </div>
 
-            <div class="form-row">
-                <label for="share-title">Event/news title *</label>
-                <input type="text" id="share-title" name="title" required>
-            </div>
-
-            <div class="form-row">
-                <label for="share-description">Short description *</label>
-                <textarea id="share-description" name="description" rows="5" required></textarea>
-            </div>
+                <div class="form-row">
+                    <label for="share-description">Short description *</label>
+                    <textarea id="share-description" name="description" rows="5" required></textarea>
+                </div>
 
             <button type="submit" class="btn primary contact-submit">Share with OSCN</button>
 
@@ -255,9 +245,6 @@
       <a href="#">Privacy</a>
       <a href="#">Cookies</a>
     </div>
-  </div>
-
-</footer>
   </div>
 
 </footer>
