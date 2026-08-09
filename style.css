@@ -1483,255 +1483,126 @@ body {
 
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | OSCN</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-<header class="topbar">
-
-    <a class="logo" href="../index.html">
-        <img src="../images/OSCN logo transparant.png" alt="OSCN Logo">
-    </a>
-
-    <nav>
-
-        <a href="../index.html" class="home" aria-label="Home">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 10.5L12 3l9 7.5"></path>
-                <path d="M5 10v10h5v-6h4v6h5V10"></path>
-            </svg>
-        </a>
-
-        <div class="dropdown">
-            <a href="about.html">About</a>
-            <div class="dropdown-content">
-                <a href="#">Resources</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-
-        <a href="events.html">Events</a>
-
-        <div class="dropdown">
-            <a href="news.html">News</a>
-            <div class="dropdown-content">
-                <a href="news.html">News</a>
-                <a href="newsletters.html">Newsletters</a>
-                <a href="newsletter-subscription.html">Newsletter Subscription</a>
-            </div>
-        </div>
-
-        <a href="members.html">Members</a>
-
-        <a href="contact.html">Contact Persons</a>
-
-        <a href="#" class="join-btn">Join</a>
-
-    </nav>
-</header>
-
-<!-- INTRO -->
-<section class="flash soft">
-
-    <div class="section-header">
-        <div class="section-kicker">GET IN TOUCH</div>
-        <h1 class="section-title">Contact us</h1>
-    </div>
-
-    <div class="about-text center-block">
-        <p>
-            Have a question, an idea, or want to get involved with OSCN? Or got news or an upcoming event you'd like
-            us to spread to the community? Use one of the forms below.
-        </p>
-    </div>
-
-</section>
-
-<!-- CONTACT + SHARE FORMS -->
-<section class="flash">
-
-    <div class="contact-forms-grid">
-
-        <div class="contact-form-wrapper">
-
-            <h2 class="contact-form-heading">Contact us</h2>
-
-            <form action="https://formspree.io/f/JOUW_FORMSPREE_ID" method="POST" class="contact-form">
-
-                <!-- Onderwerp van de e-mail die je ontvangt -->
-                <input type="hidden" name="_subject" value="New message from OSCN website">
-
-                <!-- Redirect na versturen (maak eventueel een bedankt-pagina) -->
-                <input type="hidden" name="_next" value="contact-thanks.html">
-
-                <!-- Spam honeypot -->
-                <input type="text" name="_gotcha" style="display:none">
-
-                <div class="form-row">
-                    <label for="contact-name">Name *</label>
-                    <input type="text" id="contact-name" name="name" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="contact-email">Email *</label>
-                    <input type="email" id="contact-email" name="email" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="contact-subject">Subject *</label>
-                    <input type="text" id="contact-subject" name="subject" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="contact-message">Message *</label>
-                    <textarea id="contact-message" name="message" rows="6" required></textarea>
-                </div>
-
-                <button type="submit" class="btn primary contact-submit">Send message</button>
-
-            </form>
-
-        </div>
-
-        <div class="contact-form-wrapper">
-
-            <h2 class="contact-form-heading">Share news or an event</h2>
-
-            <form action="https://formspree.io/f/JOUW_FORMSPREE_ID" method="POST" class="contact-form">
-
-                <!-- Onderwerp van de e-mail die je ontvangt -->
-                <input type="hidden" name="_subject" value="Share Form">
-
-                <!-- Redirect na versturen -->
-                <input type="hidden" name="_next" value="contact-thanks.html">
-
-                <!-- Spam honeypot -->
-                <input type="text" name="_gotcha" style="display:none">
-
-                <div class="form-row">
-                    <label for="share-name">Name *</label>
-                    <input type="text" id="share-name" name="name" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="share-email">Email *</label>
-                    <input type="email" id="share-email" name="email" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="share-title">Event/news title *</label>
-                    <input type="text" id="share-title" name="title" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="share-description">Short description *</label>
-                    <textarea id="share-description" name="description" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="btn primary contact-submit">Share with OSCN</button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-</body>
-</html>
-
-<footer class="footer">
-
-  <div class="footer-inner">
-
-    <div class="footer-col">
-      <img src="../images/OSCN logo transparant.png" alt="OSCN Logo" class="footer-logo">
-      <p>
-        Open Science Community Nijmegen promotes open, transparent and reproducible research through community building and collaboration.
-      </p>
-    </div>
-
-    <div class="footer-col">
-      <h3>Navigate</h3>
-      <a href="../pages/about.html">About</a>
-      <a href="#">Events</a>
-      <a href="../pages/news.html">News</a>
-      <a href="../pages/newsletters.html">Newsletters</a>
-      <a href="../pages/members.html">Members</a>
-      <a href="../pages/contact.html">Contact Persons</a>
-      <a href="#">Join</a>
-    </div>
-
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <p>openscience.nijmegen@gmail.com</p>
-
-<div class="socials">
-  <a href="https://www.linkedin.com/company/open-science-community-nijmegen/" 
-     target="_blank" 
-     class="social-link">
-     
-    <svg viewBox="0 0 24 24">
-      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H12v2.2h.1C12.9 8.8 14.7 7.7 17 7.7c5 0 5.9 3.3 5.9 7.6V24h-5v-7.3c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24h-5V8z"/>
-    </svg>
-
-    <span>LinkedIn</span>
-
-  </a>
-</div>
-
-    </div>
-
-<div class="footer-col">
-  <h3>Stay updated</h3>
-  <p>Join our newsletter for updates on events and open science news.</p>
-
-  <form method="post" action="https://open-science-community-nijmegen.email-provider.eu/subscribe/post/index.php" accept-charset="utf-8" class="form-op7pq9fkox">
-
-    <input type="hidden" name="next" value="" />
-    <input type="hidden" name="a" value="ohz7mrmpse" />
-    <input type="hidden" name="l" value="op7pq9fkox" />
-
-    <label for="id-Kz6LqtiXnQ">Email *</label>
-    <input name="Kz6LqtiXnQ" id="id-Kz6LqtiXnQ" type="email" required>
-
-    <label for="id-P3Px8y6G0Y">First name *</label>
-    <input name="P3Px8y6G0Y" id="id-P3Px8y6G0Y" type="text" required>
-
-    <label for="id-OTxNlZSNlG">Last name *</label>
-    <input name="OTxNlZSNlG" id="id-OTxNlZSNlG" type="text" required>
-
-    <!-- spam honeypot -->
-    <input type="email" id="email" name="email" style="position:absolute;left:-9999px;">
-
-    <input type="submit" value="Subscribe" />
-
-  </form>
-
-  <script src="https://open-science-community-nijmegen.email-provider.eu/subscribe/check/validate.js"></script>
-
-</div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 Open Science Community Nijmegen</p>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Cookies</a>
-    </div>
-  </div>
-
-</footer>
+/* ==========================================
+   CONTACT PAGE
+========================================== */
+
+.contact-form-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.05);
+}
+
+.contact-forms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.contact-forms-grid .contact-form-wrapper {
+    max-width: none;
+    margin: 0;
+}
+
+.contact-form-heading {
+    font-size: 1.3rem;
+    color: var(--blue);
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .contact-forms-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-form label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px 14px;
+    border: 1px solid #d8dde5;
+    border-radius: 10px;
+    background: #fff;
+    font-size: .95rem;
+    font-family: "Inter", sans-serif;
+    color: var(--text);
+    outline: none;
+    transition: .2s ease;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(0,32,96,0.08);
+}
+
+.contact-submit {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+}
+
+@media (max-width: 700px) {
+    .contact-form-wrapper {
+        padding: 28px 20px;
+        margin: 0 6vw;
+    }
+}
+
+/* CONTACT THANK YOU PAGE */
+
+.contact-thanks-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.contact-thanks-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.contact-thanks-wrapper .btn {
+    margin-top: 10px;
+}
