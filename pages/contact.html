@@ -117,6 +117,61 @@
 
 </section>
 
+<!-- SHARE NEWS/EVENTS FORM -->
+<section class="flash soft">
+
+    <div class="section-header">
+        <div class="section-kicker">SHARE WITH THE COMMUNITY</div>
+        <h2 class="section-title">Share news or an event</h2>
+    </div>
+
+    <div class="about-text center-block">
+        <p>
+            Got news or an upcoming event you'd like OSCN to spread to the community? Let us know below and we'll help share it.
+        </p>
+    </div>
+
+    <div class="contact-form-wrapper">
+
+        <form action="https://formspree.io/f/JOUW_FORMSPREE_ID" method="POST" class="contact-form">
+
+            <!-- Onderwerp van de e-mail die je ontvangt -->
+            <input type="hidden" name="_subject" value="Share Form">
+
+            <!-- Redirect na versturen -->
+            <input type="hidden" name="_next" value="contact-thanks.html">
+
+            <!-- Spam honeypot -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <div class="form-row">
+                <label for="share-name">Name *</label>
+                <input type="text" id="share-name" name="name" required>
+            </div>
+
+            <div class="form-row">
+                <label for="share-email">Email *</label>
+                <input type="email" id="share-email" name="email" required>
+            </div>
+
+            <div class="form-row">
+                <label for="share-title">Event/news title *</label>
+                <input type="text" id="share-title" name="title" required>
+            </div>
+
+            <div class="form-row">
+                <label for="share-description">Short description *</label>
+                <textarea id="share-description" name="description" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn primary contact-submit">Share with OSCN</button>
+
+        </form>
+
+    </div>
+
+</section>
+
 </body>
 </html>
 
@@ -200,6 +255,9 @@
       <a href="#">Privacy</a>
       <a href="#">Cookies</a>
     </div>
+  </div>
+
+</footer>
   </div>
 
 </footer>
