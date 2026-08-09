@@ -1482,3 +1482,70 @@ body {
     }
 
 }
+
+/* ==========================================
+   CONTACT PAGE
+========================================== */
+
+.contact-form-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.05);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-form label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px 14px;
+    border: 1px solid #d8dde5;
+    border-radius: 10px;
+    background: #fff;
+    font-size: .95rem;
+    font-family: "Inter", sans-serif;
+    color: var(--text);
+    outline: none;
+    transition: .2s ease;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(0,32,96,0.08);
+}
+
+.contact-submit {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+}
+
+@media (max-width: 700px) {
+    .contact-form-wrapper {
+        padding: 28px 20px;
+        margin: 0 6vw;
+    }
+}
