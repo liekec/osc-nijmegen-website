@@ -1549,3 +1549,32 @@ body {
         margin: 0 6vw;
     }
 }
+
+/* CONTACT THANK YOU PAGE */
+
+.contact-thanks-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.contact-thanks-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.contact-thanks-wrapper .btn {
+    margin-top: 10px;
+}
