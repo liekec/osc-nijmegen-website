@@ -1578,6 +1578,37 @@ body {
     }
 }
 
+.contact-forms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;   /* was: start → nu stretch zodat beide kaarten even hoog worden */
+}
+
+.contact-forms-grid .contact-form-wrapper {
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;   /* laat het formulier de volledige hoogte van de wrapper vullen */
+}
+
+.contact-submit {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    margin-top: auto;   /* duwt de knop naar de onderkant, ongeacht hoeveel tekst erboven staat */
+}
+
 /* CONTACT THANK YOU PAGE */
 
 .contact-thanks-wrapper {
