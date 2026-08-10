@@ -271,7 +271,7 @@ function filterMembers() {
 
         (
         interest === "" ||
-        member.interests.includes(interest)
+        member.interest.includes(interest)
         )
 
 
